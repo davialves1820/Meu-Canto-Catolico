@@ -52,6 +52,17 @@ export default function Footer() {
           <p className="font-label-sm text-[11px] text-on-surface-variant">
             © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.
           </p>
+          <p className="mt-2 font-label-sm text-[11px] text-on-surface-variant">
+            Desenvolvido por{" "}
+            <a
+              href="https://site-davi-five.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline underline-offset-2"
+            >
+              Davi Alves Rodrigues
+            </a>
+          </p>
         </div>
       </div>
     </footer>

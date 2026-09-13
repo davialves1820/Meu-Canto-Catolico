@@ -36,9 +36,14 @@ export default async function CalendarioPage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <h1 className="sr-only">Calendário Litúrgico</h1>
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-6">
-        <Breadcrumb items={[{ label: "Calendário Litúrgico" }]} />
+        <Breadcrumb items={[{ label: "Calendário Litúrgico" }]} className="mb-8" />
+        <section className="text-center mb-12">
+          <h1 className="font-headline-xl text-headline-xl text-primary mb-4">Calendário Litúrgico</h1>
+          <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto">
+            Acompanhe o calendário litúrgico da Igreja Católica: tempos, festas, solenidades e cores litúrgicas de cada dia do ano.
+          </p>
+        </section>
       </div>
       <CalendarioView calendarioInicial={resultado} />
     </div>
