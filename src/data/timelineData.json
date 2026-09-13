@@ -1,0 +1,1113 @@
+{
+  "eventos": [
+    {
+      "id": "criacao-do-mundo",
+      "ordem": 1,
+      "testamento": "antigo",
+      "eraTag": "Criação e Queda",
+      "titulo": "Criação do Mundo",
+      "resumo": "Deus cria os céus, a terra, a luz e todos os seres vivos em seis dias, e descansa no sétimo. (Gênesis 1)",
+      "cor": "violet"
+    },
+    {
+      "id": "adao-eva-eden",
+      "ordem": 2,
+      "testamento": "antigo",
+      "eraTag": "Criação e Queda",
+      "titulo": "Adão, Eva e o Jardim do Éden",
+      "resumo": "Deus forma o homem do pó da terra e a mulher de sua costela, colocando-os no Éden em comunhão perfeita com Ele. (Gênesis 2)",
+      "cor": "violet"
+    },
+    {
+      "id": "queda-pecado-original",
+      "ordem": 3,
+      "testamento": "antigo",
+      "eraTag": "Criação e Queda",
+      "titulo": "A Queda e o Pecado Original",
+      "resumo": "Seduzidos pela serpente, Adão e Eva desobedecem a Deus e são expulsos do Éden, introduzindo o pecado e a morte no mundo. (Gênesis 3)",
+      "cor": "violet"
+    },
+    {
+      "id": "protoevangelho",
+      "ordem": 4,
+      "testamento": "antigo",
+      "eraTag": "Criação e Queda",
+      "titulo": "O Protoevangelho",
+      "resumo": "Mesmo ao expulsar o casal do Éden, Deus já anuncia a vitória futura da descendência da mulher sobre o mal. (Gênesis 3, 15)",
+      "citacao": {
+        "texto": "Porei inimizade entre ti e a mulher, entre a tua descendência e a dela; ela te ferirá a cabeça, e tu lhe ferirás o calcanhar.",
+        "referencia": "Gênesis 3, 15"
+      },
+      "cor": "violet"
+    },
+    {
+      "id": "caim-e-abel",
+      "ordem": 5,
+      "testamento": "antigo",
+      "eraTag": "Dilúvio e as Nações",
+      "titulo": "Caim e Abel",
+      "resumo": "Com inveja da oferta aceita de seu irmão, Caim mata Abel, cometendo o primeiro homicídio da humanidade. (Gênesis 4)",
+      "cor": "violet"
+    },
+    {
+      "id": "linhagem-de-sete",
+      "ordem": 6,
+      "testamento": "antigo",
+      "eraTag": "Dilúvio e as Nações",
+      "titulo": "Da Linhagem de Sete a Noé",
+      "resumo": "Nascido em lugar de Abel, Sete inicia uma linhagem piedosa que atravessa dez gerações até chegar a Noé. (Gênesis 5)",
+      "cor": "violet"
+    },
+    {
+      "id": "corrupcao-e-arca",
+      "ordem": 7,
+      "testamento": "antigo",
+      "eraTag": "Dilúvio e as Nações",
+      "titulo": "A Corrupção da Terra e a Arca de Noé",
+      "resumo": "Diante da maldade generalizada da humanidade, Deus escolhe Noé, o único justo de sua geração, para construir uma arca e salvar sua família. (Gênesis 6)",
+      "cor": "violet"
+    },
+    {
+      "id": "o-diluvio",
+      "ordem": 8,
+      "testamento": "antigo",
+      "eraTag": "Dilúvio e as Nações",
+      "titulo": "O Dilúvio",
+      "resumo": "As águas cobrem toda a terra por quarenta dias e quarenta noites, purificando o mundo da violência que o corrompia. (Gênesis 7–8)",
+      "cor": "violet"
+    },
+    {
+      "id": "alianca-do-arco-iris",
+      "ordem": 9,
+      "testamento": "antigo",
+      "eraTag": "Dilúvio e as Nações",
+      "titulo": "A Aliança do Arco-Íris",
+      "resumo": "Deus sela com Noé e toda a criação a primeira aliança pública, prometendo nunca mais destruir a terra com um dilúvio. (Gênesis 9)",
+      "citacao": {
+        "texto": "Eis o sinal da aliança que estabeleço entre mim e vós: o meu arco pus nas nuvens.",
+        "referencia": "Gênesis 9, 12.13"
+      },
+      "cor": "violet"
+    },
+    {
+      "id": "torre-de-babel",
+      "ordem": 10,
+      "testamento": "antigo",
+      "eraTag": "Dilúvio e as Nações",
+      "titulo": "A Torre de Babel",
+      "resumo": "A humanidade tenta construir uma torre até o céu para fazer um nome para si; Deus confunde as línguas e dispersa os povos pela terra. (Gênesis 11)",
+      "cor": "violet"
+    },
+    {
+      "id": "chamado-de-abraao",
+      "ordem": 11,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "O Chamado de Abraão",
+      "resumo": "Deus chama Abrão a deixar Ur da Caldeia rumo a uma terra que lhe mostraria, prometendo-lhe uma grande descendência. (Gênesis 12)",
+      "citacao": {
+        "texto": "Em ti serão abençoadas todas as famílias da terra.",
+        "referencia": "Gênesis 12, 3"
+      },
+      "cor": "cobalt"
+    },
+    {
+      "id": "abraao-lo-melquisedeque",
+      "ordem": 12,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "Abraão, Ló e Melquisedeque",
+      "resumo": "Abraão se separa pacificamente de seu sobrinho Ló e, ao resgatá-lo da guerra, é abençoado pelo sacerdote-rei Melquisedeque. (Gênesis 13–14)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "alianca-e-promessa-abraao",
+      "ordem": 13,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "A Aliança e a Promessa a Abraão",
+      "resumo": "Deus sela uma aliança com Abraão, prometendo-lhe descendência como as estrelas do céu e instituindo a circuncisão como seu sinal. (Gênesis 15; 17)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "sodoma-e-gomorra",
+      "ordem": 14,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "Destruição de Sodoma e Gomorra",
+      "resumo": "Por sua perversidade, Sodoma e Gomorra são destruídas; Ló e suas filhas escapam, mas sua esposa se transforma em estátua de sal. (Gênesis 18–19)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "nascimento-sacrificio-isaque",
+      "ordem": 15,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "O Nascimento e o Sacrifício de Isaque",
+      "resumo": "Nascido da promessa na velhice de Abraão e Sara, Isaque é levado ao Monte Moriá, onde Deus intervém e poupa sua vida. (Gênesis 21–22)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "isaque-e-rebeca",
+      "ordem": 16,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "Isaque e Rebeca",
+      "resumo": "Um servo de Abraão encontra Rebeca junto ao poço e a traz para ser esposa de Isaque, dando continuidade à linhagem da promessa. (Gênesis 24)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "jaco-e-esau",
+      "ordem": 17,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "Jacó e Esaú",
+      "resumo": "Esaú vende sua primogenitura por um prato de lentilhas, e Jacó obtém a bênção paterna destinada ao irmão mais velho. (Gênesis 25; 27)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "escada-de-jaco",
+      "ordem": 18,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "A Escada de Jacó e a Luta com o Anjo",
+      "resumo": "Jacó sonha com uma escada que liga a terra ao céu e, anos depois, luta com um anjo em Peniel, recebendo o nome de Israel. (Gênesis 28; 32)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "doze-tribos-de-israel",
+      "ordem": 19,
+      "testamento": "antigo",
+      "eraTag": "Patriarcas",
+      "titulo": "As Doze Tribos de Israel",
+      "resumo": "Os doze filhos de Jacó dão origem às doze tribos que formarão o povo de Israel. (Gênesis 35)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "jose-sonho-dos-irmaos",
+      "ordem": 20,
+      "testamento": "antigo",
+      "eraTag": "José no Egito",
+      "titulo": "José e os Sonhos dos Irmãos",
+      "resumo": "Predileto de Jacó, José sonha que seus irmãos um dia se curvarão diante dele, despertando o ciúme da família. (Gênesis 37)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "jose-vendido-escravo",
+      "ordem": 21,
+      "testamento": "antigo",
+      "eraTag": "José no Egito",
+      "titulo": "José Vendido e Escravizado no Egito",
+      "resumo": "Por inveja, os irmãos vendem José a mercadores, que o levam ao Egito, onde se torna escravo na casa de Potifar. (Gênesis 37; 39)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "jose-interpreta-sonhos-faraó",
+      "ordem": 22,
+      "testamento": "antigo",
+      "eraTag": "José no Egito",
+      "titulo": "José Interpreta os Sonhos do Faraó",
+      "resumo": "Após interpretar corretamente os sonhos do Faraó sobre sete anos de fartura e sete de fome, José é elevado a governador do Egito. (Gênesis 40–41)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "reconciliacao-com-irmaos",
+      "ordem": 23,
+      "testamento": "antigo",
+      "eraTag": "José no Egito",
+      "titulo": "A Reconciliação com os Irmãos",
+      "resumo": "Diante da fome, os irmãos de José vão ao Egito em busca de alimento e são perdoados e reconhecidos por ele. (Gênesis 45)",
+      "citacao": {
+        "texto": "Vós planejastes o mal contra mim, mas Deus o transformou em bem.",
+        "referencia": "Gênesis 50, 20"
+      },
+      "cor": "cobalt"
+    },
+    {
+      "id": "israel-em-gosen",
+      "ordem": 24,
+      "testamento": "antigo",
+      "eraTag": "José no Egito",
+      "titulo": "Israel se Estabelece em Gósen",
+      "resumo": "Jacó e toda a sua família descem ao Egito e se estabelecem na fértil terra de Gósen, sob a proteção de José. (Gênesis 46–47)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "escravidao-no-egito",
+      "ordem": 25,
+      "testamento": "antigo",
+      "eraTag": "Escravidão e Êxodo",
+      "titulo": "A Escravidão dos Hebreus no Egito",
+      "resumo": "Séculos depois, um novo Faraó teme o crescimento dos hebreus e os reduz à escravidão, impondo trabalhos forçados. (Êxodo 1)",
+      "cor": "emerald"
+    },
+    {
+      "id": "nascimento-vocacao-moises",
+      "ordem": 26,
+      "testamento": "antigo",
+      "eraTag": "Escravidão e Êxodo",
+      "titulo": "O Nascimento e a Vocação de Moisés",
+      "resumo": "Salvo das águas do Nilo ainda bebê, Moisés foge para Midiã e é chamado por Deus na sarça ardente para libertar seu povo. (Êxodo 2–3)",
+      "cor": "emerald"
+    },
+    {
+      "id": "dez-pragas-do-egito",
+      "ordem": 27,
+      "testamento": "antigo",
+      "eraTag": "Escravidão e Êxodo",
+      "titulo": "As Dez Pragas do Egito",
+      "resumo": "Diante da recusa do Faraó em libertar Israel, Deus envia dez pragas sobre o Egito, culminando na morte dos primogênitos. (Êxodo 7–11)",
+      "cor": "emerald"
+    },
+    {
+      "id": "instituicao-da-pascoa",
+      "ordem": 28,
+      "testamento": "antigo",
+      "eraTag": "Escravidão e Êxodo",
+      "titulo": "A Instituição da Páscoa",
+      "resumo": "Deus institui o sacrifício do cordeiro pascal, cujo sangue nos batentes das portas poupa os hebreus da praga final. (Êxodo 12)",
+      "cor": "emerald"
+    },
+    {
+      "id": "saida-do-egito",
+      "ordem": 29,
+      "testamento": "antigo",
+      "eraTag": "Escravidão e Êxodo",
+      "titulo": "A Saída do Egito",
+      "resumo": "Depois de mais de quatrocentos anos, o povo de Israel finalmente deixa o Egito rumo à liberdade prometida. (Êxodo 12–13)",
+      "cor": "emerald"
+    },
+    {
+      "id": "travessia-mar-vermelho",
+      "ordem": 30,
+      "testamento": "antigo",
+      "eraTag": "Escravidão e Êxodo",
+      "titulo": "A Travessia do Mar Vermelho",
+      "resumo": "Perseguido pelo exército do Faraó, o povo atravessa o Mar Vermelho em terra seca, que se fecha sobre os egípcios. (Êxodo 14–15)",
+      "cor": "emerald"
+    },
+    {
+      "id": "mana-codornizes-rocha",
+      "ordem": 31,
+      "testamento": "antigo",
+      "eraTag": "Sinai, a Lei e o Deserto",
+      "titulo": "O Maná, as Codornizes e a Água da Rocha",
+      "resumo": "No deserto, Deus alimenta o povo com maná e codornizes e faz brotar água de uma rocha, sustentando-o em sua peregrinação. (Êxodo 16–17)",
+      "cor": "emerald"
+    },
+    {
+      "id": "alianca-dez-mandamentos",
+      "ordem": 32,
+      "testamento": "antigo",
+      "eraTag": "Sinai, a Lei e o Deserto",
+      "titulo": "A Aliança e os Dez Mandamentos",
+      "resumo": "No Monte Sinai, Deus sela a Aliança com Israel e entrega a Moisés os Dez Mandamentos gravados em tábuas de pedra. (Êxodo 19–20)",
+      "citacao": {
+        "texto": "Eu sou o Senhor, teu Deus, que te fiz sair da terra do Egito, da casa da escravidão.",
+        "referencia": "Êxodo 20, 2"
+      },
+      "cor": "emerald"
+    },
+    {
+      "id": "bezerro-de-ouro",
+      "ordem": 33,
+      "testamento": "antigo",
+      "eraTag": "Sinai, a Lei e o Deserto",
+      "titulo": "O Bezerro de Ouro",
+      "resumo": "Enquanto Moisés recebe a Lei no monte, o povo funde um bezerro de ouro e o adora, quebrando a Aliança recém-selada. (Êxodo 32)",
+      "cor": "emerald"
+    },
+    {
+      "id": "tabernaculo-e-culto",
+      "ordem": 34,
+      "testamento": "antigo",
+      "eraTag": "Sinai, a Lei e o Deserto",
+      "titulo": "O Tabernáculo e o Culto Levítico",
+      "resumo": "Israel constrói o Tabernáculo para que Deus habite em meio ao seu povo, e recebe as leis do culto e da pureza confiadas aos levitas. (Êxodo 35–40; Levítico)",
+      "cor": "emerald"
+    },
+    {
+      "id": "espias-e-rebeliao-deserto",
+      "ordem": 35,
+      "testamento": "antigo",
+      "eraTag": "Sinai, a Lei e o Deserto",
+      "titulo": "Os Doze Espias e a Rebelião no Deserto",
+      "resumo": "Por descrença ao relatório dos espias enviados a Canaã, o povo se rebela e é condenado a vagar quarenta anos pelo deserto. (Números 13–14)",
+      "cor": "emerald"
+    },
+    {
+      "id": "morte-de-moises",
+      "ordem": 36,
+      "testamento": "antigo",
+      "eraTag": "Sinai, a Lei e o Deserto",
+      "titulo": "A Morte de Moisés no Monte Nebo",
+      "resumo": "Depois de renovar a Aliança com o povo em Moabe, Moisés contempla a Terra Prometida do Monte Nebo e morre sem nela entrar. (Deuteronômio 34)",
+      "cor": "emerald"
+    },
+    {
+      "id": "josue-sucede-moises",
+      "ordem": 37,
+      "testamento": "antigo",
+      "eraTag": "Conquista de Canaã",
+      "titulo": "Josué Sucede Moisés e os Espias em Jericó",
+      "resumo": "Josué assume a liderança de Israel e envia espias a Jericó, que são protegidos pela fé da prostituta Raabe. (Josué 1–2)",
+      "cor": "gold"
+    },
+    {
+      "id": "travessia-jordao-jerico",
+      "ordem": 38,
+      "testamento": "antigo",
+      "eraTag": "Conquista de Canaã",
+      "titulo": "A Travessia do Jordão e a Queda de Jericó",
+      "resumo": "Israel atravessa o rio Jordão em terra seca e conquista Jericó após marchar em torno de seus muros por sete dias. (Josué 3–6)",
+      "cor": "gold"
+    },
+    {
+      "id": "reparticao-terra-prometida",
+      "ordem": 39,
+      "testamento": "antigo",
+      "eraTag": "Conquista de Canaã",
+      "titulo": "A Repartição da Terra Prometida",
+      "resumo": "Após as campanhas de conquista, Josué reparte a terra de Canaã entre as doze tribos de Israel. (Josué 13–21)",
+      "cor": "gold"
+    },
+    {
+      "id": "ciclo-dos-juizes",
+      "ordem": 40,
+      "testamento": "antigo",
+      "eraTag": "Juízes e Rute",
+      "titulo": "O Ciclo dos Juízes",
+      "resumo": "Sem um rei, Israel vive um ciclo repetido de infidelidade, opressão estrangeira e libertação por Juízes suscitados por Deus. (Juízes 2)",
+      "cor": "gold"
+    },
+    {
+      "id": "debora-e-baraque",
+      "ordem": 41,
+      "testamento": "antigo",
+      "eraTag": "Juízes e Rute",
+      "titulo": "Débora e Baraque",
+      "resumo": "A profetisa Débora convoca Baraque para libertar Israel do jugo cananeu, e a vitória é cantada em um dos cânticos mais antigos da Bíblia. (Juízes 4–5)",
+      "cor": "gold"
+    },
+    {
+      "id": "gideao-trezentos",
+      "ordem": 42,
+      "testamento": "antigo",
+      "eraTag": "Juízes e Rute",
+      "titulo": "Gideão e os Trezentos",
+      "resumo": "Com apenas trezentos homens escolhidos por Deus, Gideão derrota o exército madianita, mostrando que a vitória vem do Senhor. (Juízes 6–7)",
+      "cor": "gold"
+    },
+    {
+      "id": "sansao-e-dalila",
+      "ordem": 43,
+      "testamento": "antigo",
+      "eraTag": "Juízes e Rute",
+      "titulo": "Sansão e Dalila",
+      "resumo": "Dotado de força sobre-humana como nazireu, Sansão é traído por Dalila, mas na morte derrota mais filisteus do que em toda a sua vida. (Juízes 13–16)",
+      "cor": "gold"
+    },
+    {
+      "id": "rute-noemi-boaz",
+      "ordem": 44,
+      "testamento": "antigo",
+      "eraTag": "Juízes e Rute",
+      "titulo": "Rute, Noemi e Boaz",
+      "resumo": "A moabita Rute permanece fiel à sua sogra Noemi e se casa com Boaz, tornando-se bisavó do rei Davi. (Rute 1–4)",
+      "cor": "gold"
+    },
+    {
+      "id": "nascimento-chamado-samuel",
+      "ordem": 45,
+      "testamento": "antigo",
+      "eraTag": "Samuel e o Reino Unido",
+      "titulo": "O Nascimento e o Chamado de Samuel",
+      "resumo": "Fruto da oração de Ana, Samuel é dedicado ao Senhor desde criança e ouve o chamado de Deus ainda menino, no templo de Siló. (1 Samuel 1–3)",
+      "cor": "crimson"
+    },
+    {
+      "id": "saul-primeiro-rei",
+      "ordem": 46,
+      "testamento": "antigo",
+      "eraTag": "Samuel e o Reino Unido",
+      "titulo": "Saul, o Primeiro Rei",
+      "resumo": "Atendendo ao pedido do povo por um rei, Deus escolhe Saul, da tribo de Benjamim, para governar Israel. (1 Samuel 9–10)",
+      "cor": "crimson"
+    },
+    {
+      "id": "davi-e-golias",
+      "ordem": 47,
+      "testamento": "antigo",
+      "eraTag": "Samuel e o Reino Unido",
+      "titulo": "Davi e Golias",
+      "resumo": "O jovem pastor Davi derrota o gigante filisteu Golias com uma funda e cinco pedras, confiando apenas no Senhor. (1 Samuel 17)",
+      "cor": "crimson"
+    },
+    {
+      "id": "davi-foge-de-saul",
+      "ordem": 48,
+      "testamento": "antigo",
+      "eraTag": "Samuel e o Reino Unido",
+      "titulo": "Davi Foge de Saul",
+      "resumo": "Consumido pelo ciúme, Saul persegue Davi por anos, mas este poupa a vida do rei por duas vezes em respeito ao seu ungido. (1 Samuel 18–24)",
+      "cor": "crimson"
+    },
+    {
+      "id": "davi-ungido-rei",
+      "ordem": 49,
+      "testamento": "antigo",
+      "eraTag": "Samuel e o Reino Unido",
+      "titulo": "Davi é Ungido Rei de Israel",
+      "resumo": "Após a morte de Saul, Davi é ungido rei sobre todas as doze tribos e conquista Jerusalém, fazendo dela sua capital. (2 Samuel 5)",
+      "cor": "crimson"
+    },
+    {
+      "id": "arca-em-jerusalem",
+      "ordem": 50,
+      "testamento": "antigo",
+      "eraTag": "Davi e Salomão",
+      "titulo": "A Arca em Jerusalém",
+      "resumo": "Davi traz a Arca da Aliança para Jerusalém em meio a grande festa e dança diante do Senhor. (2 Samuel 6)",
+      "cor": "crimson"
+    },
+    {
+      "id": "alianca-davidica",
+      "ordem": 51,
+      "testamento": "antigo",
+      "eraTag": "Davi e Salomão",
+      "titulo": "A Aliança Davídica",
+      "resumo": "Deus promete a Davi que sua descendência e seu trono subsistirão para sempre, promessa que aponta para o Messias. (2 Samuel 7)",
+      "citacao": {
+        "texto": "Tua casa e teu reino subsistirão para sempre diante de mim; teu trono será firme para sempre.",
+        "referencia": "2 Samuel 7, 16"
+      },
+      "cor": "crimson"
+    },
+    {
+      "id": "davi-betsabá-absalao",
+      "ordem": 52,
+      "testamento": "antigo",
+      "eraTag": "Davi e Salomão",
+      "titulo": "Davi, Betsabá e a Rebelião de Absalão",
+      "resumo": "O pecado de Davi com Betsabá traz sofrimento à sua casa, culminando na rebelião e morte de seu filho Absalão. (2 Samuel 11–15)",
+      "cor": "crimson"
+    },
+    {
+      "id": "salomao-pede-sabedoria",
+      "ordem": 53,
+      "testamento": "antigo",
+      "eraTag": "Davi e Salomão",
+      "titulo": "Salomão Pede Sabedoria",
+      "resumo": "Ao suceder Davi, Salomão pede a Deus um coração sábio para governar o povo, e recebe também riqueza e glória. (1 Reis 3)",
+      "cor": "crimson"
+    },
+    {
+      "id": "construcao-do-templo",
+      "ordem": 54,
+      "testamento": "antigo",
+      "eraTag": "Davi e Salomão",
+      "titulo": "A Construção do Templo",
+      "resumo": "Salomão edifica em Jerusalém o primeiro Templo, casa definitiva para a Arca da Aliança e centro do culto a Deus. (1 Reis 6–8)",
+      "cor": "crimson"
+    },
+    {
+      "id": "rainha-de-saba",
+      "ordem": 55,
+      "testamento": "antigo",
+      "eraTag": "Davi e Salomão",
+      "titulo": "A Rainha de Sabá",
+      "resumo": "Impressionada com a fama de Salomão, a Rainha de Sabá o visita e reconhece nele a sabedoria concedida por Deus. (1 Reis 10)",
+      "cor": "crimson"
+    },
+    {
+      "id": "queda-de-salomao",
+      "ordem": 56,
+      "testamento": "antigo",
+      "eraTag": "Davi e Salomão",
+      "titulo": "A Queda de Salomão",
+      "resumo": "Nos últimos anos de seu reinado, Salomão se desvia do Senhor ao seguir os deuses de suas esposas estrangeiras. (1 Reis 11)",
+      "cor": "crimson"
+    },
+    {
+      "id": "cisao-do-reino",
+      "ordem": 57,
+      "testamento": "antigo",
+      "eraTag": "Reino Dividido e os Profetas",
+      "titulo": "A Cisão do Reino",
+      "resumo": "Após a morte de Salomão, o reino se divide entre Israel, ao norte, e Judá, ao sul, sob a casa de Davi. (1 Reis 12)",
+      "cor": "violet"
+    },
+    {
+      "id": "elias-monte-carmelo",
+      "ordem": 58,
+      "testamento": "antigo",
+      "eraTag": "Reino Dividido e os Profetas",
+      "titulo": "Elias no Monte Carmelo",
+      "resumo": "Diante dos profetas de Baal, Elias invoca o Senhor, que responde com fogo do céu, provando ser o único Deus verdadeiro. (1 Reis 18)",
+      "cor": "violet"
+    },
+    {
+      "id": "elias-horebe-partida",
+      "ordem": 59,
+      "testamento": "antigo",
+      "eraTag": "Reino Dividido e os Profetas",
+      "titulo": "Elias no Horebe e sua Partida ao Céu",
+      "resumo": "Fugindo de Jezabel, Elias encontra Deus na brisa suave do Horebe e, ao fim de sua missão, é arrebatado ao céu em um carro de fogo. (1 Reis 19; 2 Reis 2)",
+      "cor": "violet"
+    },
+    {
+      "id": "milagres-de-eliseu",
+      "ordem": 60,
+      "testamento": "antigo",
+      "eraTag": "Reino Dividido e os Profetas",
+      "titulo": "Os Milagres de Eliseu",
+      "resumo": "Herdeiro do espírito de Elias, Eliseu multiplica o óleo de uma viúva, ressuscita um menino e cura da lepra o general Naamã. (2 Reis 4–5)",
+      "cor": "violet"
+    },
+    {
+      "id": "jonas-e-ninive",
+      "ordem": 61,
+      "testamento": "antigo",
+      "eraTag": "Reino Dividido e os Profetas",
+      "titulo": "Jonas e Nínive",
+      "resumo": "Depois de fugir de sua missão e passar três dias no ventre de um grande peixe, Jonas prega em Nínive, que se converte. (Jonas 1–4)",
+      "cor": "violet"
+    },
+    {
+      "id": "amos-e-oseias",
+      "ordem": 62,
+      "testamento": "antigo",
+      "eraTag": "Reino Dividido e os Profetas",
+      "titulo": "Amós e Oseias Anunciam a Justiça de Deus",
+      "resumo": "Os profetas Amós e Oseias denunciam a injustiça social e a idolatria do Reino do Norte, chamando o povo à conversão. (Amós; Oseias)",
+      "cor": "violet"
+    },
+    {
+      "id": "queda-de-samaria",
+      "ordem": 63,
+      "testamento": "antigo",
+      "eraTag": "Reino Dividido e os Profetas",
+      "titulo": "A Queda de Samaria e o Fim de Israel",
+      "resumo": "Em 722 a.C., o Império Assírio conquista Samaria e deporta as dez tribos do Reino do Norte, que se dispersam entre as nações. (2 Reis 17)",
+      "cor": "violet"
+    },
+    {
+      "id": "isaias-sinal-emanuel",
+      "ordem": 64,
+      "testamento": "antigo",
+      "eraTag": "Reino Dividido e os Profetas",
+      "titulo": "Isaías e o Sinal do Emanuel",
+      "resumo": "Ao Reino de Judá ameaçado, Isaías anuncia o sinal de uma virgem que conceberá um filho chamado Emanuel, «Deus conosco». (Isaías 7)",
+      "citacao": {
+        "texto": "Eis que a virgem conceberá e dará à luz um filho, e lhe chamará Emanuel.",
+        "referencia": "Isaías 7, 14"
+      },
+      "cor": "violet"
+    },
+    {
+      "id": "ezequias-invasao-assiria",
+      "ordem": 65,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "Ezequias e a Invasão Assíria",
+      "resumo": "Confiando no Senhor, o rei Ezequias vê Jerusalém livrar-se do cerco do poderoso exército assírio de Senaqueribe. (2 Reis 18–19)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "reforma-de-josias",
+      "ordem": 66,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "A Reforma de Josias",
+      "resumo": "Ao reencontrar o Livro da Lei perdido no Templo, o rei Josias promove uma grande reforma religiosa em Judá. (2 Reis 22–23)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "jeremias-profeta-choroso",
+      "ordem": 67,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "Jeremias, o Profeta Chorão",
+      "resumo": "Chamado ainda jovem, Jeremias anuncia com lágrimas o juízo sobre Jerusalém e a promessa de uma Nova Aliança escrita no coração. (Jeremias 1; 31)",
+      "citacao": {
+        "texto": "Porei a minha lei no íntimo deles e a escreverei em seu coração.",
+        "referencia": "Jeremias 31, 33"
+      },
+      "cor": "cobalt"
+    },
+    {
+      "id": "queda-de-jerusalem",
+      "ordem": 68,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "A Queda de Jerusalém e a Destruição do Templo",
+      "resumo": "Em 586 a.C., Nabucodonosor destrói Jerusalém e o Templo de Salomão, levando o povo cativo para a Babilônia. (2 Reis 25)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "ezequiel-visao-da-gloria",
+      "ordem": 69,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "Ezequiel e a Visão da Glória de Deus",
+      "resumo": "No exílio, Ezequiel contempla a glória de Deus junto ao rio Cabul e anuncia a restauração futura de Israel. (Ezequiel 1)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "tres-jovens-na-fornalha",
+      "ordem": 70,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "Os Três Jovens na Fornalha",
+      "resumo": "Sadraque, Mesaque e Abednego se recusam a adorar a estátua de Nabucodonosor e são protegidos por Deus em meio às chamas. (Daniel 3)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "daniel-cova-dos-leoes",
+      "ordem": 71,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "Daniel na Cova dos Leões",
+      "resumo": "Fiel à oração diária a Deus, Daniel é lançado na cova dos leões, mas sai ileso pela proteção divina. (Daniel 6)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "tobias-e-o-anjo-rafael",
+      "ordem": 72,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "Tobias e o Anjo Rafael",
+      "resumo": "Guiado pelo arcanjo Rafael disfarçado de companheiro de viagem, o jovem Tobias cura a cegueira do pai e liberta Sara de um demônio. (Tobias 5–12)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "judite-salva-betulia",
+      "ordem": 73,
+      "testamento": "antigo",
+      "eraTag": "Queda de Jerusalém e Exílio",
+      "titulo": "Judite Salva Betúlia",
+      "resumo": "Com coragem e fé, a viúva Judite decapita o general Holofernes e livra sua cidade do cerco inimigo. (Judite 13)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "decreto-de-ciro",
+      "ordem": 74,
+      "testamento": "antigo",
+      "eraTag": "Retorno, Restauração e Macabeus",
+      "titulo": "O Decreto de Ciro",
+      "resumo": "O rei persa Ciro permite que os exilados judeus retornem à sua terra e reconstruam o Templo de Jerusalém. (Esdras 1)",
+      "cor": "emerald"
+    },
+    {
+      "id": "reconstrucao-do-templo",
+      "ordem": 75,
+      "testamento": "antigo",
+      "eraTag": "Retorno, Restauração e Macabeus",
+      "titulo": "A Reconstrução do Templo",
+      "resumo": "Sob a liderança de Zorobabel, o remanescente que retornou reconstrói o Segundo Templo em meio a oposições. (Esdras 3–6)",
+      "cor": "emerald"
+    },
+    {
+      "id": "ester-rainha-salva-povo",
+      "ordem": 76,
+      "testamento": "antigo",
+      "eraTag": "Retorno, Restauração e Macabeus",
+      "titulo": "Ester se Torna Rainha e Salva seu Povo",
+      "resumo": "A jovem judia Ester se torna rainha da Pérsia e, com coragem, intercede diante do rei para salvar seu povo do extermínio planejado por Hamã. (Ester 2; 7–8)",
+      "cor": "emerald"
+    },
+    {
+      "id": "esdras-neemias-muralhas",
+      "ordem": 77,
+      "testamento": "antigo",
+      "eraTag": "Retorno, Restauração e Macabeus",
+      "titulo": "Esdras Ensina a Lei e Neemias Reconstrói as Muralhas",
+      "resumo": "Esdras lê e explica a Lei ao povo reunido, enquanto Neemias reconstrói as muralhas de Jerusalém apesar da oposição dos vizinhos. (Esdras 7; Neemias 6)",
+      "cor": "emerald"
+    },
+    {
+      "id": "antioco-profana-templo",
+      "ordem": 78,
+      "testamento": "antigo",
+      "eraTag": "Retorno, Restauração e Macabeus",
+      "titulo": "Antíoco IV Profana o Templo",
+      "resumo": "Sob a dominação grega, o rei selêucida Antíoco IV profana o Templo de Jerusalém e proíbe o culto judaico. (1 Macabeus 1)",
+      "cor": "emerald"
+    },
+    {
+      "id": "revolta-dos-macabeus",
+      "ordem": 79,
+      "testamento": "antigo",
+      "eraTag": "Retorno, Restauração e Macabeus",
+      "titulo": "A Revolta dos Macabeus",
+      "resumo": "Judas Macabeu lidera a revolta que purifica e rededica o Templo, e oferece sacrifício e oração pelos soldados mortos, atestando a fé na ressurreição. (1 Macabeus 2–4; 2 Macabeus 12)",
+      "citacao": {
+        "texto": "É um pensamento santo e salutar orar pelos mortos, a fim de que sejam libertos do pecado.",
+        "referencia": "2 Macabeus 12, 46"
+      },
+      "cor": "emerald"
+    },
+    {
+      "id": "martirio-dos-sete-irmaos",
+      "ordem": 80,
+      "testamento": "antigo",
+      "eraTag": "Retorno, Restauração e Macabeus",
+      "titulo": "O Martírio dos Sete Irmãos",
+      "resumo": "Sete irmãos e sua mãe preferem a morte a transgredir a Lei de Deus, professando publicamente a esperança na ressurreição dos mortos. (2 Macabeus 7)",
+      "cor": "emerald"
+    },
+    {
+      "id": "anunciacao-a-zacarias",
+      "ordem": 81,
+      "testamento": "novo",
+      "eraTag": "Anúncio e Nascimento de Jesus",
+      "titulo": "A Anunciação a Zacarias",
+      "resumo": "No Templo, o anjo Gabriel anuncia ao sacerdote Zacarias que sua esposa Isabel, já idosa, daria à luz um filho. (Lucas 1)",
+      "cor": "gold"
+    },
+    {
+      "id": "anunciacao-a-maria",
+      "ordem": 82,
+      "testamento": "novo",
+      "eraTag": "Anúncio e Nascimento de Jesus",
+      "titulo": "A Anunciação a Maria",
+      "resumo": "O anjo Gabriel anuncia a Maria, virgem de Nazaré, que ela conceberia pelo Espírito Santo o Filho de Deus. (Lucas 1)",
+      "cor": "gold"
+    },
+    {
+      "id": "visitacao-e-magnificat",
+      "ordem": 83,
+      "testamento": "novo",
+      "eraTag": "Anúncio e Nascimento de Jesus",
+      "titulo": "A Visitação e o Magnificat",
+      "resumo": "Maria visita sua prima Isabel, que a saúda como mãe do Senhor, e responde com o cântico do Magnificat. (Lucas 1)",
+      "cor": "gold"
+    },
+    {
+      "id": "nascimento-joao-batista",
+      "ordem": 84,
+      "testamento": "novo",
+      "eraTag": "Anúncio e Nascimento de Jesus",
+      "titulo": "O Nascimento de João Batista",
+      "resumo": "Isabel dá à luz João, o precursor que preparará o caminho do Senhor, e Zacarias recupera a fala para louvar a Deus. (Lucas 1)",
+      "cor": "gold"
+    },
+    {
+      "id": "nascimento-de-jesus",
+      "ordem": 85,
+      "testamento": "novo",
+      "eraTag": "Anúncio e Nascimento de Jesus",
+      "titulo": "O Nascimento de Jesus em Belém",
+      "resumo": "Em uma manjedoura de Belém, o Verbo eterno de Deus se faz carne e habita entre nós. (Lucas 2)",
+      "citacao": {
+        "texto": "E o Verbo se fez carne e habitou entre nós; e vimos a sua glória, glória como do Unigênito do Pai.",
+        "referencia": "João 1, 14"
+      },
+      "cor": "gold",
+      "destaque": true
+    },
+    {
+      "id": "adoracao-dos-magos",
+      "ordem": 86,
+      "testamento": "novo",
+      "eraTag": "Anúncio e Nascimento de Jesus",
+      "titulo": "A Adoração dos Magos",
+      "resumo": "Guiados por uma estrela, sábios vindos do Oriente adoram o Menino Jesus e lhe oferecem ouro, incenso e mirra. (Mateus 2)",
+      "cor": "gold"
+    },
+    {
+      "id": "apresentacao-no-templo",
+      "ordem": 87,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "A Apresentação no Templo",
+      "resumo": "Maria e José apresentam Jesus no Templo, onde o ancião Simeão e a profetisa Ana reconhecem nele o Salvador. (Lucas 2)",
+      "cor": "gold"
+    },
+    {
+      "id": "fuga-para-o-egito",
+      "ordem": 88,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "A Fuga para o Egito",
+      "resumo": "Avisado em sonho, José leva Maria e o Menino para o Egito, escapando da perseguição de Herodes. (Mateus 2)",
+      "cor": "gold"
+    },
+    {
+      "id": "jesus-entre-os-doutores",
+      "ordem": 89,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "Jesus entre os Doutores",
+      "resumo": "Aos doze anos, Jesus permanece no Templo discutindo com os doutores da Lei, que se admiram de sua sabedoria. (Lucas 2)",
+      "cor": "gold"
+    },
+    {
+      "id": "batismo-e-tentacoes",
+      "ordem": 90,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "O Batismo e as Tentações de Jesus",
+      "resumo": "João Batista batiza Jesus no Jordão, e o Espírito desce sobre ele; em seguida, Jesus jejua quarenta dias no deserto e vence as tentações do demônio. (Mateus 3–4)",
+      "cor": "gold"
+    },
+    {
+      "id": "chamada-dos-apostolos",
+      "ordem": 91,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "A Chamada dos Primeiros Apóstolos",
+      "resumo": "Junto ao Mar da Galileia, Jesus chama Pedro, André, Tiago e João para deixarem tudo e segui-lo. (Mateus 4)",
+      "cor": "gold"
+    },
+    {
+      "id": "bodas-de-cana",
+      "ordem": 92,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "As Bodas de Caná",
+      "resumo": "A pedido de sua Mãe, Jesus realiza seu primeiro milagre público, transformando água em vinho em um casamento na Galileia. (João 2)",
+      "cor": "gold"
+    },
+    {
+      "id": "sermao-da-montanha",
+      "ordem": 93,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "O Sermão da Montanha",
+      "resumo": "Jesus proclama as Bem-aventuranças e ensina a nova Lei do Reino, resumindo a moral cristã em seu discurso mais célebre. (Mateus 5–7)",
+      "cor": "gold"
+    },
+    {
+      "id": "multiplicacao-dos-paes",
+      "ordem": 94,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "A Multiplicação dos Pães",
+      "resumo": "Com cinco pães e dois peixes, Jesus alimenta uma multidão de milhares, prefigurando o dom da Eucaristia. (Mateus 14)",
+      "cor": "gold"
+    },
+    {
+      "id": "transfiguracao",
+      "ordem": 95,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "A Transfiguração",
+      "resumo": "No Monte Tabor, Jesus se transfigura diante de Pedro, Tiago e João, revelando sua glória divina junto a Moisés e Elias. (Mateus 17)",
+      "cor": "gold"
+    },
+    {
+      "id": "ressurreicao-de-lazaro",
+      "ordem": 96,
+      "testamento": "novo",
+      "eraTag": "Vida Oculta e Ministério de Jesus",
+      "titulo": "A Ressurreição de Lázaro",
+      "resumo": "Jesus chora diante do túmulo do amigo Lázaro e o ressuscita ao quarto dia, sinal supremo de seu poder sobre a morte. (João 11)",
+      "cor": "gold"
+    },
+    {
+      "id": "entrada-triunfal-jerusalem",
+      "ordem": 97,
+      "testamento": "novo",
+      "eraTag": "Paixão, Morte e Ressurreição",
+      "titulo": "A Entrada Triunfal em Jerusalém",
+      "resumo": "Montado em um jumentinho, Jesus entra em Jerusalém aclamado pela multidão, cumprindo a profecia messiânica. (Mateus 21)",
+      "cor": "gold"
+    },
+    {
+      "id": "purificacao-do-templo",
+      "ordem": 98,
+      "testamento": "novo",
+      "eraTag": "Paixão, Morte e Ressurreição",
+      "titulo": "A Purificação do Templo",
+      "resumo": "Indignado com a profanação do lugar sagrado, Jesus expulsa os vendilhões e cambistas do átrio do Templo. (Mateus 21)",
+      "cor": "gold"
+    },
+    {
+      "id": "ultima-ceia-eucaristia",
+      "ordem": 99,
+      "testamento": "novo",
+      "eraTag": "Paixão, Morte e Ressurreição",
+      "titulo": "A Última Ceia e a Instituição da Eucaristia",
+      "resumo": "Reunido com os Doze no Cenáculo, Jesus institui a Eucaristia, entregando seu Corpo e Sangue sob as espécies do pão e do vinho. (Mateus 26)",
+      "citacao": {
+        "texto": "Isto é o meu corpo... isto é o meu sangue da aliança, que é derramado por muitos.",
+        "referencia": "Mateus 26, 26.28"
+      },
+      "cor": "gold",
+      "destaque": true
+    },
+    {
+      "id": "agonia-no-getsemani",
+      "ordem": 100,
+      "testamento": "novo",
+      "eraTag": "Paixão, Morte e Ressurreição",
+      "titulo": "A Agonia no Getsêmani",
+      "resumo": "Em oração angustiada no jardim, Jesus aceita livremente a vontade do Pai diante da cruz que se aproxima. (Mateus 26)",
+      "cor": "gold"
+    },
+    {
+      "id": "prisao-e-julgamento",
+      "ordem": 101,
+      "testamento": "novo",
+      "eraTag": "Paixão, Morte e Ressurreição",
+      "titulo": "A Prisão e o Julgamento de Jesus",
+      "resumo": "Traído por Judas com um beijo, Jesus é preso e julgado diante do Sinédrio e de Pilatos, sendo condenado à morte. (Mateus 26–27)",
+      "cor": "gold"
+    },
+    {
+      "id": "crucificacao-e-morte",
+      "ordem": 102,
+      "testamento": "novo",
+      "eraTag": "Paixão, Morte e Ressurreição",
+      "titulo": "A Crucificação e Morte de Jesus",
+      "resumo": "Jesus é crucificado no Calvário e, após entregar seu espírito ao Pai, morre pela salvação da humanidade. (João 19)",
+      "citacao": {
+        "texto": "Está consumado.",
+        "referencia": "João 19, 30"
+      },
+      "cor": "gold",
+      "destaque": true
+    },
+    {
+      "id": "a-ressurreicao",
+      "ordem": 103,
+      "testamento": "novo",
+      "eraTag": "Paixão, Morte e Ressurreição",
+      "titulo": "A Ressurreição",
+      "resumo": "Ao terceiro dia, Jesus ressuscita vitorioso sobre a morte, e o túmulo é encontrado vazio pelas santas mulheres. (João 20)",
+      "citacao": {
+        "texto": "Ele não está aqui; ressuscitou, como tinha dito.",
+        "referencia": "Mateus 28, 6"
+      },
+      "cor": "gold",
+      "destaque": true
+    },
+    {
+      "id": "a-ascensao",
+      "ordem": 104,
+      "testamento": "novo",
+      "eraTag": "Paixão, Morte e Ressurreição",
+      "titulo": "A Ascensão",
+      "resumo": "Depois de aparecer aos discípulos por quarenta dias, Jesus sobe ao céu diante deles, prometendo o Espírito Santo. (Atos 1)",
+      "cor": "gold"
+    },
+    {
+      "id": "pentecostes",
+      "ordem": 105,
+      "testamento": "novo",
+      "eraTag": "A Igreja Nascente",
+      "titulo": "Pentecostes",
+      "resumo": "Reunidos com Maria no Cenáculo, os Apóstolos recebem o Espírito Santo em línguas de fogo, e a Igreja nasce para sua missão. (Atos 2)",
+      "citacao": {
+        "texto": "Todos ficaram cheios do Espírito Santo e começaram a falar em outras línguas.",
+        "referencia": "Atos 2, 4"
+      },
+      "cor": "crimson",
+      "destaque": true
+    },
+    {
+      "id": "primeira-comunidade-crista",
+      "ordem": 106,
+      "testamento": "novo",
+      "eraTag": "A Igreja Nascente",
+      "titulo": "A Primeira Comunidade Cristã",
+      "resumo": "Os primeiros cristãos perseveram no ensino dos Apóstolos, na fração do pão e na oração, e partilham tudo em comum. (Atos 2)",
+      "cor": "crimson"
+    },
+    {
+      "id": "martirio-de-santo-estevao",
+      "ordem": 107,
+      "testamento": "novo",
+      "eraTag": "A Igreja Nascente",
+      "titulo": "O Martírio de Santo Estêvão",
+      "resumo": "O diácono Estêvão se torna o primeiro mártir cristão, apedrejado enquanto perdoa seus algozes. (Atos 7)",
+      "cor": "crimson"
+    },
+    {
+      "id": "conversao-de-saulo",
+      "ordem": 108,
+      "testamento": "novo",
+      "eraTag": "A Igreja Nascente",
+      "titulo": "A Conversão de Saulo",
+      "resumo": "A caminho de Damasco para perseguir os cristãos, Saulo é derrubado por uma luz do céu e se converte, tornando-se Paulo. (Atos 9)",
+      "cor": "crimson"
+    },
+    {
+      "id": "pedro-e-cornelio",
+      "ordem": 109,
+      "testamento": "novo",
+      "eraTag": "A Igreja Nascente",
+      "titulo": "Pedro e a Visão de Cornélio",
+      "resumo": "Uma visão revela a Pedro que o Evangelho também é destinado aos gentios, e ele batiza o centurião romano Cornélio. (Atos 10)",
+      "cor": "crimson"
+    },
+    {
+      "id": "concilio-de-jerusalem",
+      "ordem": 110,
+      "testamento": "novo",
+      "eraTag": "A Igreja Nascente",
+      "titulo": "O Concílio de Jerusalém",
+      "resumo": "Os Apóstolos se reúnem em Jerusalém e decidem que os gentios convertidos não precisam observar a Lei mosaica para serem cristãos. (Atos 15)",
+      "cor": "crimson"
+    },
+    {
+      "id": "viagens-missionarias-de-paulo",
+      "ordem": 111,
+      "testamento": "novo",
+      "eraTag": "Missão de Paulo e a Consumação",
+      "titulo": "As Viagens Missionárias de Paulo",
+      "resumo": "Paulo percorre a Ásia Menor e a Grécia em suas viagens missionárias, fundando comunidades cristãs em cidades como Corinto e Éfeso. (Atos 13–20)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "paulo-em-atenas",
+      "ordem": 112,
+      "testamento": "novo",
+      "eraTag": "Missão de Paulo e a Consumação",
+      "titulo": "Paulo em Atenas",
+      "resumo": "No Areópago de Atenas, Paulo anuncia aos gregos o «Deus desconhecido» que eles já veneravam sem o saber. (Atos 17)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "prisao-martirio-paulo",
+      "ordem": 113,
+      "testamento": "novo",
+      "eraTag": "Missão de Paulo e a Consumação",
+      "titulo": "A Prisão e o Martírio de Paulo em Roma",
+      "resumo": "Levado preso a Roma após apelar a César, Paulo prega o Evangelho mesmo em cativeiro e, segundo a Tradição, é martirizado na cidade. (Atos 28)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "martirio-de-pedro",
+      "ordem": 114,
+      "testamento": "novo",
+      "eraTag": "Missão de Paulo e a Consumação",
+      "titulo": "O Martírio de Pedro em Roma",
+      "resumo": "Segundo a Tradição apostólica, Pedro é crucificado em Roma, selando com o martírio sua missão como primeiro Papa da Igreja. (Tradição Apostólica)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "joao-em-patmos",
+      "ordem": 115,
+      "testamento": "novo",
+      "eraTag": "Missão de Paulo e a Consumação",
+      "titulo": "João Exilado em Patmos e a Visão do Apocalipse",
+      "resumo": "Exilado na ilha de Patmos, o apóstolo João recebe a visão do trono de Deus e do Cordeiro que sela o sentido último da história. (Apocalipse 1; 4–5)",
+      "cor": "cobalt"
+    },
+    {
+      "id": "nova-jerusalem-parusia",
+      "ordem": 116,
+      "testamento": "novo",
+      "eraTag": "Missão de Paulo e a Consumação",
+      "titulo": "A Nova Jerusalém e a Parusia",
+      "resumo": "A Escritura se encerra com a promessa do retorno glorioso de Cristo e a visão da Nova Jerusalém, onde Deus enxugará toda lágrima. (Apocalipse 21–22)",
+      "citacao": {
+        "texto": "O Espírito e a Esposa dizem: Vem!... Vem, Senhor Jesus!",
+        "referencia": "Apocalipse 22, 17.20"
+      },
+      "cor": "cobalt"
+    }
+  ]
+}
