@@ -24,15 +24,6 @@ const PALETA: Record<TimelineCor, { texto: string; suave: string; borda: string;
   violet: { texto: "text-violet", suave: "bg-violet/10", borda: "border-violet/25", ponto: "bg-violet", acento: "border-l-violet" },
 };
 
-/** Variável CSS de cada cor, para montar o gradiente contínuo do eixo. */
-const VAR_COR: Record<TimelineCor, string> = {
-  gold: "--gold",
-  cobalt: "--cobalt",
-  emerald: "--emerald",
-  crimson: "--crimson",
-  violet: "--violet",
-};
-
 const PASSO_SCROLL = 420;
 
 export function BibleHorizontalTimeline({ eventos }: BibleHorizontalTimelineProps) {
@@ -125,13 +116,6 @@ export function BibleHorizontalTimeline({ eventos }: BibleHorizontalTimelineProp
     setSegurando(false);
   }
 
-  // Eixo em degradê contínuo, passando pela cor de cada evento — como a linha
-  // colorida do site de referência, só que percorrendo a esteira horizontal.
-  const totalizador = Math.max(eventos.length - 1, 1);
-  const eixoGradiente = eventos
-    .map((e, i) => `hsl(var(${VAR_COR[e.cor]})) ${((i / totalizador) * 100).toFixed(1)}%`)
-    .join(", ");
-
   return (
     <section aria-labelledby="linha-do-tempo-titulo">
       {/* Filtro por Testamento + controles de navegação */}
@@ -161,7 +145,7 @@ export function BibleHorizontalTimeline({ eventos }: BibleHorizontalTimelineProp
             <MoveHorizontal size={14} className="text-primary" aria-hidden="true" />
             Arraste ou use as setas
           </span>
-          <div className="flex items-center gap-1.5 border-l border-border pl-3">
+          <div className="hidden sm:flex items-center gap-1.5 border-l border-border pl-3">
             <button
               type="button"
               onClick={() => rolar(-1)}
@@ -206,12 +190,6 @@ export function BibleHorizontalTimeline({ eventos }: BibleHorizontalTimelineProp
       {/* Esteira cronológica horizontal */}
       <div className="relative">
         <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-0 right-0 top-4 h-[3px] rounded-full opacity-80"
-          style={{ background: `linear-gradient(to right, ${eixoGradiente})` }}
-        />
-
-        <div
           ref={definirScrollRef}
           role="region"
           aria-label="Linha do tempo horizontal da Bíblia. Use as setas do teclado, arraste com o mouse ou deslize com o dedo para navegar."
@@ -237,6 +215,11 @@ export function BibleHorizontalTimeline({ eventos }: BibleHorizontalTimelineProp
                 evento.destaque ? "w-[76vw] max-w-[300px] sm:w-[300px]" : "w-[68vw] max-w-[250px] sm:w-[250px]"
               }`}
             >
+              {/* Trecho do eixo sob este card — cor sólida do próprio evento, estendida até o gap para ficar contínuo. */}
+              <div
+                aria-hidden="true"
+                className={`absolute -left-2.5 -right-2.5 top-[13px] h-[3px] ${PALETA[evento.cor].ponto}`}
+              />
               <div className="flex flex-col items-center" aria-hidden="true">
                 <span
                   className={`relative z-10 flex h-7 w-7 items-center justify-center rounded-full ${PALETA[evento.cor].ponto} text-[12px] font-bold text-white ring-4 ring-background shadow-sm`}
