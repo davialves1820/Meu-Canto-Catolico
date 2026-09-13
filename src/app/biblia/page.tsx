@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { Suspense } from "react";
 import { BibleSearchBar } from "@/components/biblia/BibleSearchBar";
 import { BooksGrid } from "@/components/biblia/BooksGrid";
+import { CanonArchitecture } from "@/components/biblia/CanonArchitecture";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
 
@@ -37,7 +38,9 @@ async function ConteudoBiblia() {
         </div>
       </section>
 
-      <div className="gold-divider mb-24" />
+      <CanonArchitecture />
+
+      <div className="gold-divider mt-24 mb-24" />
 
       {/* Bible Books Grid (Client Component) */}
       <div className="space-y-32">

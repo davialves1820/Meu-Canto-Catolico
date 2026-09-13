@@ -1,4 +1,4 @@
-import { Cross, HeartHandshake, Flame, Calendar, Users, type LucideIcon } from "lucide-react";
+import { Cross, HeartHandshake, Flame, Calendar, Users, History, type LucideIcon } from "lucide-react";
 
 export interface ItemRecurso {
   href: string;
@@ -38,5 +38,11 @@ export const RECURSOS: ItemRecurso[] = [
     icone: Users,
     titulo: "Santos",
     descricao: "Santoral e hagiografia: vida e padroeiros dos santos.",
+  },
+  {
+    href: "/historia-da-salvacao",
+    icone: History,
+    titulo: "Linha do Tempo da Bíblia",
+    descricao: "A História da Salvação evento a evento, da Criação ao Apocalipse.",
   },
 ];
