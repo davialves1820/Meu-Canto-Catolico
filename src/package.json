@@ -17,7 +17,7 @@
     "framer-motion": "^12.36.0",
     "lucide-react": "^0.577.0",
     "luxon": "^3.7.2",
-    "next": "16.1.6",
+    "next": "16.3.5",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-markdown": "^10.1.0"
