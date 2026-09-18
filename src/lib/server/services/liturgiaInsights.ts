@@ -94,6 +94,10 @@ async function gerarInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights
       responseMimeType: "application/json",
       responseSchema,
       temperature: 0.2,
+      // Sem isso, o SDK tenta até 5x com backoff exponencial (chega a ~90s) quando a
+      // API do Gemini está instável — e essa espera bloqueia o carregamento da home
+      // inteira por ser um enriquecimento opcional, não algo crítico.
+      httpOptions: { timeout: 8_000, retryOptions: { attempts: 2 } },
     },
   });
 
