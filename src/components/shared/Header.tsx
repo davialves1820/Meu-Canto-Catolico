@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Church, Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { RECURSOS } from "@/config/recursos";
+import BuscaGlobal from "@/components/shared/BuscaGlobal";
 
 const NAV = [
   { label: "Início", href: "/" },
@@ -78,6 +79,8 @@ const Header = () => {
           <Church size={24} className="text-[#000000]" />
           <h1 className="font-sans text-[14px] leading-[20px] tracking-[0.2em] font-bold uppercase text-[#000000]">MEU CANTO CATÓLICO</h1>
         </Link>
+
+        <div className="flex items-center gap-1 md:gap-8">
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-10" aria-label="Navegação principal">
@@ -182,6 +185,8 @@ const Header = () => {
 
         </nav>
 
+        <BuscaGlobal />
+
         {/* Mobile toggle */}
         <button
           onClick={() => setMenuOpen((v) => !v)}
@@ -202,6 +207,7 @@ const Header = () => {
             )}
           </AnimatePresence>
         </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
