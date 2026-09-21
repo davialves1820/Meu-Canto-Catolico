@@ -96,10 +96,12 @@ async function gerarInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights
       temperature: 0.2,
       // Sem isso, o SDK tenta até 5x com backoff exponencial (chega a ~90s) quando a
       // API do Gemini está instável — e essa espera bloqueia o carregamento da home
-      // inteira por ser um enriquecimento opcional, não algo crítico.
-      // 10s é o deadline mínimo aceito pela API — abaixo disso ela rejeita a chamada
-      // inteira com 400 INVALID_ARGUMENT antes mesmo de tentar gerar o texto.
-      httpOptions: { timeout: 15_000, retryOptions: { attempts: 2 } },
+      // inteira por ser um enriquecimento opcional, não algo crítico. Mas o deadline
+      // precisa ser generoso: é um JSON grande (contexto histórico, conexões
+      // teológicas, comentários patrísticos e perguntas de aplicação prática) e 15s
+      // não bastava — a própria API devolvia 504 DEADLINE_EXCEEDED antes de terminar
+      // de gerar. Como a chamada roda dentro de um Suspense, não bloqueia a home.
+      httpOptions: { timeout: 45_000, retryOptions: { attempts: 2 } },
     },
   });
 
