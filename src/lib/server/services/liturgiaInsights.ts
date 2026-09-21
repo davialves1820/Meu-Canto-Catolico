@@ -7,6 +7,22 @@ const MODEL = "gemini-3.6-flash";
 // então o resultado pode ficar em cache por muito tempo (cache-aside sem banco de dados).
 const CACHE_TTL_SECONDS = 60 * 60 * 24 * 60;
 
+// Falhas não ficam no Data Cache do Next (de propósito, para permitir nova tentativa
+// depois) — mas sem alguma trava, cada visita durante uma instabilidade da API dispara
+// uma chamada nova, o que rapidamente estoura o rate limit (429) e realimenta o ciclo.
+// Este cooldown em memória evita bater na API de novo por um tempo após uma falha.
+const COOLDOWN_MS = 5 * 60 * 1000;
+const ultimaFalhaPorData = new Map<string, number>();
+
+setInterval(() => {
+  const agora = Date.now();
+  for (const [data, timestamp] of ultimaFalhaPorData.entries()) {
+    if (agora - timestamp >= COOLDOWN_MS) {
+      ultimaFalhaPorData.delete(data);
+    }
+  }
+}, COOLDOWN_MS);
+
 let client: GoogleGenAI | null = null;
 
 function getClient(): GoogleGenAI | null {
@@ -115,10 +131,16 @@ async function gerarInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights
 /**
  * Busca (ou gera, na primeira vez do dia) o contexto histórico e patrístico da liturgia.
  * Usa o Data Cache do Next.js como cache-aside por data — sem depender de banco de dados.
- * Falhas (chave ausente, erro da API, etc.) não são cacheadas, para permitir nova tentativa depois.
+ * Falhas (chave ausente, erro da API, etc.) não são cacheadas — para permitir nova
+ * tentativa depois —, mas ficam sob um cooldown em memória para não martelar a API.
  */
 export async function getLiturgiaInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights | null> {
   const chaveData = liturgia.data.split("/").reverse().join("-");
+
+  const ultimaFalha = ultimaFalhaPorData.get(chaveData);
+  if (ultimaFalha && Date.now() - ultimaFalha < COOLDOWN_MS) {
+    return null;
+  }
 
   try {
     const buscarComCache = unstable_cache(() => gerarInsights(liturgia), ["liturgia-insights", chaveData], {
@@ -126,9 +148,12 @@ export async function getLiturgiaInsights(liturgia: LiturgiaDiaria): Promise<Lit
       tags: [`liturgia-insights-${chaveData}`],
     });
 
-    return await buscarComCache();
+    const insights = await buscarComCache();
+    ultimaFalhaPorData.delete(chaveData);
+    return insights;
   } catch (error) {
     console.error("[liturgiaInsights] Erro ao obter contexto histórico/patrístico:", error);
+    ultimaFalhaPorData.set(chaveData, Date.now());
     return null;
   }
 }
