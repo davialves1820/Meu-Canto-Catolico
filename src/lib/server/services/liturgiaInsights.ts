@@ -1,15 +1,12 @@
-import { unstable_cache } from "next/cache";
 import { GoogleGenAI, Type, type Schema } from "@google/genai";
 import { LiturgiaDiaria, LiturgiaInsights } from "@/types/liturgia";
+import { getDb } from "@/lib/server/db";
 
 const MODEL = "gemini-3.6-flash";
-// As leituras de uma data específica não mudam de um ano para o outro dentro do ciclo já gerado,
-// então o resultado pode ficar em cache por muito tempo (cache-aside sem banco de dados).
-const CACHE_TTL_SECONDS = 60 * 60 * 24 * 60;
 
-// Falhas não ficam no Data Cache do Next (de propósito, para permitir nova tentativa
-// depois) — mas sem alguma trava, cada visita durante uma instabilidade da API dispara
-// uma chamada nova, o que rapidamente estoura o rate limit (429) e realimenta o ciclo.
+// Falhas não ficam guardadas (de propósito, para permitir nova tentativa depois) —
+// mas sem alguma trava, cada visita durante uma instabilidade da API dispara uma
+// chamada nova, o que rapidamente estoura o rate limit (429) e realimenta o ciclo.
 // Este cooldown em memória evita bater na API de novo por um tempo após uma falha.
 const COOLDOWN_MS = 5 * 60 * 1000;
 const ultimaFalhaPorData = new Map<string, number>();
@@ -128,14 +125,48 @@ async function gerarInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights
   return JSON.parse(response.text) as LiturgiaInsights;
 }
 
+async function buscarInsightsSalvos(db: NonNullable<ReturnType<typeof getDb>>, chaveData: string): Promise<LiturgiaInsights | null> {
+  try {
+    const [linha] = await db<{ insights: LiturgiaInsights | string }[]>`
+      select insights from liturgia_insights where data = ${chaveData}
+    `;
+    if (!linha) return null;
+    // O driver às vezes devolve a coluna jsonb como texto em vez de já parseada.
+    return typeof linha.insights === "string" ? JSON.parse(linha.insights) : linha.insights;
+  } catch (error) {
+    console.error("[liturgiaInsights] Erro ao ler do banco:", error);
+    return null;
+  }
+}
+
+async function salvarInsights(db: NonNullable<ReturnType<typeof getDb>>, chaveData: string, insights: LiturgiaInsights): Promise<void> {
+  try {
+    await db`
+      insert into liturgia_insights (data, insights)
+      values (${chaveData}, ${JSON.stringify(insights)}::jsonb)
+      on conflict (data) do update set insights = excluded.insights
+    `;
+  } catch (error) {
+    console.error("[liturgiaInsights] Erro ao salvar no banco:", error);
+  }
+}
+
 /**
  * Busca (ou gera, na primeira vez do dia) o contexto histórico e patrístico da liturgia.
- * Usa o Data Cache do Next.js como cache-aside por data — sem depender de banco de dados.
- * Falhas (chave ausente, erro da API, etc.) não são cacheadas — para permitir nova
- * tentativa depois —, mas ficam sob um cooldown em memória para não martelar a API.
+ * As leituras de uma data específica não mudam de um ano para o outro dentro do ciclo já
+ * gerado, então o resultado fica guardado no Postgres indefinidamente (sem banco, cada
+ * visitante durante uma instabilidade da API disparava uma chamada nova ao Gemini).
+ * Falhas não são salvas — para permitir nova tentativa depois —, mas ficam sob um
+ * cooldown em memória para não martelar a API repetidamente.
  */
 export async function getLiturgiaInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights | null> {
   const chaveData = liturgia.data.split("/").reverse().join("-");
+  const db = getDb();
+
+  if (db) {
+    const salvo = await buscarInsightsSalvos(db, chaveData);
+    if (salvo) return salvo;
+  }
 
   const ultimaFalha = ultimaFalhaPorData.get(chaveData);
   if (ultimaFalha && Date.now() - ultimaFalha < COOLDOWN_MS) {
@@ -143,13 +174,9 @@ export async function getLiturgiaInsights(liturgia: LiturgiaDiaria): Promise<Lit
   }
 
   try {
-    const buscarComCache = unstable_cache(() => gerarInsights(liturgia), ["liturgia-insights", chaveData], {
-      revalidate: CACHE_TTL_SECONDS,
-      tags: [`liturgia-insights-${chaveData}`],
-    });
-
-    const insights = await buscarComCache();
+    const insights = await gerarInsights(liturgia);
     ultimaFalhaPorData.delete(chaveData);
+    if (db) await salvarInsights(db, chaveData, insights);
     return insights;
   } catch (error) {
     console.error("[liturgiaInsights] Erro ao obter contexto histórico/patrístico:", error);
