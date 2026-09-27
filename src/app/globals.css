@@ -289,6 +289,8 @@
   .gold-divider {
     height: 1px;
     background: linear-gradient(to right, transparent, hsl(var(--gold) / 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 6s ease-in-out infinite;
     position: relative;
   }
 
@@ -303,6 +305,100 @@
     background: hsl(var(--background));
     padding: 0 6px;
     line-height: 1;
+    animation: liturgical-pulse 6s ease-in-out infinite;
+  }
+
+  /* ─── Glow litúrgico — reforça visualmente a cor do dia (--primary) ─── */
+  @keyframes liturgical-pulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes liturgical-glow-breathe {
+    0%, 100% {
+      opacity: 0.35;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: translate(-50%, -50%) scale(1.12);
+    }
+  }
+
+  .liturgical-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60rem;
+    height: 60rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, hsl(var(--primary) / 0.35), transparent 65%);
+    pointer-events: none;
+    animation: liturgical-glow-breathe 8s ease-in-out infinite;
+  }
+
+  @keyframes liturgical-border-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.18); }
+    50% { box-shadow: 0 0 48px 6px hsl(var(--primary) / 0.22); }
+  }
+
+  .liturgical-card-glow {
+    animation: liturgical-border-pulse 6s ease-in-out infinite;
+  }
+
+  /* ─── Fundo animado litúrgico — presente em todas as páginas, fixo atrás
+     do conteúdo. Bem discreto de propósito: só duas manchas grandes, bem
+     borradas e com opacidade baixa, respirando devagar perto do topo. ─── */
+  .liturgical-bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .liturgical-bg span {
+    position: absolute;
+    border-radius: 9999px;
+    background: hsl(var(--primary) / 0.12);
+    filter: blur(110px);
+    opacity: 0.8;
+  }
+
+  .liturgical-bg span:nth-child(1) {
+    width: 32rem;
+    height: 32rem;
+    top: -14rem;
+    left: -10rem;
+    animation: liturgical-bg-drift-1 42s ease-in-out infinite;
+  }
+
+  .liturgical-bg span:nth-child(2) {
+    width: 28rem;
+    height: 28rem;
+    top: -12rem;
+    right: -8rem;
+    animation: liturgical-bg-drift-2 36s ease-in-out infinite;
+  }
+
+  @keyframes liturgical-bg-drift-1 {
+    0%, 100% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(2.5rem, 3rem); opacity: 1; }
+  }
+
+  @keyframes liturgical-bg-drift-2 {
+    0%, 100% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(-2.5rem, 2.5rem); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gold-divider,
+    .gold-divider::before,
+    .liturgical-glow,
+    .liturgical-card-glow,
+    .liturgical-bg span {
+      animation: none;
+    }
   }
 
   /* Card hover effects */

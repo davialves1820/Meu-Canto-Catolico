@@ -39,6 +39,7 @@ export default async function Home() {
             />
           </div>
           <div className="absolute inset-0 z-10" style={{ background: "linear-gradient(180deg, rgba(251, 249, 244, 0) 0%, rgba(251, 249, 244, 1) 100%)" }}></div>
+          <div className="liturgical-glow z-[15]" aria-hidden="true" />
           <div className="relative z-20 text-center max-w-4xl px-4">
             <h1 className="sr-only">
               Meu Canto Católico — Liturgia Diária, Bíblia, Santos e Orações
@@ -81,7 +82,7 @@ export default async function Home() {
         {/* Daily Liturgy Section */}
         {liturgia && (
           <section className="px-5 md:px-16 py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-[#ffffff] p-8 md:p-16 border border-primary/30">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-[#ffffff] p-8 md:p-16 border border-primary/30 liturgical-card-glow">
               <div className="lg:col-span-10 lg:col-start-2 text-center">
                 <div className="flex flex-col items-center gap-6 mb-8">
                   <div className="w-16 h-16 rounded-full border-2 border-primary flex items-center justify-center">

@@ -142,6 +142,11 @@ export default async function RootLayout({
   return (
     <html lang="pt-BR" data-liturgical-color={corLiturgica ?? undefined}>
       <body className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${montserrat.variable} antialiased bg-[#fbf9f4] text-[#1b1c19] min-h-screen flex flex-col`}>
+        <div className="liturgical-bg" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
         <Header />
