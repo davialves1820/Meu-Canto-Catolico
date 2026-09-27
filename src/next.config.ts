@@ -22,6 +22,14 @@ const nextConfig: NextConfig = {
         hostname: "media.vaticannews.va",
         pathname: "/**",
       },
+      // CNBB: as imagens do feed vêm em http (não https), então o protocolo
+      // precisa bater exatamente — o navegador nunca busca a URL http direto,
+      // é o servidor Next que baixa e reotimiza (serve tudo via https do site).
+      {
+        protocol: "http",
+        hostname: "www.cnbb.org.br",
+        pathname: "/**",
+      },
       // Santos: imagens externas (Wikipedia, etc.)
       {
         protocol: "https",

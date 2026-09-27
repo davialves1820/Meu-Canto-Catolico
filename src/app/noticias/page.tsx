@@ -1,28 +1,50 @@
 import { Suspense } from "react";
-import { buscarNoticias } from "@/lib/server/services/noticias";
+import { buscarNoticias, filtrarNoticias, LIMITE_MAXIMO } from "@/lib/server/services/noticias";
+import { TODAS_AS_FONTES } from "@/config/feeds";
 import NoticiaDestaque from "@/components/noticias/NoticiaDestaque";
 import { NoticiasSkeleton } from "@/components/ui/skeletons";
 import { Metadata } from "next";
-import { Newspaper, Sparkles } from "lucide-react";
+import { Newspaper, Sparkles, SearchX } from "lucide-react";
 import NoticiasInfiniteGrid from "@/components/noticias/NoticiasInfiniteGrid";
+import BuscaNoticias from "@/components/noticias/BuscaNoticias";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = pageMetadata({
-  title: "Notícias do Vaticano",
-  description: "As últimas notícias do Papa Francisco e da Igreja Católica direto do Vatican News, atualizadas continuamente.",
+  title: "Notícias Católicas",
+  description: "As últimas notícias do Papa, da Santa Sé e da Igreja no Brasil, direto do Vatican News e da CNBB, atualizadas continuamente.",
   path: "/noticias",
-  keywords: ["notícias do vaticano", "notícias católicas", "papa", "vatican news"],
+  keywords: ["notícias católicas", "papa", "vatican news", "cnbb", "igreja no brasil"],
 });
 
-async function NoticiasContent() {
-  const noticias = await buscarNoticias(["vaticannews"], 20);
+interface PropsPaginaNoticias {
+  searchParams: Promise<{ busca?: string }>;
+}
+
+async function NoticiasContent({ busca }: { busca: string }) {
+  const todas = await buscarNoticias(TODAS_AS_FONTES, busca ? LIMITE_MAXIMO : 20);
+  const noticias = busca ? filtrarNoticias(todas, busca) : todas;
   const [destaque, ...resto] = noticias;
+  // Na busca, todo o resultado já vem de uma vez (filtra sobre o pool inteiro
+  // buscado); no modo normal, o grid pagina de verdade via /api/noticias.
+  const temMaisInicial = !busca;
 
   if (noticias.length === 0) {
-    return (
+    return busca ? (
+      <div className="text-center py-24 space-y-6">
+        <div className="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center mx-auto border border-secondary/10">
+          <SearchX size={28} className="text-secondary/40" />
+        </div>
+        <div className="space-y-2">
+          <p className="font-headline-md text-primary">Nenhuma notícia encontrada</p>
+          <p className="font-body-md text-on-surface-variant max-w-xs mx-auto">
+            Não achamos nada para &ldquo;{busca}&rdquo; entre as notícias recentes.
+          </p>
+        </div>
+      </div>
+    ) : (
       <div className="text-center py-24 space-y-6">
         <div className="w-16 h-16 rounded-3xl bg-surface-container-low flex items-center justify-center mx-auto border border-secondary/10">
           <Newspaper size={28} className="text-secondary/40" />
@@ -44,13 +66,13 @@ async function NoticiasContent() {
       <section aria-labelledby="ultimas-heading">
         <div className="flex items-center gap-6 mb-12">
           <h2 id="ultimas-heading" className="font-headline-lg text-primary whitespace-nowrap">
-            Últimas notícias
+            {busca ? "Resultados da busca" : "Últimas notícias"}
           </h2>
           <div className="h-[1px] flex-1 bg-secondary/10" />
         </div>
 
         {/* Grid inicial (SSR) + carregamento adicional via IntersectionObserver */}
-        <NoticiasInfiniteGrid noticiasIniciais={resto} />
+        <NoticiasInfiniteGrid noticiasIniciais={resto} temMaisInicial={temMaisInicial} busca={busca} />
       </section>
 
       <div className="pt-16 border-t border-secondary/5 text-center space-y-4">
@@ -69,13 +91,24 @@ async function NoticiasContent() {
           >
             Vatican News
           </a>
+          {" "}e da{" "}
+          <a
+            href="https://www.cnbb.org.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
+          >
+            CNBB
+          </a>
         </p>
       </div>
     </div>
   );
 }
 
-export default function NoticiasPage() {
+export default async function NoticiasPage({ searchParams }: PropsPaginaNoticias) {
+  const busca = (await searchParams).busca?.trim() ?? "";
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <main className="flex-1">
@@ -89,16 +122,17 @@ export default function NoticiasPage() {
           />
           <div className="relative max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
             <Breadcrumb items={[{ label: "Notícias" }]} className="mb-6 justify-center" />
-            <h1 className="font-headline-xl text-primary mb-6">Notícias do Vaticano</h1>
+            <h1 className="font-headline-xl text-primary mb-6">Notícias Católicas</h1>
             <p className="font-body-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
-              Mensagens do Papa, acontecimentos da Igreja e notícias da Santa Sé para alimentar sua fé e conhecimento.
+              Mensagens do Papa, acontecimentos da Igreja e notícias da CNBB para alimentar sua fé e conhecimento.
             </p>
+            <BuscaNoticias valorInicial={busca} />
           </div>
         </section>
 
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
           <Suspense fallback={<NoticiasSkeleton />}>
-            <NoticiasContent />
+            <NoticiasContent busca={busca} />
           </Suspense>
         </div>
       </main>

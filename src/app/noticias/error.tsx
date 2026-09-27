@@ -22,7 +22,7 @@ export default function NoticiasError({ error, reset }: { error: Error & { diges
                 Não foi possível carregar as notícias
             </h2>
             <p className="font-body text-muted-foreground mb-8 max-w-md">
-                Ocorreu um erro ao buscar as notícias do Vatican News. Verifique sua conexão e tente novamente.
+                Ocorreu um erro ao buscar as notícias. Verifique sua conexão e tente novamente.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">

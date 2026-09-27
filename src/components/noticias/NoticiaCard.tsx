@@ -25,6 +25,9 @@ export default function NoticiaCard({ noticia }: { noticia: Noticia }) {
 
       <div className="flex flex-col flex-1 p-8">
         <div className="flex items-center gap-3 mb-4">
+          <span className="font-label-sm text-primary/70 px-2 py-0.5 rounded-full border border-primary/20 bg-primary/5">
+            {noticia.fonteLabel}
+          </span>
           <div className="h-[1px] w-4 bg-secondary/30" />
           <p className="font-label-sm text-secondary">
             {formatarData(noticia.publicadoEm)}

@@ -56,7 +56,9 @@ function parsearItem(item: RssItem, fonte: FonteNoticia): Noticia | null {
   const link = item.link;
   const desc = item.description ?? item["content:encoded"] ?? "";
   const pubDate = item.pubDate ?? item["dc:date"];
-  const categoria = item.category;
+  // Feeds com múltiplas tags <category> (ex.: CNBB) viram array no fast-xml-parser —
+  // usamos só a primeira, como já era o comportamento implícito com uma fonte só.
+  const categoria = Array.isArray(item.category) ? item.category[0] : item.category;
 
   if (!titulo || !link) {
     return null;
@@ -203,4 +205,21 @@ export function formatarData(iso: string): string {
     month: "long",
     year: "numeric",
   }).format(new Date(iso));
+}
+
+/** Teto de itens buscados por fonte para listagem/paginação e para a busca. */
+export const LIMITE_MAXIMO = 60;
+
+function normalizar(texto: string): string {
+  return texto.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+
+/** Filtra notícias já carregadas por título/resumo — a busca cobre só o que foi
+ * buscado nos feeds (RSS não tem histórico completo, é sempre "as mais recentes"). */
+export function filtrarNoticias(noticias: Noticia[], busca: string): Noticia[] {
+  const q = normalizar(busca.trim());
+  if (!q) return noticias;
+  return noticias.filter(
+    (n) => normalizar(n.titulo).includes(q) || normalizar(n.resumo).includes(q)
+  );
 }

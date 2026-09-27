@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getLiturgiaDiaria } from "@/lib/server/services/liturgia";
 import { buscarNoticias } from "@/lib/server/services/noticias";
+import { TODAS_AS_FONTES } from "@/config/feeds";
 import NoticiaCard from "@/components/noticias/NoticiaCard";
 import SantoDoDia from "@/components/santos/SantoDoDia";
 import ExegeseButton from "@/components/liturgia/ExegeseButton";
@@ -18,10 +19,13 @@ export default async function Home() {
   const monthNumeric = (brDate.getMonth() + 1).toString();
   const year = brDate.getFullYear().toString();
 
-  const [liturgia, noticias] = await Promise.all([
+  const [liturgia, noticiasBrutas] = await Promise.all([
     getLiturgiaDiaria(day.toString(), monthNumeric, year),
-    buscarNoticias(["vaticannews"], 3)
+    buscarNoticias(TODAS_AS_FONTES, 3)
   ]);
+  // buscarNoticias busca até 3 por fonte antes de misturar — corta pra exatamente
+  // 3 no total, pra manter a grade de destaque da home em 3 colunas.
+  const noticias = noticiasBrutas.slice(0, 3);
 
   return (
     <div className="selection:bg-[#fed977]">
@@ -121,12 +125,12 @@ export default async function Home() {
           <div className="gold-divider" />
         </div>
 
-        {/* Vatican News Grid */}
+        {/* Notícias Grid */}
         <section className="px-5 md:px-16 py-20">
           <div className="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b border-[#d0c4be] pb-4">
             <div>
               <span className="text-[12px] font-semibold text-primary uppercase tracking-[0.3em] mb-2 block">Mundus</span>
-              <h2 className="font-heading text-4xl text-primary">Vatican News</h2>
+              <h2 className="font-heading text-4xl text-primary">Notícias</h2>
             </div>
             <Link className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[#4d4540] hover:text-primary flex items-center gap-2 mt-4 md:mt-0 transition-colors" href="/noticias">
               Ver todas as notícias <ArrowRight size={14} />

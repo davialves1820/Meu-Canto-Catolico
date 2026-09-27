@@ -7,14 +7,24 @@ import { Loader2 } from "lucide-react";
 
 interface Props {
   noticiasIniciais: Noticia[];
+  temMaisInicial?: boolean;
+  busca?: string;
 }
 
-export default function NoticiasInfiniteGrid({ noticiasIniciais }: Props) {
+export default function NoticiasInfiniteGrid({ noticiasIniciais, temMaisInicial = true, busca = "" }: Props) {
   const [noticias, setNoticias] = useState<Noticia[]>(noticiasIniciais);
   const [pagina, setPagina] = useState(1);
-  const [temMais, setTemMais] = useState(true);
+  const [temMais, setTemMais] = useState(temMaisInicial);
   const [carregando, setCarregando] = useState(false);
   const sentinelRef = useRef<HTMLDivElement>(null);
+
+  // Quando a busca muda, a página troca (novo SSR de "página 1") — reseta o
+  // estado do scroll infinito pra recomeçar a paginação do zero.
+  useEffect(() => {
+    setNoticias(noticiasIniciais);
+    setPagina(1);
+    setTemMais(temMaisInicial);
+  }, [noticiasIniciais, temMaisInicial]);
 
   const carregarMais = useCallback(async () => {
     if (carregando || !temMais) {
@@ -24,7 +34,9 @@ export default function NoticiasInfiniteGrid({ noticiasIniciais }: Props) {
 
     try {
       const proximaPagina = pagina + 1;
-      const res = await fetch(`/api/noticias?pagina=${proximaPagina}`);
+      const params = new URLSearchParams({ pagina: String(proximaPagina) });
+      if (busca) params.set("busca", busca);
+      const res = await fetch(`/api/noticias?${params.toString()}`);
       if (!res.ok) {
         throw new Error(`HTTP ${res.status}`);
       }
@@ -44,7 +56,7 @@ export default function NoticiasInfiniteGrid({ noticiasIniciais }: Props) {
     } finally {
       setCarregando(false);
     }
-  }, [carregando, temMais, pagina]);
+  }, [carregando, temMais, pagina, busca]);
 
   // Observa o elemento sentinela — quando entra na viewport, carrega mais
   useEffect(() => {
