@@ -151,6 +151,55 @@
     --saint: 28 100% 55%;
     --saint-light: 28 100% 65%;
   }
+
+  /* ─── Tema litúrgico ───────────────────────────────────────────────────
+     A cor de destaque do site acompanha a cor litúrgica do dia (definida
+     como data-liturgical-color em <html> pelo layout raiz). "Branco" não
+     tem regra própria — cai no dourado padrão acima, que já é festivo. */
+  :root[data-liturgical-color="roxo"] {
+    --primary: 262 46% 32%;
+    --gold: 262 46% 32%;
+    --gold-light: 262 50% 55%;
+    --gold-dark: 262 55% 20%;
+    --accent: 262 46% 32%;
+    --ring: 262 46% 32%;
+  }
+
+  :root[data-liturgical-color="verde"] {
+    --primary: 152 55% 28%;
+    --gold: 152 55% 28%;
+    --gold-light: 152 50% 48%;
+    --gold-dark: 152 60% 18%;
+    --accent: 152 55% 28%;
+    --ring: 152 55% 28%;
+  }
+
+  :root[data-liturgical-color="vermelho"] {
+    --primary: 0 68% 32%;
+    --gold: 0 68% 32%;
+    --gold-light: 0 60% 44%;
+    --gold-dark: 0 72% 22%;
+    --accent: 0 68% 32%;
+    --ring: 0 68% 32%;
+  }
+
+  :root[data-liturgical-color="rosa"] {
+    --primary: 336 45% 42%;
+    --gold: 336 45% 42%;
+    --gold-light: 336 50% 62%;
+    --gold-dark: 336 55% 28%;
+    --accent: 336 45% 42%;
+    --ring: 336 45% 42%;
+  }
+
+  :root[data-liturgical-color="preto"] {
+    --primary: 0 0% 15%;
+    --gold: 0 0% 15%;
+    --gold-light: 0 0% 35%;
+    --gold-dark: 0 0% 8%;
+    --accent: 0 0% 15%;
+    --ring: 0 0% 15%;
+  }
 }
 
 @layer base {

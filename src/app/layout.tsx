@@ -10,6 +10,8 @@ import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { siteConfig, absoluteUrl } from "@/config/site";
+import { getCorLiturgicaHoje } from "@/lib/server/services/calendarioLiturgico";
+import { normalizarCorLiturgica } from "@/lib/shared/temaLiturgico";
 
 
 const geistSans = Geist({
@@ -132,11 +134,13 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
+  const corLiturgica = normalizarCorLiturgica(await getCorLiturgicaHoje());
+
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" data-liturgical-color={corLiturgica ?? undefined}>
       <body className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${montserrat.variable} antialiased bg-[#fbf9f4] text-[#1b1c19] min-h-screen flex flex-col`}>
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />

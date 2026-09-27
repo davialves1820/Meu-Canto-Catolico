@@ -43,7 +43,7 @@ export default async function Home() {
             <h1 className="sr-only">
               Meu Canto Católico — Liturgia Diária, Bíblia, Santos e Orações
             </h1>
-            <span className="text-[12px] font-semibold text-[#755b00] uppercase tracking-[0.4em] mb-8 block">Sacer Quotidianus</span>
+            <span className="text-[12px] font-semibold text-primary uppercase tracking-[0.4em] mb-8 block">Sacer Quotidianus</span>
             <h2 className="font-heading text-4xl md:text-6xl text-primary mb-10 italic leading-tight">&quot;A caridade é o centro que une todas as virtudes.&quot;</h2>
             <p className="font-sans text-[14px] font-semibold text-[#4d4540] tracking-[0.3em] uppercase">— SANTO AGOSTINHO</p>
             <div className="mt-16 flex justify-center">
@@ -141,9 +141,9 @@ export default async function Home() {
 
         {/* Sacred Divider */}
         <div className="flex items-center justify-center py-24">
-          <div className="h-px w-32 bg-gradient-to-r from-transparent to-[#755b00]/40"></div>
-          <Leaf size={18} className="text-[#755b00] mx-6" />
-          <div className="h-px w-32 bg-gradient-to-l from-transparent to-[#755b00]/40"></div>
+          <div className="h-px w-32 bg-gradient-to-r from-transparent to-primary/40"></div>
+          <Leaf size={18} className="text-primary mx-6" />
+          <div className="h-px w-32 bg-gradient-to-l from-transparent to-primary/40"></div>
         </div>
       </main>
     </div>

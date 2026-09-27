@@ -84,7 +84,7 @@ export function InstallAppBanner() {
       aria-label="Instalar aplicativo"
       className="fixed inset-x-4 bottom-4 z-50 mx-auto flex max-w-md items-start gap-4 rounded-2xl border border-[#c9a84c]/30 bg-white p-4 shadow-xl md:inset-x-auto md:right-6 md:left-auto"
     >
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#c9a84c]/10 text-[#755b00]">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#c9a84c]/10 text-primary">
         <Download size={20} aria-hidden="true" />
       </div>
 

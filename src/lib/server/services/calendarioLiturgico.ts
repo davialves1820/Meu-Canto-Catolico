@@ -1,5 +1,6 @@
 import path from "path";
 import fs from "fs/promises";
+import { DateTime } from "luxon";
 import { type EntradaDiaJson } from "@/types/calendario";
 
 /** Anos com arquivo de calendário disponível em src/data/Calendario. */
@@ -23,4 +24,16 @@ export async function getCalendarioLiturgico(): Promise<Record<string, EntradaDi
 
   cachedJson = Object.assign({}, ...porAno);
   return cachedJson!;
+}
+
+/** Cor litúrgica (ex.: "ROXO", "VERDE") do dia atual, para tematizar a interface. */
+export async function getCorLiturgicaHoje(): Promise<string | null> {
+  try {
+    const calendario = await getCalendarioLiturgico();
+    const chave = DateTime.now().setZone("America/Sao_Paulo").toFormat("yyyy-MM-dd");
+    return calendario[chave]?.[0]?.cor ?? null;
+  } catch (error) {
+    console.error("[calendarioLiturgico] Erro ao obter cor litúrgica do dia:", error);
+    return null;
+  }
 }

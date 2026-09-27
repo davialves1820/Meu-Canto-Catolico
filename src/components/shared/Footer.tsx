@@ -17,7 +17,7 @@ const LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#755b00]/10 bg-[#fbf9f4]">
+    <footer className="border-t border-primary/10 bg-[#fbf9f4]">
       <div className="container mx-auto px-5 md:px-16 py-14">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
           <div className="max-w-sm">
@@ -48,7 +48,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-[#755b00]/10 text-center">
+        <div className="mt-12 pt-6 border-t border-primary/10 text-center">
           <p className="font-label-sm text-[11px] text-on-surface-variant">
             © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.
           </p>

@@ -64,8 +64,8 @@ const Header = () => {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 border-b ${scrolled
-        ? "bg-[#fbf9f4]/98 backdrop-blur-md shadow-sm border-[#755b00]/20"
-        : "bg-[#fbf9f4]/95 backdrop-blur-sm border-[#755b00]/10"
+        ? "bg-[#fbf9f4]/98 backdrop-blur-md shadow-sm border-primary/20"
+        : "bg-[#fbf9f4]/95 backdrop-blur-sm border-primary/10"
         }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-5 md:px-16">
@@ -102,8 +102,8 @@ const Header = () => {
                     aria-haspopup="true"
                     aria-controls="recursos-menu"
                     className={`flex items-center gap-1 relative py-1 text-[12px] uppercase tracking-widest font-bold transition-all duration-300 focus-visible:outline-none ${active
-                      ? "text-[#000000] border-b-2 border-[#755b00]"
-                      : "text-[#4d4540] font-medium hover:text-[#755b00]"
+                      ? "text-[#000000] border-b-2 border-primary"
+                      : "text-[#4d4540] font-medium hover:text-primary"
                       }`}
                   >
                     {label}
@@ -174,8 +174,8 @@ const Header = () => {
                 href={href}
                 aria-current={active ? "page" : undefined}
                 className={`relative py-1 text-[12px] uppercase tracking-widest font-bold transition-all duration-300 focus-visible:outline-none ${active
-                  ? "text-[#000000] border-b-2 border-[#755b00]"
-                  : "text-[#4d4540] font-medium hover:text-[#755b00]"
+                  ? "text-[#000000] border-b-2 border-primary"
+                  : "text-[#4d4540] font-medium hover:text-primary"
                   }`}
               >
                 {label}
@@ -233,7 +233,7 @@ const Header = () => {
                       href={href}
                       onClick={() => setMenuOpen(false)}
                       aria-current={active ? "page" : undefined}
-                      className={`block py-3 text-[14px] uppercase tracking-widest font-bold transition-all ${active ? "text-[#755b00]" : "text-[#1b1c19] hover:text-[#755b00]"
+                      className={`block py-3 text-[14px] uppercase tracking-widest font-bold transition-all ${active ? "text-primary" : "text-[#1b1c19] hover:text-primary"
                         }`}
                     >
                       {label}

@@ -101,7 +101,7 @@ export function MarkdownPage({ content, title, backHref, backLabel, description,
                   <a
                     key={i}
                     href={`#${heading.id}`}
-                    className={`text-sm transition-colors hover:text-[#755b00] leading-snug ${heading.level === 2 ? 'font-semibold text-[#4d4540] mt-2' : 'pl-4 text-[#736a65]'
+                    className={`text-sm transition-colors hover:text-primary leading-snug ${heading.level === 2 ? 'font-semibold text-[#4d4540] mt-2' : 'pl-4 text-[#736a65]'
                       }`}
                   >
                     {heading.text}
@@ -130,7 +130,7 @@ export function MarkdownPage({ content, title, backHref, backLabel, description,
                     <a
                       key={i}
                       href={`#${heading.id}`}
-                      className={`text-sm transition-colors hover:text-[#755b00] leading-snug ${heading.level === 2 ? 'font-semibold text-[#4d4540]' : 'pl-4 text-[#736a65]'
+                      className={`text-sm transition-colors hover:text-primary leading-snug ${heading.level === 2 ? 'font-semibold text-[#4d4540]' : 'pl-4 text-[#736a65]'
                         }`}
                     >
                       {heading.text}
@@ -143,13 +143,13 @@ export function MarkdownPage({ content, title, backHref, backLabel, description,
             <article className="
               prose prose-stone lg:prose-xl max-w-none
               prose-p:font-body-lg prose-p:text-[#4d4540] prose-p:leading-relaxed prose-p:mb-6 prose-p:text-justify
-              prose-a:text-[#755b00] prose-a:no-underline hover:prose-a:underline prose-a:font-semibold
+              prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-a:font-semibold
               prose-strong:text-[#000000] prose-strong:font-semibold
               prose-blockquote:border-l-4 prose-blockquote:border-[#c9a84c] prose-blockquote:bg-[#fbf9f4] prose-blockquote:px-8 prose-blockquote:py-6 prose-blockquote:italic prose-blockquote:text-[#584400] prose-blockquote:rounded-r-xl prose-blockquote:shadow-sm prose-blockquote:my-10
               prose-ul:list-disc prose-ul:pl-6 prose-ol:list-decimal prose-ol:pl-6
               prose-li:marker:text-[#c9a84c] prose-li:text-[#4d4540] prose-li:mb-2
               prose-hr:border-[#c9a84c]/30 prose-hr:my-12
-              [&>p:first-of-type]:first-letter:float-left [&>p:first-of-type]:first-letter:text-7xl [&>p:first-of-type]:first-letter:font-headline-xl [&>p:first-of-type]:first-letter:text-[#755b00] [&>p:first-of-type]:first-letter:pr-4 [&>p:first-of-type]:first-letter:-mt-2 [&>p:first-of-type]:first-letter:mb-[-12px]
+              [&>p:first-of-type]:first-letter:float-left [&>p:first-of-type]:first-letter:text-7xl [&>p:first-of-type]:first-letter:font-headline-xl [&>p:first-of-type]:first-letter:text-primary [&>p:first-of-type]:first-letter:pr-4 [&>p:first-of-type]:first-letter:-mt-2 [&>p:first-of-type]:first-letter:mb-[-12px]
             ">
               <ReactMarkdown
                 components={{
@@ -164,17 +164,17 @@ export function MarkdownPage({ content, title, backHref, backLabel, description,
                   },
                   h3: ({ children, ...props }) => {
                     const text = extractText(children);
-                    return <h4 id={generateId(text)} className="font-headline-md text-2xl text-[#755b00] mt-10 scroll-mt-[100px]" {...props}>{children}</h4>;
+                    return <h4 id={generateId(text)} className="font-headline-md text-2xl text-primary mt-10 scroll-mt-[100px]" {...props}>{children}</h4>;
                   },
                   a: ({ children, ...props }) => {
                     const isExternal = (props.href && (props.href.startsWith('http') || props.href.startsWith('//')));
                     if (isExternal) {
-                      return <a {...props} target="_blank" rel="noopener noreferrer" className="text-[#755b00] underline font-semibold hover:no-underline transition-colors inline-flex items-center gap-1 group">
+                      return <a {...props} target="_blank" rel="noopener noreferrer" className="text-primary underline font-semibold hover:no-underline transition-colors inline-flex items-center gap-1 group">
                         {children}
                         <svg className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                       </a>;
                     }
-                    return <a {...props} className="text-[#755b00] underline font-semibold hover:no-underline transition-colors">{children}</a>;
+                    return <a {...props} className="text-primary underline font-semibold hover:no-underline transition-colors">{children}</a>;
                   }
                 }}
               >
@@ -188,7 +188,7 @@ export function MarkdownPage({ content, title, backHref, backLabel, description,
                 href="https://bibliotecacatolica.com.br/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#755b00] underline font-semibold hover:no-underline transition-colors"
+                className="text-primary underline font-semibold hover:no-underline transition-colors"
               >
                 Biblioteca Católica
               </a>
