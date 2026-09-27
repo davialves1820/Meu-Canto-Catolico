@@ -1,5 +1,5 @@
 # Meu Canto Católico
-
+ 
 O **Meu Canto Católico** é uma plataforma integrada para a vida de fé e a centralização de informações católicas. Ela oferece acesso à Bíblia Sagrada, Liturgia Diária, Calendário Litúrgico, Santos, Orações e notícias atualizadas do Vaticano.
 
 ## 🛠️ Tecnologias Principais
