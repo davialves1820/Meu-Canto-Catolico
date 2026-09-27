@@ -1,12 +1,13 @@
 import { Suspense } from "react";
 import { buscarNoticias, filtrarNoticias, LIMITE_MAXIMO } from "@/lib/server/services/noticias";
-import { TODAS_AS_FONTES } from "@/config/feeds";
+import { TODAS_AS_FONTES, FEEDS, FonteNoticia, ehFonteValida } from "@/config/feeds";
 import NoticiaDestaque from "@/components/noticias/NoticiaDestaque";
 import { NoticiasSkeleton } from "@/components/ui/skeletons";
 import { Metadata } from "next";
 import { Newspaper, Sparkles, SearchX } from "lucide-react";
 import NoticiasInfiniteGrid from "@/components/noticias/NoticiasInfiniteGrid";
 import BuscaNoticias from "@/components/noticias/BuscaNoticias";
+import FiltroFonteNoticias from "@/components/noticias/FiltroFonteNoticias";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
 
@@ -20,11 +21,12 @@ export const metadata: Metadata = pageMetadata({
 });
 
 interface PropsPaginaNoticias {
-  searchParams: Promise<{ busca?: string }>;
+  searchParams: Promise<{ busca?: string; fonte?: string }>;
 }
 
-async function NoticiasContent({ busca }: { busca: string }) {
-  const todas = await buscarNoticias(TODAS_AS_FONTES, busca ? LIMITE_MAXIMO : 20);
+async function NoticiasContent({ busca, fonte }: { busca: string; fonte: FonteNoticia | "todas" }) {
+  const fontes = fonte === "todas" ? TODAS_AS_FONTES : [fonte];
+  const todas = await buscarNoticias(fontes, busca ? LIMITE_MAXIMO : 20);
   const noticias = busca ? filtrarNoticias(todas, busca) : todas;
   const [destaque, ...resto] = noticias;
   // Na busca, todo o resultado já vem de uma vez (filtra sobre o pool inteiro
@@ -40,7 +42,8 @@ async function NoticiasContent({ busca }: { busca: string }) {
         <div className="space-y-2">
           <p className="font-headline-md text-primary">Nenhuma notícia encontrada</p>
           <p className="font-body-md text-on-surface-variant max-w-xs mx-auto">
-            Não achamos nada para &ldquo;{busca}&rdquo; entre as notícias recentes.
+            Não achamos nada para &ldquo;{busca}&rdquo;
+            {fonte !== "todas" ? ` em ${FEEDS[fonte].label}` : ""} entre as notícias recentes.
           </p>
         </div>
       </div>
@@ -72,7 +75,7 @@ async function NoticiasContent({ busca }: { busca: string }) {
         </div>
 
         {/* Grid inicial (SSR) + carregamento adicional via IntersectionObserver */}
-        <NoticiasInfiniteGrid noticiasIniciais={resto} temMaisInicial={temMaisInicial} busca={busca} />
+        <NoticiasInfiniteGrid noticiasIniciais={resto} temMaisInicial={temMaisInicial} busca={busca} fonte={fonte === "todas" ? undefined : fonte} />
       </section>
 
       <div className="pt-16 border-t border-secondary/5 text-center space-y-4">
@@ -82,24 +85,44 @@ async function NoticiasContent({ busca }: { busca: string }) {
           <div className="h-[1px] w-12 bg-secondary/20" />
         </div>
         <p className="font-label-sm text-outline">
-          Conteúdo via RSS do{" "}
-          <a
-            href="https://www.vaticannews.va/pt.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
-          >
-            Vatican News
-          </a>
-          {" "}e da{" "}
-          <a
-            href="https://www.cnbb.org.br/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
-          >
-            CNBB
-          </a>
+          {fonte === "cnbb" ? (
+            <>
+              Conteúdo via RSS da{" "}
+              <a
+                href="https://www.cnbb.org.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
+              >
+                CNBB
+              </a>
+            </>
+          ) : (
+            <>
+              Conteúdo via RSS do{" "}
+              <a
+                href="https://www.vaticannews.va/pt.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
+              >
+                Vatican News
+              </a>
+              {fonte === "todas" && (
+                <>
+                  {" "}e da{" "}
+                  <a
+                    href="https://www.cnbb.org.br/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
+                  >
+                    CNBB
+                  </a>
+                </>
+              )}
+            </>
+          )}
         </p>
       </div>
     </div>
@@ -107,7 +130,9 @@ async function NoticiasContent({ busca }: { busca: string }) {
 }
 
 export default async function NoticiasPage({ searchParams }: PropsPaginaNoticias) {
-  const busca = (await searchParams).busca?.trim() ?? "";
+  const params = await searchParams;
+  const busca = params.busca?.trim() ?? "";
+  const fonte: FonteNoticia | "todas" = ehFonteValida(params.fonte) ? params.fonte : "todas";
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -127,12 +152,13 @@ export default async function NoticiasPage({ searchParams }: PropsPaginaNoticias
               Mensagens do Papa, acontecimentos da Igreja e notícias da CNBB para alimentar sua fé e conhecimento.
             </p>
             <BuscaNoticias valorInicial={busca} />
+            <FiltroFonteNoticias fonteAtiva={fonte} />
           </div>
         </section>
 
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
           <Suspense fallback={<NoticiasSkeleton />}>
-            <NoticiasContent busca={busca} />
+            <NoticiasContent busca={busca} fonte={fonte} />
           </Suspense>
         </div>
       </main>

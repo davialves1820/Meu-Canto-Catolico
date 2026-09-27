@@ -11,16 +11,21 @@ interface Props {
 export default function BuscaNoticias({ valorInicial }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [valor, setValor] = useState(valorInicial);
   const [isPending, startTransition] = useTransition();
 
-  const prevValorInicialRef = useRef(valorInicial);
+  // Digitando rápido, várias navegações ficam "em voo" ao mesmo tempo — se uma
+  // resposta mais antiga chegar depois de uma mais nova, o valorInicial (vindo
+  // do servidor) reverte pra um valor velho e apagava o que o usuário já tinha
+  // digitado depois. Por isso só resincroniza quando o campo não está focado
+  // (ou seja, quando não é o usuário digitando ativamente) — mesmo espírito da
+  // busca global, que nunca deixa uma resposta externa sobrescrever o input.
   useEffect(() => {
-    if (valorInicial !== prevValorInicialRef.current) {
-      prevValorInicialRef.current = valorInicial;
-      setValor(valorInicial);
-    }
-  }, [valorInicial]);
+    if (valorInicial === valor) return;
+    if (document.activeElement === inputRef.current) return;
+    setValor(valorInicial);
+  }, [valorInicial, valor]);
 
   // Debounce: atualiza a URL (e portanto os resultados, via SSR) um tempo depois
   // que o usuário para de digitar — sem exigir um botão de "buscar".
@@ -28,10 +33,11 @@ export default function BuscaNoticias({ valorInicial }: Props) {
     const timer = setTimeout(() => {
       const q = new URLSearchParams(searchParams.toString());
       const atual = q.get("busca") ?? "";
-      if (valor === atual) return;
+      const valorTratado = valor.trim();
+      if (valorTratado === atual) return;
 
-      if (valor.trim()) {
-        q.set("busca", valor.trim());
+      if (valorTratado) {
+        q.set("busca", valorTratado);
       } else {
         q.delete("busca");
       }
@@ -57,6 +63,7 @@ export default function BuscaNoticias({ valorInicial }: Props) {
         }
       </div>
       <input
+        ref={inputRef}
         type="search"
         value={valor}
         onChange={(e) => setValor(e.target.value)}

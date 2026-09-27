@@ -20,3 +20,8 @@ export type FonteNoticia = keyof typeof FEEDS;
 
 /** Todas as fontes cadastradas — usado pelos callers que querem misturar tudo. */
 export const TODAS_AS_FONTES = Object.keys(FEEDS) as FonteNoticia[];
+
+/** Valida um valor vindo de query string ("fonte=cnbb") como uma FonteNoticia real. */
+export function ehFonteValida(valor: string | null | undefined): valor is FonteNoticia {
+  return !!valor && Object.prototype.hasOwnProperty.call(FEEDS, valor);
+}

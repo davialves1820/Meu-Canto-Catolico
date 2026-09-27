@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Noticia } from "@/types/noticias";
+import { Noticia, FonteNoticia } from "@/types/noticias";
 import NoticiaCard from "./NoticiaCard";
 import { Loader2 } from "lucide-react";
 
@@ -9,9 +9,10 @@ interface Props {
   noticiasIniciais: Noticia[];
   temMaisInicial?: boolean;
   busca?: string;
+  fonte?: FonteNoticia;
 }
 
-export default function NoticiasInfiniteGrid({ noticiasIniciais, temMaisInicial = true, busca = "" }: Props) {
+export default function NoticiasInfiniteGrid({ noticiasIniciais, temMaisInicial = true, busca = "", fonte }: Props) {
   const [noticias, setNoticias] = useState<Noticia[]>(noticiasIniciais);
   const [pagina, setPagina] = useState(1);
   const [temMais, setTemMais] = useState(temMaisInicial);
@@ -36,6 +37,7 @@ export default function NoticiasInfiniteGrid({ noticiasIniciais, temMaisInicial 
       const proximaPagina = pagina + 1;
       const params = new URLSearchParams({ pagina: String(proximaPagina) });
       if (busca) params.set("busca", busca);
+      if (fonte) params.set("fonte", fonte);
       const res = await fetch(`/api/noticias?${params.toString()}`);
       if (!res.ok) {
         throw new Error(`HTTP ${res.status}`);
@@ -56,7 +58,7 @@ export default function NoticiasInfiniteGrid({ noticiasIniciais, temMaisInicial 
     } finally {
       setCarregando(false);
     }
-  }, [carregando, temMais, pagina, busca]);
+  }, [carregando, temMais, pagina, busca, fonte]);
 
   // Observa o elemento sentinela — quando entra na viewport, carrega mais
   useEffect(() => {
