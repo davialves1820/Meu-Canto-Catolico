@@ -12,6 +12,8 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { siteConfig, absoluteUrl } from "@/config/site";
 import { getCorLiturgicaHoje } from "@/lib/server/services/calendarioLiturgico";
 import { normalizarCorLiturgica } from "@/lib/shared/temaLiturgico";
+import { AuthProvider } from "@/components/shared/AuthProvider";
+import { auth } from "@/auth";
 
 
 const geistSans = Geist({
@@ -137,7 +139,10 @@ export const viewport: Viewport = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
-  const corLiturgica = normalizarCorLiturgica(await getCorLiturgicaHoje());
+  const [corLiturgica, session] = await Promise.all([
+    getCorLiturgicaHoje().then(normalizarCorLiturgica),
+    auth(),
+  ]);
 
   return (
     <html lang="pt-BR" data-liturgical-color={corLiturgica ?? undefined}>
@@ -149,11 +154,13 @@ export default async function RootLayout({
         </div>
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <AuthProvider session={session}>
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </AuthProvider>
         <PWARegister />
         <InstallAppBanner />
         <Analytics />
