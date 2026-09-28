@@ -1,6 +1,6 @@
 import { GoogleGenAI, Type, type Schema } from "@google/genai";
 import { LiturgiaDiaria, LiturgiaInsights } from "@/types/liturgia";
-import { getDb } from "@/lib/server/db";
+import { getPrisma } from "@/lib/server/prisma";
 
 const MODEL = "gemini-3.6-flash";
 
@@ -125,27 +125,26 @@ async function gerarInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights
   return JSON.parse(response.text) as LiturgiaInsights;
 }
 
-async function buscarInsightsSalvos(db: NonNullable<ReturnType<typeof getDb>>, chaveData: string): Promise<LiturgiaInsights | null> {
+async function buscarInsightsSalvos(db: NonNullable<ReturnType<typeof getPrisma>>, chaveData: string): Promise<LiturgiaInsights | null> {
   try {
-    const [linha] = await db<{ insights: LiturgiaInsights | string }[]>`
-      select insights from liturgia_insights where data = ${chaveData}
-    `;
-    if (!linha) return null;
-    // O driver às vezes devolve a coluna jsonb como texto em vez de já parseada.
-    return typeof linha.insights === "string" ? JSON.parse(linha.insights) : linha.insights;
+    const linha = await db.liturgiaInsight.findUnique({
+      where: { data: new Date(chaveData) },
+      select: { insights: true },
+    });
+    return (linha?.insights as LiturgiaInsights | undefined) ?? null;
   } catch (error) {
     console.error("[liturgiaInsights] Erro ao ler do banco:", error);
     return null;
   }
 }
 
-async function salvarInsights(db: NonNullable<ReturnType<typeof getDb>>, chaveData: string, insights: LiturgiaInsights): Promise<void> {
+async function salvarInsights(db: NonNullable<ReturnType<typeof getPrisma>>, chaveData: string, insights: LiturgiaInsights): Promise<void> {
   try {
-    await db`
-      insert into liturgia_insights (data, insights)
-      values (${chaveData}, ${JSON.stringify(insights)}::jsonb)
-      on conflict (data) do update set insights = excluded.insights
-    `;
+    await db.liturgiaInsight.upsert({
+      where: { data: new Date(chaveData) },
+      create: { data: new Date(chaveData), insights: insights as object },
+      update: { insights: insights as object },
+    });
   } catch (error) {
     console.error("[liturgiaInsights] Erro ao salvar no banco:", error);
   }
@@ -161,7 +160,7 @@ async function salvarInsights(db: NonNullable<ReturnType<typeof getDb>>, chaveDa
  */
 export async function getLiturgiaInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights | null> {
   const chaveData = liturgia.data.split("/").reverse().join("-");
-  const db = getDb();
+  const db = getPrisma();
 
   if (db) {
     const salvo = await buscarInsightsSalvos(db, chaveData);
