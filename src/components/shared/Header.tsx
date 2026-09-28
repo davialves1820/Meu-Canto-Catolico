@@ -2,9 +2,11 @@
 
 import { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Church, Menu, X, ChevronDown } from "lucide-react";
+import { Church, Menu, X, ChevronDown, User } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import { useSession } from "next-auth/react";
 import { RECURSOS } from "@/config/recursos";
 import BuscaGlobal from "@/components/shared/BuscaGlobal";
 
@@ -25,6 +27,7 @@ const Header = () => {
   const [recursosOpen, setRecursosOpen] = useState(false);
   const mounted = useSyncExternalStore(subscribe, () => true, () => false);
   const pathname = usePathname();
+  const { data: sessao } = useSession();
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 16);
@@ -186,6 +189,20 @@ const Header = () => {
         </nav>
 
         <BuscaGlobal />
+
+        <Link
+          href={sessao ? "/conta" : "/entrar"}
+          aria-label={sessao ? "Minha conta" : "Entrar"}
+          className="flex items-center gap-2 p-2 rounded-lg text-[#1b1c19] hover:bg-[#f0eee9] transition-colors focus-visible:outline-none"
+        >
+          {sessao?.user?.image ? (
+            <span className="relative w-6 h-6 rounded-full overflow-hidden block">
+              <Image src={sessao.user.image} alt="" fill unoptimized className="object-cover" />
+            </span>
+          ) : (
+            <User size={20} aria-hidden="true" />
+          )}
+        </Link>
 
         {/* Mobile toggle */}
         <button

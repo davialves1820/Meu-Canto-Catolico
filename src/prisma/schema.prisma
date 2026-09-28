@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model LiturgiaInsight {
+  data      DateTime @id @db.Date
+  insights  Json
+  criadoEm  DateTime @default(now()) @map("criado_em") @db.Timestamptz(6)
+
+  @@map("liturgia_insights")
+}
+
+model User {
+  id                  String    @id @db.Uuid
+  name                String
+  email               String    @unique
+  passwordHash        String    @map("password_hash")
+  criadoEm            DateTime  @default(now()) @map("criado_em") @db.Timestamptz(6)
+  termsAcceptedAt     DateTime? @map("terms_accepted_at") @db.Timestamptz(6)
+  avatarUrl           String?   @map("avatar_url")
+  resetTokenHash      String?   @map("reset_token_hash")
+  resetTokenExpiresAt DateTime? @map("reset_token_expires_at") @db.Timestamptz(6)
+
+  @@map("users")
+}
