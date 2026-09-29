@@ -131,7 +131,9 @@ async function buscarInsightsSalvos(db: NonNullable<ReturnType<typeof getPrisma>
       where: { data: new Date(chaveData) },
       select: { insights: true },
     });
-    return (linha?.insights as LiturgiaInsights | undefined) ?? null;
+    if (!linha) return null;
+    // @prisma/adapter-pg devolve a coluna jsonb como texto em vez de já parseada.
+    return typeof linha.insights === "string" ? JSON.parse(linha.insights) : (linha.insights as unknown as LiturgiaInsights);
   } catch (error) {
     console.error("[liturgiaInsights] Erro ao ler do banco:", error);
     return null;
