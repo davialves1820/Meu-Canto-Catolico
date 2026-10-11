@@ -1,81 +1,95 @@
-// Mapeamento de abreviações e variações para nomes canônicos
+// Mapeamento de abreviações e variações para os nomes exatos usados em bibliaAveMaria.json
 const LIVROS: Record<string, string> = {
   // Antigo Testamento
   "gn": "Gênesis", "gen": "Gênesis", "gênesis": "Gênesis",
   "ex": "Êxodo", "exo": "Êxodo", "êxodo": "Êxodo",
-  "lv": "Levítico", "lev": "Levítico",
-  "nm": "Números", "num": "Números",
-  "dt": "Deuteronômio", "deu": "Deuteronômio",
-  "js": "Josué", "jos": "Josué",
-  "jz": "Juízes", "jui": "Juízes",
-  "rt": "Rute",
-  "1sm": "1 Samuel", "1sam": "1 Samuel",
-  "2sm": "2 Samuel", "2sam": "2 Samuel",
-  "1rs": "1 Reis", "1rei": "1 Reis",
-  "2rs": "2 Reis", "2rei": "2 Reis",
-  "1cr": "1 Crônicas", "1cro": "1 Crônicas",
-  "2cr": "2 Crônicas", "2cro": "2 Crônicas",
-  "ed": "Esdras", "esd": "Esdras",
-  "ne": "Neemias", "nee": "Neemias",
-  "tb": "Tobias", "tob": "Tobias",
-  "jdt": "Judite",
-  "est": "Ester",
-  "1mc": "1 Macabeus",
-  "2mc": "2 Macabeus",
+  "lv": "Levítico", "lev": "Levítico", "levítico": "Levítico",
+  "nm": "Números", "num": "Números", "números": "Números",
+  "dt": "Deuteronômio", "deu": "Deuteronômio", "deuteronômio": "Deuteronômio",
+  "js": "Josué", "jos": "Josué", "josué": "Josué",
+  "jz": "Juízes", "jui": "Juízes", "juízes": "Juízes",
+  "rt": "Rute", "rute": "Rute",
+  "1sm": "I Samuel", "1sam": "I Samuel", "1samuel": "I Samuel",
+  "2sm": "II Samuel", "2sam": "II Samuel", "2samuel": "II Samuel",
+  "1rs": "I Reis", "1rei": "I Reis", "1reis": "I Reis",
+  "2rs": "II Reis", "2rei": "II Reis", "2reis": "II Reis",
+  "1cr": "I Crônicas", "1cro": "I Crônicas", "1crônicas": "I Crônicas",
+  "2cr": "II Crônicas", "2cro": "II Crônicas", "2crônicas": "II Crônicas",
+  "ed": "Esdras", "esd": "Esdras", "esdras": "Esdras",
+  "ne": "Neemias", "nee": "Neemias", "neemias": "Neemias",
+  "tb": "Tobias", "tob": "Tobias", "tobias": "Tobias",
+  "jdt": "Judite", "judite": "Judite",
+  "est": "Ester", "ester": "Ester",
+  "1mc": "I Macabeus", "1macabeus": "I Macabeus",
+  "2mc": "II Macabeus", "2macabeus": "II Macabeus",
   "jó": "Jó",
-  "sl": "Salmos", "sal": "Salmos", "ps": "Salmos",
-  "pr": "Provérbios", "pro": "Provérbios",
-  "ecl": "Eclesiastes",
-  "ct": "Cântico dos Cânticos",
-  "sb": "Sabedoria", "sab": "Sabedoria",
-  "si": "Sirácida", "eclo": "Sirácida",
-  "is": "Isaías", "isa": "Isaías",
-  "jr": "Jeremias", "jer": "Jeremias",
-  "lm": "Lamentações",
-  "br": "Baruc", "bar": "Baruc",
-  "ez": "Ezequiel", "eze": "Ezequiel",
-  "dn": "Daniel", "dan": "Daniel",
-  "os": "Oseias", "ose": "Oseias",
-  "jl": "Joel",
-  "am": "Amós",
-  "ob": "Abdias",
-  "jn": "Jonas", "jon": "Jonas",
-  "mq": "Miquéias", "mic": "Miquéias",
-  "na": "Naum",
-  "hc": "Habacuc", "hab": "Habacuc",
-  "sf": "Sofonias", "sof": "Sofonias",
-  "ag": "Ageu",
-  "zc": "Zacarias", "zac": "Zacarias",
-  "ml": "Malaquias", "mal": "Malaquias",
+  "sl": "Salmos", "sal": "Salmos", "ps": "Salmos", "salmo": "Salmos", "salmos": "Salmos",
+  "pr": "Provérbios", "pro": "Provérbios", "provérbios": "Provérbios",
+  "ecl": "Eclesiastes", "eclesiastes": "Eclesiastes",
+  "ct": "Cântico dos Cânticos", "cânticos": "Cântico dos Cânticos",
+  "sb": "Sabedoria", "sab": "Sabedoria", "sabedoria": "Sabedoria",
+  "si": "Eclesiástico", "eclo": "Eclesiástico", "eclesiástico": "Eclesiástico", "sirácida": "Eclesiástico",
+  "is": "Isaías", "isa": "Isaías", "isaías": "Isaías",
+  "jr": "Jeremias", "jer": "Jeremias", "jeremias": "Jeremias",
+  "lm": "Lamentações", "lamentações": "Lamentações",
+  "br": "Baruc", "bar": "Baruc", "baruc": "Baruc",
+  "ez": "Ezequiel", "eze": "Ezequiel", "ezequiel": "Ezequiel",
+  "dn": "Daniel", "dan": "Daniel", "daniel": "Daniel",
+  "os": "Oséias", "ose": "Oséias", "oséias": "Oséias", "oseias": "Oséias",
+  "jl": "Joel", "joel": "Joel",
+  "am": "Amós", "amós": "Amós",
+  "ab": "Abdias", "ob": "Abdias", "abdias": "Abdias",
+  "jn": "Jonas", "jon": "Jonas", "jonas": "Jonas",
+  "mq": "Miquéias", "mic": "Miquéias", "miquéias": "Miquéias", "miqueias": "Miquéias",
+  "na": "Naum", "naum": "Naum",
+  "hc": "Habacuc", "hab": "Habacuc", "habacuc": "Habacuc",
+  "sf": "Sofonias", "sof": "Sofonias", "sofonias": "Sofonias",
+  "ag": "Ageu", "ageu": "Ageu",
+  "zc": "Zacarias", "zac": "Zacarias", "zacarias": "Zacarias",
+  "ml": "Malaquias", "mal": "Malaquias", "malaquias": "Malaquias",
   // Novo Testamento
-  "mt": "Mateus", "mat": "Mateus",
-  "mc": "Marcos", "mar": "Marcos",
-  "lc": "Lucas", "luc": "Lucas",
-  "jo": "João", "joão": "João",
-  "at": "Atos", "atos": "Atos",
-  "rm": "Romanos", "rom": "Romanos",
-  "1co": "1 Coríntios", "1cor": "1 Coríntios",
-  "2co": "2 Coríntios", "2cor": "2 Coríntios",
-  "gl": "Gálatas", "gal": "Gálatas",
-  "ef": "Efésios", "efe": "Efésios",
-  "fl": "Filipenses", "fil": "Filipenses",
-  "cl": "Colossenses", "col": "Colossenses",
-  "1ts": "1 Tessalonicenses", "1tes": "1 Tessalonicenses",
-  "2ts": "2 Tessalonicenses", "2tes": "2 Tessalonicenses",
-  "1tm": "1 Timóteo", "1tim": "1 Timóteo",
-  "2tm": "2 Timóteo", "2tim": "2 Timóteo",
-  "tt": "Tito", "tit": "Tito",
-  "fm": "Filemon", "flm": "Filemon",
-  "hb": "Hebreus", "heb": "Hebreus",
-  "tg": "Tiago", "tia": "Tiago",
-  "1pe": "1 Pedro", "1pd": "1 Pedro",
-  "2pe": "2 Pedro", "2pd": "2 Pedro",
-  "1jo": "1 João",
-  "2jo": "2 João",
-  "3jo": "3 João",
-  "jd": "Judas",
-  "ap": "Apocalipse", "apo": "Apocalipse",
+  "mt": "São Mateus", "mat": "São Mateus", "mateus": "São Mateus",
+  "mc": "São Marcos", "mar": "São Marcos", "marcos": "São Marcos",
+  "lc": "São Lucas", "luc": "São Lucas", "lucas": "São Lucas",
+  "jo": "São João", "joão": "São João",
+  "at": "Atos dos Apóstolos", "atos": "Atos dos Apóstolos",
+  "rm": "Romanos", "rom": "Romanos", "romanos": "Romanos",
+  "1co": "I Coríntios", "1cor": "I Coríntios", "1coríntios": "I Coríntios",
+  "2co": "II Coríntios", "2cor": "II Coríntios", "2coríntios": "II Coríntios",
+  "gl": "Gálatas", "gal": "Gálatas", "gálatas": "Gálatas",
+  "ef": "Efésios", "efe": "Efésios", "efésios": "Efésios",
+  "fl": "Filipenses", "fil": "Filipenses", "filipenses": "Filipenses",
+  "cl": "Colossenses", "col": "Colossenses", "colossenses": "Colossenses",
+  "1ts": "I Tessalonicenses", "1tes": "I Tessalonicenses", "1tessalonicenses": "I Tessalonicenses",
+  "2ts": "II Tessalonicenses", "2tes": "II Tessalonicenses", "2tessalonicenses": "II Tessalonicenses",
+  "1tm": "I Timóteo", "1tim": "I Timóteo", "1timóteo": "I Timóteo",
+  "2tm": "II Timóteo", "2tim": "II Timóteo", "2timóteo": "II Timóteo",
+  "tt": "Tito", "tit": "Tito", "tito": "Tito",
+  "fm": "Filêmon", "flm": "Filêmon", "filêmon": "Filêmon", "filemon": "Filêmon",
+  "hb": "Hebreus", "heb": "Hebreus", "hebreus": "Hebreus",
+  "tg": "São Tiago", "tia": "São Tiago", "tiago": "São Tiago",
+  "1pe": "I São Pedro", "1pd": "I São Pedro", "1pedro": "I São Pedro",
+  "2pe": "II São Pedro", "2pd": "II São Pedro", "2pedro": "II São Pedro",
+  "1jo": "I São João", "1joão": "I São João",
+  "2jo": "II São João", "2joão": "II São João",
+  "3jo": "III São João", "3joão": "III São João",
+  "jd": "São Judas", "judas": "São Judas",
+  "ap": "Apocalipse", "apo": "Apocalipse", "apocalipse": "Apocalipse",
 };
+
+function removerAcentos(texto: string): string {
+  return texto.normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+
+// Índice com as chaves originais e suas versões sem acento (sem sobrescrever:
+// "jo" continua sendo São João mesmo com "jó" → "jo")
+const INDICE_LIVROS = new Map<string, string>(Object.entries(LIVROS));
+for (const [chave, livro] of Object.entries(LIVROS)) {
+  const semAcento = removerAcentos(chave);
+  if (!INDICE_LIVROS.has(semAcento)) {
+    INDICE_LIVROS.set(semAcento, livro);
+  }
+}
 
 export interface ReferenciaBiblica {
   livro: string;
@@ -83,23 +97,22 @@ export interface ReferenciaBiblica {
   versiculo?: number;
 }
 
-export function parsearReferencia(input: string): Referenciabiblica | null {
-  // Remove espaços extras e normaliza
-  const texto = input.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+export function parsearReferencia(input: string): ReferenciaBiblica | null {
+  const texto = input.trim().toLowerCase().normalize("NFC");
 
-
+  // Ex: "Jo 3,16", "1 Co 13:4", "Mateus 5", "sao joao 3 16"
   const match = texto.match(
-    /^(\d)?([a-záéíóúãõâêîôûç]+)\s+(\d+)(?:[,;:\s](\d+))?/i
+    /^([1-3])?\s*(?:s[aã]o\s+)?(\p{L}+)\.?\s*(\d+)(?:\s*[,;:.\s]\s*(\d+))?/u
   );
 
   if (!match) {
     return null;
   }
 
-  const [, prefixo, abrevRaw, capStr, verStr] = match;
-  const abrev = (prefixo ? prefixo + abrevRaw : abrevRaw).replace(/\s/g, "");
+  const [, prefixo, nome, capStr, verStr] = match;
+  const abrev = (prefixo ?? "") + nome;
 
-  const livro = LIVROS[abrev];
+  const livro = INDICE_LIVROS.get(abrev) ?? INDICE_LIVROS.get(removerAcentos(abrev));
   if (!livro) {
     return null;
   }
@@ -114,15 +127,10 @@ export function parsearReferencia(input: string): Referenciabiblica | null {
   return { livro, capitulo, versiculo };
 }
 
-export function urlDaReferencia(ref: Referenciabiblica): string {
+export function urlDaReferencia(ref: ReferenciaBiblica): string {
   const base = `/biblia/${encodeURIComponent(ref.livro)}/${ref.capitulo}`;
   return ref.versiculo ? `${base}?v=${ref.versiculo}` : base;
 }
 
-// Alias para consistência de tipo
-export type Referenciabiblica = ReferenciabiblicaBase;
-interface ReferenciabiblicaBase {
-  livro: string;
-  capitulo: number;
-  versiculo?: number;
-}
+// Alias mantido por compatibilidade com imports existentes
+export type Referenciabiblica = ReferenciaBiblica;
