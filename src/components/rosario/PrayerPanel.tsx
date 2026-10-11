@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { BookOpen } from "lucide-react";
 import type { PropsPrayerPanel } from "@/types/rosario";
+import { tituloOracoesForaDasDezenas } from "@/lib/rosario/sequencia";
 import { PrayerCard } from "./PrayerCard";
 
 export function PrayerPanel({ grupo, passo, oracao, tamanhoFonte }: PropsPrayerPanel) {
@@ -22,6 +23,7 @@ export function PrayerPanel({ grupo, passo, oracao, tamanhoFonte }: PropsPrayerP
   }
 
   const misterio = passo.grupoIndex !== undefined ? grupo.misterios[passo.grupoIndex] : null;
+  const tituloSecao = misterio ? null : tituloOracoesForaDasDezenas(passo);
 
   return (
     <div className="rounded-2xl border border-[#c9a84c]/25 bg-white p-5 space-y-4">
@@ -35,13 +37,13 @@ export function PrayerPanel({ grupo, passo, oracao, tamanhoFonte }: PropsPrayerP
             <p className="mt-0.5 font-body-sm italic text-on-surface-variant">Fruto: {misterio.fruto}</p>
           </>
         ) : (
-          <h3 className="font-heading text-xl font-semibold mt-1 text-primary">Orações Iniciais</h3>
+          <h3 className="font-heading text-xl font-semibold mt-1 text-primary">{tituloSecao}</h3>
         )}
       </div>
 
       <AnimatePresence mode="wait">
         <motion.div
-          key={misterio ? `${misterio.numero}` : "intro"}
+          key={misterio ? `${misterio.numero}` : tituloSecao}
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}

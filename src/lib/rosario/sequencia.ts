@@ -2,6 +2,14 @@ import type { GrupoMisterio, PassoRosario } from "@/types/rosario";
 
 const ORDINAIS = ["1ª", "2ª", "3ª", "4ª", "5ª", "6ª", "7ª", "8ª", "9ª", "10ª"];
 
+/** Quantidade de passos da introdução (Sinal da Cruz, Creio, Pai-Nosso, 3 Ave-Marias, Glória). */
+const TAMANHO_INTRODUCAO = 7;
+
+/** Título da seção de um passo fora das dezenas: "Orações Iniciais" ou "Orações Finais". */
+export function tituloOracoesForaDasDezenas(passo: PassoRosario): string {
+  return passo.ordem < TAMANHO_INTRODUCAO ? "Orações Iniciais" : "Orações Finais";
+}
+
 /**
  * Gera a sequência completa e ordenada de passos (contas) do Santo Rosário
  * para um grupo de mistérios: introdução, as 5 dezenas e as orações finais.
@@ -78,16 +86,16 @@ export interface SecaoSequencia {
 /** Agrupa a sequência em seções legíveis (Introdução, cada dezena, Orações Finais) para exibição em texto. */
 export function agruparPorSecao(sequencia: PassoRosario[], grupo: GrupoMisterio): SecaoSequencia[] {
   const secoes: SecaoSequencia[] = [];
-  const chaveSecao = (passo: PassoRosario, indice: number): string => {
+  const chaveSecao = (passo: PassoRosario): string => {
     if (passo.grupoIndex === undefined) {
-      return indice < sequencia.length - 2 ? "Orações Iniciais" : "Orações Finais";
+      return tituloOracoesForaDasDezenas(passo);
     }
     const misterio = grupo.misterios[passo.grupoIndex];
     return `${misterio.numero}º Mistério — ${misterio.nome}`;
   };
 
   sequencia.forEach((passo, indice) => {
-    const titulo = chaveSecao(passo, indice);
+    const titulo = chaveSecao(passo);
     const atual = secoes[secoes.length - 1];
     if (atual && atual.titulo === titulo) {
       atual.itens.push({ passo, indice });
