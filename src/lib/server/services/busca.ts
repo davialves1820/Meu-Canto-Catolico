@@ -5,6 +5,7 @@ import { CONFIG_CAT, Oracao } from "@/types/oracao";
 import { ResultadoBusca } from "@/types/busca";
 import { getSantos } from "./santos";
 import { pesquisarBiblia } from "./biblia";
+import { pesquisarCatecismo } from "./catecismo";
 
 const TODAS_ORACOES = (oracoesData as { oracoes: Oracao[] }).oracoes;
 const LIMITE_POR_CATEGORIA = 5;
@@ -60,16 +61,28 @@ async function buscarBiblia(query: string): Promise<ResultadoBusca[]> {
   }));
 }
 
+async function buscarCatecismo(query: string): Promise<ResultadoBusca[]> {
+  // Mesmo critério da Bíblia: o serviço já ignora termos curtos (exceto números de parágrafo)
+  const paragrafos = await pesquisarCatecismo(query);
+  return paragrafos.slice(0, LIMITE_POR_CATEGORIA).map((p) => ({
+    tipo: "catecismo" as const,
+    titulo: `Catecismo §${p.numero}`,
+    descricao: p.trecho,
+    href: `/catecismo/${p.slug}?p=${p.numero}`,
+  }));
+}
+
 export async function buscaGlobal(query: string): Promise<ResultadoBusca[]> {
   const q = normalizar(query.trim());
   if (!q) return [];
 
-  const [paginas, santos, oracoes, biblia] = await Promise.all([
+  const [paginas, santos, oracoes, biblia, catecismo] = await Promise.all([
     Promise.resolve(buscarPaginas(q)),
     buscarSantos(query),
     Promise.resolve(buscarOracoes(q)),
     buscarBiblia(query),
+    buscarCatecismo(query),
   ]);
 
-  return [...paginas, ...santos, ...oracoes, ...biblia];
+  return [...paginas, ...santos, ...oracoes, ...biblia, ...catecismo];
 }

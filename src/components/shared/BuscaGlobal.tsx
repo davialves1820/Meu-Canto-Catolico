@@ -4,7 +4,7 @@ import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Loader2, X, FileText, Users, BookOpen, BookMarked, CornerDownLeft } from "lucide-react";
+import { Search, Loader2, X, FileText, Users, BookOpen, BookMarked, ScrollText, CornerDownLeft } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { ResultadoBusca, TipoResultadoBusca } from "@/types/busca";
 
@@ -15,8 +15,9 @@ const CONFIG_TIPO: Record<TipoResultadoBusca, { label: string; icone: LucideIcon
   santo: { label: "Santos", icone: Users },
   oracao: { label: "Orações", icone: BookOpen },
   biblia: { label: "Bíblia", icone: BookMarked },
+  catecismo: { label: "Catecismo", icone: ScrollText },
 };
-const ORDEM_TIPOS: TipoResultadoBusca[] = ["pagina", "santo", "oracao", "biblia"];
+const ORDEM_TIPOS: TipoResultadoBusca[] = ["pagina", "santo", "oracao", "biblia", "catecismo"];
 
 interface Estado {
   aberto: boolean;
