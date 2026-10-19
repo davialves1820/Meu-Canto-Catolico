@@ -11,6 +11,7 @@ const PAGINAS_PRINCIPAIS: PaginaBusca[] = [
   { titulo: "Início", descricao: "Página inicial do Meu Canto Católico.", href: "/" },
   { titulo: "Bíblia", descricao: "Leitura da Bíblia Ave-Maria, livro por livro e capítulo por capítulo.", href: "/biblia" },
   { titulo: "Pesquisar na Bíblia", descricao: "Busque versículos, temas, livros ou capítulos da Bíblia.", href: "/biblia/pesquisa" },
+  { titulo: "Pesquisar no Catecismo", descricao: "Busque temas, palavras ou o número de um parágrafo do Catecismo da Igreja Católica.", href: "/catecismo/pesquisa" },
   { titulo: "Liturgia Diária", descricao: "Leituras, salmo e evangelho do dia, com exegese e contexto patrístico.", href: "/liturgia" },
   { titulo: "Orações", descricao: "Livro de orações católicas, organizado por categoria.", href: "/oracoes" },
   { titulo: "Notícias", descricao: "Últimas notícias do Papa e da Igreja Católica, direto do Vatican News.", href: "/noticias" },

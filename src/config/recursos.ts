@@ -1,4 +1,4 @@
-import { Cross, HeartHandshake, Flame, Calendar, Users, History, type LucideIcon } from "lucide-react";
+import { Cross, HeartHandshake, Flame, Calendar, Users, History, ScrollText, type LucideIcon } from "lucide-react";
 
 export interface ItemRecurso {
   href: string;
@@ -20,6 +20,12 @@ export const RECURSOS: ItemRecurso[] = [
     icone: HeartHandshake,
     titulo: "Confissão",
     descricao: "Exame de consciência para se preparar para a Reconciliação.",
+  },
+  {
+    href: "/catecismo",
+    icone: ScrollText,
+    titulo: "Catecismo",
+    descricao: "O Catecismo da Igreja Católica completo, com busca por tema ou parágrafo.",
   },
   {
     href: "/catequese",

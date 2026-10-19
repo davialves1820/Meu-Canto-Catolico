@@ -4,12 +4,22 @@ import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
-export function BibleSearchBar() {
+interface PropsBibleSearchBar {
+  href?: string;
+  placeholder?: string;
+  ariaLabel?: string;
+}
+
+export function BibleSearchBar({
+  href = "/biblia/pesquisa",
+  placeholder = "Pesquisar versículos, temas, livros ou capítulos...",
+  ariaLabel = "Pesquisar na Bíblia — pressione Enter para abrir a busca",
+}: PropsBibleSearchBar = {}) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const irParaPesquisa = () => {
-    router.push("/biblia/pesquisa");
+    router.push(href);
   };
 
   return (
@@ -31,9 +41,9 @@ export function BibleSearchBar() {
               irParaPesquisa();
             }
           }}
-          aria-label="Pesquisar na Bíblia — pressione Enter para abrir a busca"
+          aria-label={ariaLabel}
           className="w-full bg-card border border-border/40 rounded-2xl shadow-sm group-hover:border-primary transition-all py-6 pl-16 pr-8 text-lg md:text-xl outline-none placeholder:text-muted-foreground/40 font-body cursor-pointer"
-          placeholder="Pesquisar versículos, temas, livros ou capítulos..."
+          placeholder={placeholder}
         />
         <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-primary w-8 h-8 opacity-70 group-hover:scale-110 transition-transform pointer-events-none" aria-hidden="true" />
       </div>

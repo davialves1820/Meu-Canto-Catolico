@@ -1,4 +1,4 @@
-export type TipoResultadoBusca = "pagina" | "santo" | "oracao" | "biblia";
+export type TipoResultadoBusca = "pagina" | "santo" | "oracao" | "biblia" | "catecismo";
 
 export interface ResultadoBusca {
   tipo: TipoResultadoBusca;

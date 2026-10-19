@@ -8,6 +8,7 @@ const LINKS = [
   { label: "Santoral", href: "/santos" },
   { label: "Orações", href: "/oracoes" },
   { label: "Calendário Litúrgico", href: "/calendario" },
+  { label: "Catecismo", href: "/catecismo" },
   { label: "Catequese", href: "/catequese" },
   { label: "Santo Rosário", href: "/rosario" },
   { label: "Confissão", href: "/confissao" },

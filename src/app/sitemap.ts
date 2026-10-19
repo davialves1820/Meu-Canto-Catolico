@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { getDadosBiblia } from "@/lib/server/services/biblia";
+import { getIndiceCatecismo } from "@/lib/server/services/catecismo";
 import { CONFIG_CAT } from "@/types/oracao";
 import { CATEQUESE } from "@/config/catequese";
 import santosData from "@/data/santos.json";
@@ -13,6 +14,8 @@ const STATIC_ROUTES: { path: string; changeFrequency: MetadataRoute.Sitemap[numb
   { path: "/liturgia", changeFrequency: "daily", priority: 0.9 },
   { path: "/biblia", changeFrequency: "weekly", priority: 0.9 },
   { path: "/biblia/pesquisa", changeFrequency: "monthly", priority: 0.5 },
+  { path: "/catecismo", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/catecismo/pesquisa", changeFrequency: "monthly", priority: 0.5 },
   { path: "/santos", changeFrequency: "weekly", priority: 0.9 },
   { path: "/santos/calendario", changeFrequency: "weekly", priority: 0.7 },
   { path: "/oracoes", changeFrequency: "weekly", priority: 0.9 },
@@ -68,11 +71,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
+  const indiceCatecismo = await getIndiceCatecismo();
+  const entradasCatecismo: MetadataRoute.Sitemap = indiceCatecismo.flatMap((parte) =>
+    parte.capitulos.map((cap) => ({
+      url: url(`/catecismo/${cap.slug}`),
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
+    }))
+  );
+
   return [
     ...entradasEstaticas,
     ...entradasSantos,
     ...entradasOracoes,
     ...entradasCatequese,
     ...entradasBiblia,
+    ...entradasCatecismo,
   ];
 }

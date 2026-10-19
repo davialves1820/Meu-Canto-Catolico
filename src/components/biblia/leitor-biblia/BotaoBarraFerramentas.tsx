@@ -5,6 +5,7 @@ export default function BotaoBarraFerramentas({ onClick, active, label, children
         <button
             onClick={onClick}
             aria-label={label}
+            title={label}
             aria-pressed={active}
             className={`p-2.5 rounded-xl transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 active 
