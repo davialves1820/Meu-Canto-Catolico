@@ -13,7 +13,6 @@ import { siteConfig, absoluteUrl } from "@/config/site";
 import { getCorLiturgicaHoje } from "@/lib/server/services/calendarioLiturgico";
 import { normalizarCorLiturgica } from "@/lib/shared/temaLiturgico";
 import { AuthProvider } from "@/components/shared/AuthProvider";
-import { auth } from "@/auth";
 
 
 const geistSans = Geist({
@@ -136,13 +135,16 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
+// O layout não lê cookies/sessão (o SessionProvider busca a sessão no cliente), então
+// as páginas podem ser estáticas com ISR. Este teto vale para todas que não definem um
+// revalidate menor: sem ele, páginas sem revalidate ficariam congeladas no dia do build
+// (data da home, cor litúrgica do dia).
+export const revalidate = 3600;
+
 export default async function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
-  const [corLiturgica, session] = await Promise.all([
-    getCorLiturgicaHoje().then(normalizarCorLiturgica),
-    auth(),
-  ]);
+  const corLiturgica = normalizarCorLiturgica(await getCorLiturgicaHoje());
 
   return (
     <html lang="pt-BR" data-liturgical-color={corLiturgica ?? undefined}>
@@ -154,7 +156,7 @@ export default async function RootLayout({
         </div>
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
-        <AuthProvider session={session}>
+        <AuthProvider>
           <Header />
           <main className="flex-1">
             {children}

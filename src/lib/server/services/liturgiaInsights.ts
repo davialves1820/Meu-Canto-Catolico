@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import { GoogleGenAI, Type, type Schema } from "@google/genai";
 import { LiturgiaDiaria, LiturgiaInsights } from "@/types/liturgia";
 import { getPrisma } from "@/lib/server/prisma";
@@ -152,16 +153,7 @@ async function salvarInsights(db: NonNullable<ReturnType<typeof getPrisma>>, cha
   }
 }
 
-/**
- * Busca (ou gera, na primeira vez do dia) o contexto histórico e patrístico da liturgia.
- * As leituras de uma data específica não mudam de um ano para o outro dentro do ciclo já
- * gerado, então o resultado fica guardado no Postgres indefinidamente (sem banco, cada
- * visitante durante uma instabilidade da API disparava uma chamada nova ao Gemini).
- * Falhas não são salvas — para permitir nova tentativa depois —, mas ficam sob um
- * cooldown em memória para não martelar a API repetidamente.
- */
-export async function getLiturgiaInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights | null> {
-  const chaveData = liturgia.data.split("/").reverse().join("-");
+async function obterInsights(liturgia: LiturgiaDiaria, chaveData: string): Promise<LiturgiaInsights> {
   const db = getPrisma();
 
   if (db) {
@@ -171,17 +163,41 @@ export async function getLiturgiaInsights(liturgia: LiturgiaDiaria): Promise<Lit
 
   const ultimaFalha = ultimaFalhaPorData.get(chaveData);
   if (ultimaFalha && Date.now() - ultimaFalha < COOLDOWN_MS) {
-    return null;
+    throw new Error("Em cooldown após falha recente.");
   }
 
+  let insights: LiturgiaInsights;
   try {
-    const insights = await gerarInsights(liturgia);
-    ultimaFalhaPorData.delete(chaveData);
-    if (db) await salvarInsights(db, chaveData, insights);
-    return insights;
+    insights = await gerarInsights(liturgia);
   } catch (error) {
     console.error("[liturgiaInsights] Erro ao obter contexto histórico/patrístico:", error);
     ultimaFalhaPorData.set(chaveData, Date.now());
+    throw error;
+  }
+
+  ultimaFalhaPorData.delete(chaveData);
+  if (db) await salvarInsights(db, chaveData, insights);
+  return insights;
+}
+
+/**
+ * Busca (ou gera, na primeira vez do dia) o contexto histórico e patrístico da liturgia.
+ * As leituras de uma data específica não mudam de um ano para o outro dentro do ciclo já
+ * gerado, então o resultado fica guardado no Postgres indefinidamente (sem banco, cada
+ * visitante durante uma instabilidade da API disparava uma chamada nova ao Gemini).
+ * Por cima do Postgres há o Data Cache do Next, sem expiração: sem ele, cada visita à
+ * home acordava o compute do Neon, que nunca chegava a suspender e estourava a cota
+ * mensal. Falhas lançam erro dentro do cache (erros não são guardados) — para permitir
+ * nova tentativa depois —, mas ficam sob um cooldown em memória para não martelar a API.
+ */
+export async function getLiturgiaInsights(liturgia: LiturgiaDiaria): Promise<LiturgiaInsights | null> {
+  const chaveData = liturgia.data.split("/").reverse().join("-");
+
+  try {
+    return await unstable_cache(() => obterInsights(liturgia, chaveData), ["liturgia-insights", chaveData], {
+      revalidate: false,
+    })();
+  } catch {
     return null;
   }
 }

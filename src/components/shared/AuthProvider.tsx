@@ -2,8 +2,9 @@
 
 import { SessionProvider } from "next-auth/react";
 import { ReactNode } from "react";
-import type { Session } from "next-auth";
 
-export function AuthProvider({ children, session }: { children: ReactNode; session: Session | null }) {
-  return <SessionProvider session={session}>{children}</SessionProvider>;
+// Sem a prop session: a sessão é buscada no cliente (/api/auth/session). Passá-la do
+// servidor exigiria auth() no layout, o que tornava todas as páginas dinâmicas.
+export function AuthProvider({ children }: { children: ReactNode }) {
+  return <SessionProvider>{children}</SessionProvider>;
 }
