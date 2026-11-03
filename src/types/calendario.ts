@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { type TempoId } from "@/lib/shared/anoLiturgico";
 
 export interface DadosDiaLiturgico {
   chave: string;
@@ -26,6 +27,10 @@ export interface EstadoCalendario {
   diaSelecionado: string | null;
   modoVisualizacao: ModoVisualizacao;
   estaMontado: boolean;
+  tempoFiltro: TempoId | null;
+  /** Dia realçado temporariamente após uma busca. */
+  diaDestacado: string | null;
+  anosDisponiveis: number[];
 
   /* derivados */
   rotuloMes: string;
@@ -40,6 +45,10 @@ export interface EstadoCalendario {
   selecionarDia: (dateStr: string) => void;
   limparDia: () => void;
   setModoVisualizacao: (m: ModoVisualizacao) => void;
+  selecionarTempo: (tempo: TempoId | null) => void;
+  mudarAno: (ano: number) => void;
+  irParaMes: (dateStr: string) => void;
+  irParaData: (dateStr: string) => void;
 }
 
 export interface CelulaDia {
@@ -68,6 +77,8 @@ export interface PropsVisualizacaoListaCalendario {
   diaSelecionado: string | null;
   estaMontado: boolean;
   rotuloMes: string;
+  tempoFiltro: TempoId | null;
+  diaDestacado: string | null;
   aoSelecionarDia: (dateStr: string) => void;
 }
 
@@ -86,5 +97,7 @@ export interface PropsVisualizacaoGradeCalendario {
   diaSelecionado: string | null;
   estaMontado: boolean;
   rotuloMes: string;
+  tempoFiltro: TempoId | null;
+  diaDestacado: string | null;
   aoSelecionarDia: (dateStr: string) => void;
 }

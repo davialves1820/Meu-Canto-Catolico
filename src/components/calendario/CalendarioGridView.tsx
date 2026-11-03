@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { DateTime } from "luxon";
+import { getSeasonsForDate } from "@/lib/shared/anoLiturgico";
+import { classeFundoCor } from "./coresLiturgicas";
 import { type PropsVisualizacaoGradeCalendario } from "@/types/calendario";
 import { Star } from "lucide-react";
 
@@ -12,6 +14,8 @@ export default function CalendarioGridView({
   calendario,
   diaSelecionado,
   estaMontado,
+  tempoFiltro,
+  diaDestacado,
   aoSelecionarDia,
 }: PropsVisualizacaoGradeCalendario) {
   return (
@@ -34,20 +38,13 @@ export default function CalendarioGridView({
         const isSelected = diaSelecionado === dateStr;
         const isToday = estaMontado && data.hasSame(DateTime.now(), "day");
         const cor = main?.cores?.[0] || "BRANCO";
-
-        // Liturgical color mapping to Tailwind classes
-        const colorClasses: Record<string, string> = {
-          VERDE: "bg-green-700",
-          VERMELHO: "bg-red-700",
-          ROXO: "bg-purple-700",
-          BRANCO: "bg-white border border-outline-variant/30",
-          PRETO: "bg-black",
-          ROSA: "bg-pink-400",
-        };
+        const noTempo = !!tempoFiltro && getSeasonsForDate(dateStr).some((p) => p.tempo === tempoFiltro);
+        const isDestacado = diaDestacado === dateStr;
 
         return (
           <motion.button
             key={dateStr}
+            id={`dia-${dateStr}`}
             type="button"
             whileTap={{ scale: 0.98 }}
             onClick={() => {
@@ -58,6 +55,8 @@ export default function CalendarioGridView({
               ${idx % 7 !== 6 ? "border-r" : ""}
               ${idx < dias.length - 7 ? "border-b" : ""}
               ${isSelected ? "bg-surface-container-highest/40 ring-1 ring-inset ring-primary z-10" : ""}
+              ${tempoFiltro && ehMesAtual ? (noTempo ? "bg-secondary/10" : "opacity-30") : ""}
+              ${isDestacado ? "ring-2 ring-inset ring-secondary animate-pulse z-20" : ""}
             `}
           >
             <div className="flex justify-between items-start w-full">
@@ -72,7 +71,7 @@ export default function CalendarioGridView({
             {main && ehMesAtual && (
               <div className="flex flex-col gap-1 w-full">
                 <div 
-                  className={`w-full h-1 ${colorClasses[cor] || "bg-outline-variant"}`}
+                  className={`w-full h-1 ${classeFundoCor(cor)}`}
                   title={main.nome}
                 />
                 <span className="hidden md:block text-[10px] leading-tight font-body-md text-on-surface-variant line-clamp-1">
@@ -86,4 +85,3 @@ export default function CalendarioGridView({
     </div>
   );
 }
-
