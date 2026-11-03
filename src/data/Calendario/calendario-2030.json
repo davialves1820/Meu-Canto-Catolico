@@ -1361,9 +1361,9 @@
   ],
   "2030-06-20": [
     {
-      "nome": "Quinta-feira da 11ª Semana do Tempo Comum",
-      "cor": "VERDE",
-      "rank": "FÉRIA",
+      "nome": "Santíssimo Corpo e Sangue de Cristo",
+      "cor": "BRANCO",
+      "rank": "SOLENIDADE",
       "temporada": "Tempo Comum"
     }
   ],
@@ -1385,9 +1385,9 @@
   ],
   "2030-06-23": [
     {
-      "nome": "Santíssimo Corpo e Sangue de Cristo",
-      "cor": "BRANCO",
-      "rank": "SOLENIDADE",
+      "nome": "12º Domingo do Tempo Comum",
+      "cor": "VERDE",
+      "rank": "DOMINGO",
       "temporada": "Tempo Comum"
     }
   ],

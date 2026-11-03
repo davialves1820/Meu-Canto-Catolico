@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { DateTime } from "luxon";
 import { ChevronRight } from "lucide-react";
+import { getSeasonsForDate } from "@/lib/shared/anoLiturgico";
+import { classeFundoCor } from "./coresLiturgicas";
 import { type PropsVisualizacaoListaCalendario } from "@/types/calendario";
 
 export default function CalendarioListView({
@@ -10,6 +12,8 @@ export default function CalendarioListView({
   calendario,
   diaSelecionado,
   estaMontado,
+  tempoFiltro,
+  diaDestacado,
   aoSelecionarDia,
 }: PropsVisualizacaoListaCalendario) {
   return (
@@ -22,19 +26,14 @@ export default function CalendarioListView({
         const isToday = estaMontado && data.hasSame(DateTime.now(), "day");
         const diaSemana = data.setLocale("pt-BR").toFormat("ccc").toUpperCase();
         const cor = main?.cores?.[0] || "BRANCO";
+        const noTempo = !!tempoFiltro && getSeasonsForDate(dateStr).some((p) => p.tempo === tempoFiltro);
+        const isDestacado = diaDestacado === dateStr;
 
-        const colorClasses: Record<string, string> = {
-          VERDE: "bg-green-700",
-          VERMELHO: "bg-red-700",
-          ROXO: "bg-purple-700",
-          BRANCO: "bg-white border border-outline-variant/30",
-          PRETO: "bg-black",
-          ROSA: "bg-pink-400",
-        };
 
         return (
           <motion.button
             key={dateStr}
+            id={`dia-${dateStr}`}
             type="button"
             whileTap={{ scale: 0.99 }}
             onClick={() => {
@@ -42,6 +41,8 @@ export default function CalendarioListView({
             }}
             className={`w-full flex items-center gap-6 px-6 py-4 text-left transition-colors hover:bg-surface-container-low
               ${isSelected ? "bg-surface-container-low ring-1 ring-inset ring-primary/20" : ""}
+              ${tempoFiltro ? (noTempo ? "bg-secondary/10" : "opacity-30") : ""}
+              ${isDestacado ? "ring-2 ring-inset ring-secondary animate-pulse" : ""}
             `}
           >
             {/* Date Info */}
@@ -56,7 +57,7 @@ export default function CalendarioListView({
 
             {/* Liturgical Color Dot */}
             <div 
-              className={`w-3 h-3 rounded-full shrink-0 ${colorClasses[cor] || "bg-outline-variant"}`}
+              className={`w-3 h-3 rounded-full shrink-0 ${classeFundoCor(cor)}`}
               aria-hidden="true"
             />
 

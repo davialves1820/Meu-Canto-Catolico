@@ -3,20 +3,52 @@
 import { useState, useMemo, useEffect } from "react";
 import { DateTime } from "luxon";
 import { type EstadoCalendario, type ModoVisualizacao, type DadosDiaLiturgico } from "@/types/calendario";
+import { liturgicalSeasons, type TempoId } from "@/lib/shared/anoLiturgico";
+import { NOMES_TEMPOS } from "@/lib/shared/buscaCalendario";
+
+function ehTempoValido(valor: string | null): valor is TempoId {
+  return !!valor && valor in NOMES_TEMPOS;
+}
+
+/** Mês a exibir ao filtrar por um tempo: o próximo período dele no ano (ou o primeiro, se já passaram). */
+function inicioDoTempo(tempo: TempoId, ano: number): DateTime {
+  const hoje = DateTime.now().toISODate()!;
+  const periodos = liturgicalSeasons(ano).filter((p) => p.tempo === tempo);
+  const periodo = periodos.find((p) => p.fim >= hoje) ?? periodos[0];
+  return DateTime.fromISO(periodo.inicio);
+}
 
 export function useCalendario(calendarioInicial: Record<string, DadosDiaLiturgico[]>): EstadoCalendario {
   const [estaMontado, setEstaMontado] = useState(false);
-  const [dataAtual, setDataAtual] = useState(() => DateTime.now().startOf("month"));
+  const [dataAtual, setDataAtual] = useState<DateTime>(() => DateTime.now().startOf("month"));
   const [diaSelecionado, setDiaSelecionado] = useState<string | null>(null);
   const [modoVisualizacao, setModoVisualizacao] = useState<ModoVisualizacao>("lista");
+  const [tempoFiltro, setTempoFiltro] = useState<TempoId | null>(null);
+  const [diaDestacado, setDiaDestacado] = useState<string | null>(null);
+
+  const anosDisponiveis = useMemo(
+    () => [...new Set(Object.keys(calendarioInicial).map((d) => Number(d.slice(0, 4))))].sort(),
+    [calendarioInicial],
+  );
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
     const sincronizarModo = () => setModoVisualizacao(media.matches ? "grade" : "lista");
 
     const handle = requestAnimationFrame(() => {
+      // Filtro compartilhável pela URL: ?tempo=quaresma&ano=2027
+      const params = new URLSearchParams(window.location.search);
+      const tempo = params.get("tempo");
+      const anoUrl = Number(params.get("ano"));
+      const ano = anosDisponiveis.includes(anoUrl) ? anoUrl : DateTime.now().year;
+
       setEstaMontado(true);
-      setDataAtual(DateTime.now());
+      if (ehTempoValido(tempo)) {
+        setTempoFiltro(tempo);
+        setDataAtual(inicioDoTempo(tempo, ano));
+      } else {
+        setDataAtual(DateTime.now().set({ year: ano }));
+      }
       sincronizarModo();
     });
 
@@ -25,7 +57,26 @@ export function useCalendario(calendarioInicial: Record<string, DadosDiaLiturgic
       cancelAnimationFrame(handle);
       media.removeEventListener("change", sincronizarModo);
     };
-  }, []);
+  }, [anosDisponiveis]);
+
+  useEffect(() => {
+    if (!estaMontado) return;
+    const params = new URLSearchParams(window.location.search);
+    if (tempoFiltro) params.set("tempo", tempoFiltro);
+    else params.delete("tempo");
+    if (tempoFiltro || dataAtual.year !== DateTime.now().year) params.set("ano", String(dataAtual.year));
+    else params.delete("ano");
+
+    const query = params.toString();
+    window.history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
+  }, [estaMontado, tempoFiltro, dataAtual.year]);
+
+  // O destaque de uma busca some sozinho depois de alguns segundos.
+  useEffect(() => {
+    if (!diaDestacado) return;
+    const timer = setTimeout(() => setDiaDestacado(null), 4000);
+    return () => clearTimeout(timer);
+  }, [diaDestacado]);
 
   const rotuloMes = dataAtual.toFormat("MMMM yyyy", { locale: "pt-BR" });
 
@@ -67,11 +118,33 @@ export function useCalendario(calendarioInicial: Record<string, DadosDiaLiturgic
   };
   const limparDia = () => setDiaSelecionado(null);
 
+  const selecionarTempo = (tempo: TempoId | null) => {
+    setTempoFiltro(tempo);
+    if (tempo) setDataAtual(inicioDoTempo(tempo, dataAtual.year));
+  };
+
+  const mudarAno = (ano: number) => {
+    setDataAtual(tempoFiltro ? inicioDoTempo(tempoFiltro, ano) : dataAtual.set({ year: ano }));
+  };
+
+  const irParaMes = (dateStr: string) => setDataAtual(DateTime.fromISO(dateStr));
+
+  const irParaData = (dateStr: string) => {
+    setTempoFiltro(null);
+    setDataAtual(DateTime.fromISO(dateStr));
+    setDiaDestacado(dateStr);
+    // No mobile o detalhe do dia abre como gaveta e cobriria a data destacada.
+    if (window.matchMedia("(min-width: 1024px)").matches) selecionarDia(dateStr);
+  };
+
   return {
     dataAtual,
     diaSelecionado,
     modoVisualizacao,
     estaMontado,
+    tempoFiltro,
+    diaDestacado,
+    anosDisponiveis,
     rotuloMes,
     diasNoMes,
     listaDias,
@@ -82,5 +155,9 @@ export function useCalendario(calendarioInicial: Record<string, DadosDiaLiturgic
     selecionarDia,
     limparDia,
     setModoVisualizacao,
+    selecionarTempo,
+    mudarAno,
+    irParaMes,
+    irParaData,
   };
-}
+}
