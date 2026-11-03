@@ -2,8 +2,9 @@ import { describe, expect, it } from "vitest";
 import { buscarNoCalendario, criarIndiceBusca, normalizarBusca } from "./buscaCalendario";
 
 const indice = criarIndiceBusca(2026, [
-  { nome: "Natal do Senhor", data: "2026-12-25" },
-  { nome: "Domingo de Páscoa", data: "2026-04-05" },
+  { nome: "Natal do Senhor", data: "2026-12-25", grau: "SOLENIDADE" },
+  { nome: "Domingo de Páscoa", data: "2026-04-05", grau: "SOLENIDADE" },
+  { nome: "Santíssimo Corpo e Sangue de Cristo", data: "2026-06-04", grau: "SOLENIDADE" },
 ]);
 const ids = (consulta: string) => buscarNoCalendario(indice, consulta).map((r) => r.id);
 
@@ -21,6 +22,12 @@ describe("buscarNoCalendario", () => {
 
   it("não duplica celebrações fixas que já são móveis", () => {
     expect(ids("domingo de pascoa")).toEqual(["pascoa"]);
+    expect(ids("corp")).toEqual(["corpus-christi"]);
+  });
+
+  it("informa o grau da celebração", () => {
+    expect(buscarNoCalendario(indice, "natal do senhor")[0]).toMatchObject({ grau: "solenidade" });
+    expect(buscarNoCalendario(indice, "cinzas")[0]).toMatchObject({ grau: "dia santo" });
   });
 
   it.each([

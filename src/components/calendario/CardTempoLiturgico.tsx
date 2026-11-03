@@ -34,7 +34,7 @@ export default function CardTempoLiturgico({ tempoFiltro }: PropsCardTempoLiturg
   return (
     <section
       aria-labelledby="titulo-tempo-liturgico"
-      className={`mb-8 mx-2 ghost-border border-l-4 ${classeBordaCor(conteudo.cor)} bg-surface p-6 sm:p-8 sacred-shadow space-y-4`}
+      className={`mb-8 mx-2 ghost-border border-l-4 ${classeBordaCor(conteudo.cor)} bg-card p-5 sm:p-8 sacred-shadow space-y-4`}
     >
       <div className="flex items-center gap-3">
         <span className={`w-3 h-3 rounded-full shrink-0 ${classeFundoCor(conteudo.cor)}`} aria-hidden="true" />
@@ -43,13 +43,13 @@ export default function CardTempoLiturgico({ tempoFiltro }: PropsCardTempoLiturg
         </span>
       </div>
 
-      <h2 id="titulo-tempo-liturgico" className="font-headline-lg text-headline-lg text-on-surface">
+      <h2 id="titulo-tempo-liturgico" className="font-headline-lg text-2xl sm:text-headline-lg leading-tight text-on-surface">
         {titulo}
       </h2>
 
-      <p className="font-body-md text-on-surface leading-relaxed">{conteudo.sentido}</p>
+      <p className="font-body-md text-sm sm:text-base text-on-surface leading-relaxed">{conteudo.sentido}</p>
 
-      <dl className="grid gap-3 sm:grid-cols-2 font-body-md text-on-surface-variant">
+      <dl className="grid gap-4 sm:grid-cols-2 font-body-md text-sm text-on-surface-variant">
         <div>
           <dt className="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">Cor litúrgica</dt>
           <dd>{conteudo.significadoCor}</dd>

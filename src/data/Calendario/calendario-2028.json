@@ -1329,9 +1329,9 @@
   ],
   "2028-06-15": [
     {
-      "nome": "Quinta-feira da 10ª Semana do Tempo Comum",
-      "cor": "VERDE",
-      "rank": "FÉRIA",
+      "nome": "Santíssimo Corpo e Sangue de Cristo",
+      "cor": "BRANCO",
+      "rank": "SOLENIDADE",
       "temporada": "Tempo Comum"
     }
   ],
@@ -1353,9 +1353,9 @@
   ],
   "2028-06-18": [
     {
-      "nome": "Santíssimo Corpo e Sangue de Cristo",
-      "cor": "BRANCO",
-      "rank": "SOLENIDADE",
+      "nome": "11º Domingo do Tempo Comum",
+      "cor": "VERDE",
+      "rank": "DOMINGO",
       "temporada": "Tempo Comum"
     }
   ],

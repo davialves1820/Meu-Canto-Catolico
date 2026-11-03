@@ -32,7 +32,7 @@ export default function CalendarioView({ calendarioInicial }: PropsVisualizacaoC
   }
 
   return (
-    <main className="pt-32 pb-24 px-gutter max-w-container-max mx-auto">
+    <main className="pt-4 md:pt-12 pb-24 px-gutter max-w-container-max mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
         <div className="col-span-1 lg:col-span-2">
           <BuscaCalendario

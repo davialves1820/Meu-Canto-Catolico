@@ -25,25 +25,25 @@
   ],
   "2026-01-04": [
     {
-      "nome": "2º Domingo do Natal",
+      "nome": "Epifania do Senhor",
       "cor": "BRANCO",
-      "rank": "DOMINGO",
+      "rank": "SOLENIDADE",
       "temporada": "Natal"
     }
   ],
   "2026-01-05": [
     {
-      "nome": "Segunda-feira do Tempo do Natal",
+      "nome": "Segunda-feira depois da Epifania",
       "cor": "BRANCO",
-      "rank": "MEMÓRIA",
+      "rank": "FÉRIA",
       "temporada": "Natal"
     }
   ],
   "2026-01-06": [
     {
-      "nome": "Epifania do Senhor",
+      "nome": "Terça-feira depois da Epifania",
       "cor": "BRANCO",
-      "rank": "FESTA",
+      "rank": "FÉRIA",
       "temporada": "Natal"
     }
   ],
@@ -1233,9 +1233,9 @@
   ],
   "2026-06-04": [
     {
-      "nome": "Quinta-feira da 9ª Semana do Tempo Comum",
-      "cor": "VERDE",
-      "rank": "FÉRIA",
+      "nome": "Santíssimo Corpo e Sangue de Cristo",
+      "cor": "BRANCO",
+      "rank": "SOLENIDADE",
       "temporada": "Tempo Comum"
     }
   ],
@@ -1257,9 +1257,9 @@
   ],
   "2026-06-07": [
     {
-      "nome": "Santíssimo Corpo e Sangue de Cristo",
-      "cor": "BRANCO",
-      "rank": "SOLENIDADE",
+      "nome": "10º Domingo do Tempo Comum",
+      "cor": "VERDE",
+      "rank": "DOMINGO",
       "temporada": "Tempo Comum"
     }
   ],

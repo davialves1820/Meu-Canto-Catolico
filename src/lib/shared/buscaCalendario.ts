@@ -2,12 +2,14 @@ import { celebracoesMoveis, type TempoId } from "./anoLiturgico";
 
 export type ResultadoBusca =
   | { tipo: "tempo"; id: string; nome: string; tempo: TempoId }
-  | { tipo: "celebracao"; id: string; nome: string; data: string };
+  | { tipo: "celebracao"; id: string; nome: string; data: string; grau: string };
 
 /** Celebração fixa vinda do calendário anual (ex.: Natal, Assunção). */
 export interface CelebracaoFixa {
   nome: string;
   data: string;
+  /** Grau como vem do calendário (ex.: "SOLENIDADE", "FESTA DO SENHOR"). */
+  grau: string;
 }
 
 export const NOMES_TEMPOS: Record<TempoId, string> = {
@@ -63,10 +65,10 @@ export function criarIndiceBusca(ano: number, fixas: CelebracaoFixa[] = []): Ite
   const datasMoveis = new Set(moveis.map((c) => c.data));
 
   const celebracoes: ItemIndice[] = [
-    ...moveis.map((c) => ({ id: c.id, nome: c.nome, data: c.data })),
+    ...moveis.map((c) => ({ id: c.id, nome: c.nome, data: c.data, grau: c.grau })),
     ...fixas
       .filter((f) => !datasMoveis.has(f.data))
-      .map((f) => ({ id: `${f.data}-${normalizarBusca(f.nome)}`, nome: f.nome, data: f.data })),
+      .map((f) => ({ id: `${f.data}-${normalizarBusca(f.nome)}`, nome: f.nome, data: f.data, grau: f.grau.toLowerCase() })),
   ].map((c) => ({
     resultado: { tipo: "celebracao", ...c },
     termos: [c.nome, ...(SINONIMOS[c.id] ?? [])].map(normalizarBusca),

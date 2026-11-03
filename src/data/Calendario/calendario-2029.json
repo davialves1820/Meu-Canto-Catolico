@@ -1201,9 +1201,9 @@
   ],
   "2029-05-31": [
     {
-      "nome": "Visitação de Nossa Senhora",
+      "nome": "Santíssimo Corpo e Sangue de Cristo",
       "cor": "BRANCO",
-      "rank": "FESTA",
+      "rank": "SOLENIDADE",
       "temporada": "Tempo Comum"
     }
   ],
@@ -1225,9 +1225,9 @@
   ],
   "2029-06-03": [
     {
-      "nome": "Santíssimo Corpo e Sangue de Cristo",
-      "cor": "BRANCO",
-      "rank": "SOLENIDADE",
+      "nome": "9º Domingo do Tempo Comum",
+      "cor": "VERDE",
+      "rank": "DOMINGO",
       "temporada": "Tempo Comum"
     }
   ],
