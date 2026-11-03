@@ -1,0 +1,76 @@
+{
+  "advento": {
+    "nome": "Advento",
+    "cor": "roxo",
+    "significadoCor": "O roxo expressa a espera vigilante e a conversão. No 3º domingo (Gaudete) pode-se usar o rosa, sinal da alegria pela proximidade do Natal.",
+    "duracao": "Quatro semanas: do 1º Domingo do Advento (entre 27 de novembro e 3 de dezembro) até 24 de dezembro.",
+    "sentido": "Tempo de preparação para o Natal, que abre o ano litúrgico. A Igreja recorda a primeira vinda de Cristo, na humildade de Belém, e aguarda com esperança a sua vinda gloriosa no fim dos tempos. É uma espera alegre e vigilante, acompanhada por Maria, João Batista e os profetas.",
+    "links": [
+      { "rotulo": "Liturgia do dia", "href": "/liturgia" },
+      { "rotulo": "Catecismo §524", "href": "/catecismo/paragrafo/524" },
+      { "rotulo": "Alma Redemptoris Mater", "href": "/oracoes/alma-redemptoris-mater-advento" }
+    ]
+  },
+  "natal": {
+    "nome": "Natal",
+    "cor": "branco",
+    "significadoCor": "O branco é a cor da luz, da alegria e da glória de Deus que se manifesta em Cristo.",
+    "duracao": "Da Missa da noite de 24 de dezembro até a festa do Batismo do Senhor, em janeiro.",
+    "sentido": "Celebra o mistério da Encarnação: o Filho eterno de Deus se fez homem e habitou entre nós. O tempo inclui a oitava do Natal, a solenidade de Santa Maria, Mãe de Deus, e a Epifania, quando Cristo se revela a todos os povos.",
+    "links": [
+      { "rotulo": "Liturgia do dia", "href": "/liturgia" },
+      { "rotulo": "Catecismo §525", "href": "/catecismo/paragrafo/525" },
+      { "rotulo": "Natal do Senhor", "href": "/catequese/festas/natal" }
+    ]
+  },
+  "quaresma": {
+    "nome": "Quaresma",
+    "cor": "roxo",
+    "significadoCor": "O roxo é sinal de penitência e conversão. No 4º domingo (Laetare) pode-se usar o rosa, lembrando que a Páscoa se aproxima.",
+    "duracao": "Quarenta dias: da Quarta-feira de Cinzas até a manhã da Quinta-feira Santa, antes da Missa da Ceia do Senhor.",
+    "sentido": "Caminho de conversão rumo à Páscoa, inspirado nos quarenta dias de Jesus no deserto. Pela oração, pelo jejum e pela esmola, a Igreja se purifica e se prepara para renovar, na Vigília Pascal, as promessas do Batismo.",
+    "links": [
+      { "rotulo": "Liturgia do dia", "href": "/liturgia" },
+      { "rotulo": "Catecismo §1438", "href": "/catecismo/paragrafo/1438" },
+      { "rotulo": "Guia da Quaresma", "href": "/catequese/periodos/quaresma" },
+      { "rotulo": "Ave, Rainha dos céus", "href": "/oracoes/ave-rainha-dos-ceus-quaresma" }
+    ]
+  },
+  "triduo": {
+    "nome": "Tríduo Pascal",
+    "cor": "vermelho",
+    "significadoCor": "Branco na Missa da Ceia do Senhor, vermelho na Sexta-feira da Paixão, pelo sangue de Cristo, e de novo branco na Vigília Pascal.",
+    "duracao": "Da Missa da Ceia do Senhor, na noite da Quinta-feira Santa, até as Vésperas do Domingo de Páscoa.",
+    "sentido": "Ápice de todo o ano litúrgico. Em três dias celebra-se um único mistério pascal: a instituição da Eucaristia, a Paixão e morte do Senhor, o silêncio do sepulcro e a Ressurreição, proclamada na Vigília Pascal, a mãe de todas as vigílias.",
+    "links": [
+      { "rotulo": "Liturgia do dia", "href": "/liturgia" },
+      { "rotulo": "Catecismo §1168", "href": "/catecismo/paragrafo/1168" },
+      { "rotulo": "A Santa Cruz", "href": "/oracoes/a-santa-cruz" }
+    ]
+  },
+  "pascal": {
+    "nome": "Tempo Pascal",
+    "cor": "branco",
+    "significadoCor": "O branco celebra a alegria e a vitória da Ressurreição. Em Pentecostes usa-se o vermelho, cor do fogo do Espírito Santo.",
+    "duracao": "Cinquenta dias: do Domingo de Páscoa até o Domingo de Pentecostes.",
+    "sentido": "Os cinquenta dias são celebrados como um só dia de festa, um grande domingo. A Igreja contempla o Ressuscitado, celebra sua Ascensão aos céus e acolhe o dom do Espírito Santo em Pentecostes, que conclui o tempo.",
+    "links": [
+      { "rotulo": "Liturgia do dia", "href": "/liturgia" },
+      { "rotulo": "Catecismo §1169", "href": "/catecismo/paragrafo/1169" },
+      { "rotulo": "Páscoa", "href": "/catequese/festas/pascoa" },
+      { "rotulo": "Rainha do céu", "href": "/oracoes/rainha-do-ceu" }
+    ]
+  },
+  "comum": {
+    "nome": "Tempo Comum",
+    "cor": "verde",
+    "significadoCor": "O verde simboliza a esperança e o crescimento da vida cristã no dia a dia.",
+    "duracao": "33 ou 34 semanas, em duas partes: depois do Batismo do Senhor até a véspera das Cinzas, e depois de Pentecostes até a véspera do Advento.",
+    "sentido": "Não celebra um aspecto particular, mas o mistério de Cristo em sua plenitude, sobretudo aos domingos. Acompanhando a vida pública de Jesus, a Igreja cresce na fé e no seguimento diário do Senhor. Termina com a solenidade de Cristo Rei.",
+    "links": [
+      { "rotulo": "Liturgia do dia", "href": "/liturgia" },
+      { "rotulo": "Catecismo §1166", "href": "/catecismo/paragrafo/1166" },
+      { "rotulo": "Angelus", "href": "/oracoes/angelus" }
+    ]
+  }
+}
