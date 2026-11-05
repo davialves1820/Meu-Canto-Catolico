@@ -1,4 +1,5 @@
 import { getDadosBiblia } from "@/lib/server/services/biblia";
+import { type Livro, type ResumoLivro } from "@/types/biblia";
 import { BibleIndexSkeleton } from "@/components/ui/skeletons";
 import { Metadata } from "next";
 import { Suspense } from "react";
@@ -15,7 +16,9 @@ export const metadata: Metadata = pageMetadata({
   keywords: ["bíblia sagrada", "bíblia católica", "bíblia ave maria", "ler a bíblia online"],
 });
 
-export const revalidate = 86400;
+function resumir(livros: Livro[]): ResumoLivro[] {
+  return livros.map((livro) => ({ nome: livro.nome, totalCapitulos: livro.capitulos.length }));
+}
 
 async function ConteudoBiblia() {
   const data = await getDadosBiblia();
@@ -47,13 +50,13 @@ async function ConteudoBiblia() {
         <BooksGrid
           title="Antigo Testamento"
           subtitle="A Antiga Aliança"
-          books={data.antigoTestamento}
+          books={resumir(data.antigoTestamento)}
         />
 
         <BooksGrid
           title="Novo Testamento"
           subtitle="A Nova e Eterna Aliança"
-          books={data.novoTestamento}
+          books={resumir(data.novoTestamento)}
         />
       </div>
     </main>

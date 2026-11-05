@@ -10,8 +10,6 @@ import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { siteConfig, absoluteUrl } from "@/config/site";
-import { getCorLiturgicaHoje } from "@/lib/server/services/calendarioLiturgico";
-import { normalizarCorLiturgica } from "@/lib/shared/temaLiturgico";
 import { AuthProvider } from "@/components/shared/AuthProvider";
 
 
@@ -136,18 +134,22 @@ export const viewport: Viewport = {
 };
 
 // O layout não lê cookies/sessão (o SessionProvider busca a sessão no cliente), então
-// as páginas podem ser estáticas com ISR. Este teto vale para todas que não definem um
-// revalidate menor: sem ele, páginas sem revalidate ficariam congeladas no dia do build
-// (data da home, cor litúrgica do dia).
-export const revalidate = 3600;
+// as páginas podem ser estáticas com ISR. Este teto vale para todas as páginas, porque
+// o Next usa o menor revalidate entre layout e página: quem muda mais rápido que isso
+// (ex.: a home) define o próprio. O teto mantém atualizado o ano do rodapé.
+export const revalidate = 604800;
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
-  const corLiturgica = normalizarCorLiturgica(await getCorLiturgicaHoje());
-
   return (
-    <html lang="pt-BR" data-liturgical-color={corLiturgica ?? undefined}>
+    // suppressHydrationWarning: /tema-liturgico.js define data-liturgical-color antes da hidratação.
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        {/* Síncrono de propósito: aplica a cor do dia antes da pintura, sem piscar o tema padrão. */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script src="/tema-liturgico.js" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${montserrat.variable} antialiased bg-[#fbf9f4] text-[#1b1c19] min-h-screen flex flex-col`}>
         <div className="liturgical-bg" aria-hidden="true">
           <span />

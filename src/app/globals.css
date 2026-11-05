@@ -154,7 +154,7 @@
 
   /* ─── Tema litúrgico ───────────────────────────────────────────────────
      A cor de destaque do site acompanha a cor litúrgica do dia (definida
-     como data-liturgical-color em <html> pelo layout raiz). "Branco" não
+     como data-liturgical-color em <html> por /tema-liturgico.js). "Branco" não
      tem regra própria — cai no dourado padrão acima, que já é festivo. */
   :root[data-liturgical-color="roxo"] {
     --primary: 262 46% 32%;

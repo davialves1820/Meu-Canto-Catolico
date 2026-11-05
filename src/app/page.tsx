@@ -10,6 +10,9 @@ import { Leaf, Sparkles, BookOpenText, Book, ArrowRight, Newspaper, Compass } fr
 import { Suspense } from "react";
 import { SantoDoDiaSkeleton } from "@/components/ui/skeletons";
 
+// As notícias e a liturgia da home mudam ao longo do dia.
+export const revalidate = 3600;
+
 export default async function Home() {
   const now = new Date();
   const brDate = new Date(now.toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
