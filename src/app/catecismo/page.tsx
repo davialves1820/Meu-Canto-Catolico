@@ -15,8 +15,6 @@ export const metadata: Metadata = pageMetadata({
   keywords: ["catecismo da igreja católica", "catecismo", "CIC", "doutrina católica", "ler o catecismo online"],
 });
 
-export const revalidate = 86400;
-
 async function ConteudoCatecismo() {
   const [indice, dados] = await Promise.all([getIndiceCatecismo(), getDadosCatecismo()]);
 

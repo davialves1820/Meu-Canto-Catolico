@@ -81,10 +81,16 @@ export interface PropsBookCard {
   chapters: number;
 }
 
+/** Só o que a grade de livros mostra: o texto dos versículos não vai para o cliente. */
+export interface ResumoLivro {
+  nome: string;
+  totalCapitulos: number;
+}
+
 export interface PropsBooksGrid {
   title: string;
   subtitle: string;
-  books: Livro[];
+  books: ResumoLivro[];
 }
 
 export interface PropsItemVersiculo {

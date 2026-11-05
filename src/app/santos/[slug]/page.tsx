@@ -11,8 +11,6 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
 import { siteConfig, absoluteUrl } from "@/config/site";
 
-export const revalidate = 86400;
-
 export async function generateStaticParams() {
   const { santos } = await getSantos({ tipo: "Todos", busca: "", pagina: 1, porPagina: 9999 });
   return santos.map((s) => ({ slug: s.slug }));
