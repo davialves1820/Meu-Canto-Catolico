@@ -3,10 +3,6 @@ export const FEEDS = {
         url: "https://www.vaticannews.va/pt.rss.xml",
         label: "Vatican News",
     },
-    cnbb: {
-        url: "https://www.cnbb.org.br/feed/",
-        label: "CNBB",
-    },
     // Para adicionar uma nova fonte: basta acrescentar aqui.
     // O tipo FonteNoticia é derivado automaticamente via keyof typeof FEEDS.
     //
@@ -21,7 +17,7 @@ export type FonteNoticia = keyof typeof FEEDS;
 /** Todas as fontes cadastradas — usado pelos callers que querem misturar tudo. */
 export const TODAS_AS_FONTES = Object.keys(FEEDS) as FonteNoticia[];
 
-/** Valida um valor vindo de query string ("fonte=cnbb") como uma FonteNoticia real. */
+/** Valida um valor vindo de query string ("fonte=vaticannews") como uma FonteNoticia real. */
 export function ehFonteValida(valor: string | null | undefined): valor is FonteNoticia {
   return !!valor && Object.prototype.hasOwnProperty.call(FEEDS, valor);
 }

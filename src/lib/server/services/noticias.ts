@@ -56,8 +56,7 @@ function parsearItem(item: RssItem, fonte: FonteNoticia): Noticia | null {
   const link = item.link;
   const desc = item.description ?? item["content:encoded"] ?? "";
   const pubDate = item.pubDate ?? item["dc:date"];
-  // Feeds com múltiplas tags <category> (ex.: CNBB) viram array no fast-xml-parser —
-  // usamos só a primeira, como já era o comportamento implícito com uma fonte só.
+  // Feeds com múltiplas tags <category> viram array no fast-xml-parser — usamos só a primeira.
   const categoria = Array.isArray(item.category) ? item.category[0] : item.category;
 
   if (!titulo || !link) {

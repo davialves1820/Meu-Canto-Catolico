@@ -23,6 +23,9 @@ export default function FiltroFonteNoticias({ fonteAtiva }: Props) {
     router.push(`/noticias?${q.toString()}`, { scroll: false });
   };
 
+  // Com uma fonte só, "Todas" e a fonte mostram o mesmo conteúdo: o filtro não tem o que filtrar.
+  if (OPCOES.length <= 2) return null;
+
   return (
     <div className="flex flex-wrap items-center justify-center gap-3 mt-6" role="group" aria-label="Filtrar por fonte">
       {OPCOES.map((opt) => {

@@ -15,9 +15,9 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = pageMetadata({
   title: "Notícias Católicas",
-  description: "As últimas notícias do Papa, da Santa Sé e da Igreja no Brasil, direto do Vatican News e da CNBB, atualizadas continuamente.",
+  description: "As últimas notícias do Papa, da Santa Sé e da Igreja no mundo, direto do Vatican News, atualizadas continuamente.",
   path: "/noticias",
-  keywords: ["notícias católicas", "papa", "vatican news", "cnbb", "igreja no brasil"],
+  keywords: ["notícias católicas", "papa", "vatican news", "santa sé", "igreja católica"],
 });
 
 interface PropsPaginaNoticias {
@@ -85,44 +85,15 @@ async function NoticiasContent({ busca, fonte }: { busca: string; fonte: FonteNo
           <div className="h-[1px] w-12 bg-secondary/20" />
         </div>
         <p className="font-label-sm text-outline">
-          {fonte === "cnbb" ? (
-            <>
-              Conteúdo via RSS da{" "}
-              <a
-                href="https://www.cnbb.org.br/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
-              >
-                CNBB
-              </a>
-            </>
-          ) : (
-            <>
-              Conteúdo via RSS do{" "}
-              <a
-                href="https://www.vaticannews.va/pt.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
-              >
-                Vatican News
-              </a>
-              {fonte === "todas" && (
-                <>
-                  {" "}e da{" "}
-                  <a
-                    href="https://www.cnbb.org.br/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
-                  >
-                    CNBB
-                  </a>
-                </>
-              )}
-            </>
-          )}
+          Conteúdo via RSS do{" "}
+          <a
+            href="https://www.vaticannews.va/pt.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30"
+          >
+            Vatican News
+          </a>
         </p>
       </div>
     </div>
@@ -149,7 +120,7 @@ export default async function NoticiasPage({ searchParams }: PropsPaginaNoticias
             <Breadcrumb items={[{ label: "Notícias" }]} className="mb-6 justify-center" />
             <h1 className="font-headline-xl text-primary mb-6">Notícias Católicas</h1>
             <p className="font-body-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
-              Mensagens do Papa, acontecimentos da Igreja e notícias da CNBB para alimentar sua fé e conhecimento.
+              Mensagens do Papa e acontecimentos da Igreja no mundo para alimentar sua fé e conhecimento.
             </p>
             <BuscaNoticias valorInicial={busca} />
             <FiltroFonteNoticias fonteAtiva={fonte} />

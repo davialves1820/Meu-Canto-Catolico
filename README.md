@@ -1,6 +1,6 @@
 # Meu Canto Católico
  
-O **Meu Canto Católico** é uma plataforma integrada para a vida de fé e a centralização de informações católicas. Ela oferece acesso à Bíblia Sagrada, ao Catecismo da Igreja Católica, Liturgia Diária, Calendário Litúrgico, Santos, Orações, Rosário, Exame de Consciência, Catequese e notícias atualizadas do Vaticano e da CNBB — com pesquisa em todo o site e conta de usuário.
+O **Meu Canto Católico** é uma plataforma integrada para a vida de fé e a centralização de informações católicas. Ela oferece acesso à Bíblia Sagrada, ao Catecismo da Igreja Católica, Liturgia Diária, Calendário Litúrgico, Santos, Orações, Rosário, Exame de Consciência, Catequese e notícias atualizadas do Vaticano — com pesquisa em todo o site e conta de usuário.
 
 ## 🛠️ Tecnologias Principais
 
@@ -17,7 +17,7 @@ O **Meu Canto Católico** é uma plataforma integrada para a vida de fé e a cen
 Para garantir a fidelidade e riqueza das informações, utilizei as seguintes fontes:
 
 - **Santos**: Dados obtidos via Web Scraping da Wikipedia.
-- **Notícias**: Sincronizadas via RSS do [Vatican News](https://www.vaticannews.va/pt.rss.xml) e da [CNBB](https://www.cnbb.org.br/feed/).
+- **Notícias**: Sincronizadas via RSS do [Vatican News](https://www.vaticannews.va/pt.rss.xml).
 - **Calendário Litúrgico**: Dados provenientes do [Romcal](https://www.romcal.net/).
 - **Orações**: Coletadas do site [Padre Paulo Ricardo](https://padrepauloricardo.org/oracoes/) via Web Scraping.
 - **Liturgia Diária**: API de [Dancrf/liturgia-diaria](https://github.com/Dancrf/liturgia-diaria).
