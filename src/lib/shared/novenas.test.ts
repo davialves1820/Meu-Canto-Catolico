@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import novenasData from "../../data/novenas.json";
+import santosData from "../../data/santos.json";
+import { NOVENAS_POR_SANTO } from "../../config/santosNovenas";
 import { dataDaFesta, diaDaNovena, formatarPeriodo, hojeEmBrasilia, periodoNovena, proximoPeriodo } from "./novenas";
 import type { Novena } from "@/types/novena";
 
@@ -105,5 +107,16 @@ describe("novenas.json", () => {
 
   it("não traz HTML cru", () => {
     expect(JSON.stringify(novenasData)).not.toMatch(/<\/?(p|div|span|h\d|br)\b/);
+  });
+});
+
+describe("NOVENAS_POR_SANTO", () => {
+  it("liga santos e novenas que existem", () => {
+    const santos = new Set((santosData as { santos: { slug: string }[] }).santos.map((s) => s.slug));
+    const slugsNovenas = new Set(novenas.map((n) => n.slug));
+    for (const [santo, lista] of Object.entries(NOVENAS_POR_SANTO)) {
+      expect(santos.has(santo), santo).toBe(true);
+      for (const n of lista) expect(slugsNovenas.has(n), n).toBe(true);
+    }
   });
 });

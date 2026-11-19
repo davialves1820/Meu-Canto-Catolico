@@ -2,8 +2,10 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
-import { CalendarDays, ChevronLeft, Cross, Hourglass, Sparkles } from "lucide-react";
+import { CalendarDays, ChevronLeft, ChevronRight, Cross, Hourglass, Sparkles } from "lucide-react";
 import { getNovenaPorSlug, getNovenasResumo } from "@/lib/server/services/novenas";
+import { getSantoPorSlug } from "@/lib/server/services/santos";
+import { SANTO_POR_NOVENA } from "@/config/santosNovenas";
 import LeitorNovena from "@/components/novena/LeitorNovena";
 import { PropsPaginaDetalheNovena } from "@/types/novena";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -51,6 +53,7 @@ export default async function PaginaDetalheNovena({ params }: PropsPaginaDetalhe
   }
 
   const totalDias = novena.versoes[0].dias.length;
+  const santo = SANTO_POR_NOVENA[novena.slug] ? await getSantoPorSlug(SANTO_POR_NOVENA[novena.slug]) : null;
   const festa = novena.festa
     ? "movel" in novena.festa
       ? FESTAS_MOVEIS[novena.festa.movel]
@@ -128,6 +131,15 @@ export default async function PaginaDetalheNovena({ params }: PropsPaginaDetalhe
                 </div>
               ))}
             </div>
+            {santo && (
+              <Link
+                href={`/santos/${santo.slug}`}
+                className="inline-flex items-center gap-1.5 mt-8 font-label-sm text-[11px] text-secondary hover:text-primary transition-colors"
+              >
+                Conheça a vida de {santo.nome}
+                <ChevronRight size={14} aria-hidden="true" />
+              </Link>
+            )}
           </div>
         </div>
       </header>

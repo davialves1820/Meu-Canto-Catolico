@@ -2,6 +2,7 @@
 
 import { PropsSecaoSalmo } from "../../types/liturgia";
 import { Music } from "lucide-react";
+import ReferenciaBiblica from "./ReferenciaBiblica";
 
 const PsalmSection = ({ salmo }: PropsSecaoSalmo) => {
   return (
@@ -23,9 +24,7 @@ const PsalmSection = ({ salmo }: PropsSecaoSalmo) => {
         {/* Reference */}
         <div className="flex items-center gap-4 mb-12">
           <div className="w-16 h-[1px] bg-primary/30"></div>
-          <p className="text-xl md:text-2xl font-heading font-medium text-primary tracking-normal">
-            {salmo.referencia}
-          </p>
+          <ReferenciaBiblica referencia={salmo.referencia} />
         </div>
 
         {/* Refrain */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { PropsSecaoLeitura } from "@/types/liturgia";
+import ReferenciaBiblica from "./ReferenciaBiblica";
 
 const ReadingSection = ({ titulo, leitura, Icon }: PropsSecaoLeitura) => {
   return (
@@ -28,9 +29,7 @@ const ReadingSection = ({ titulo, leitura, Icon }: PropsSecaoLeitura) => {
         {/* Reference */}
         <div className="flex items-center gap-4 mb-10">
           <div className="w-16 h-[1px] bg-primary/30"></div>
-          <p className="text-xl md:text-2xl font-heading font-medium text-primary tracking-normal">
-            {leitura.referencia}
-          </p>
+          <ReferenciaBiblica referencia={leitura.referencia} />
         </div>
 
         {/* Title */}

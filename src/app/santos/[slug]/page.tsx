@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getSantoPorSlug, getSantos } from "@/lib/server/services/santos";
+import { getNovenasDoSanto } from "@/lib/server/services/novenas";
 import { Metadata } from "next";
-import { ChevronLeft, Calendar, Crown, Star, Cross, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, Calendar, Crown, Star, Cross, Sparkles, FlameKindling } from "lucide-react";
 import LinkExternoSanto from "@/components/santos/LinkExternoSanto";
 import { PropsPaginaDetalheSanto } from "@/types/santos";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
@@ -48,6 +49,8 @@ export default async function PaginaDetalheSanto({ params }: PropsPaginaDetalheS
   if (!santo) {
     notFound();
   }
+
+  const novenas = await getNovenasDoSanto(santo.slug);
 
   const campos = [
     { label: "Data de Festa", valor: santo.data_festa },
@@ -152,6 +155,27 @@ export default async function PaginaDetalheSanto({ params }: PropsPaginaDetalheS
                 ))}
               </div>
             </div>
+            {novenas.length > 0 && (
+              <div className="bg-white p-8 rounded-2xl border border-[#c9a84c]/30">
+                <p className="font-label-sm text-primary mb-4 flex items-center gap-2">
+                  <FlameKindling size={14} aria-hidden="true" />
+                  {novenas.length > 1 ? "Rezar as novenas" : "Rezar a novena"}
+                </p>
+                <ul className="space-y-3">
+                  {novenas.map((n) => (
+                    <li key={n.slug}>
+                      <Link
+                        href={`/novenas/${n.slug}`}
+                        className="group flex items-center justify-between gap-3 font-body-sm text-on-surface hover:text-primary transition-colors"
+                      >
+                        {n.titulo}
+                        <ChevronRight size={14} className="shrink-0 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10">
               <p className="font-label-sm text-primary mb-4">Saiba Mais</p>
               <LinkExternoSanto href={santo.url} />

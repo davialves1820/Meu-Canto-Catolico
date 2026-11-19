@@ -1,9 +1,12 @@
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
+import { rehypeLinksOracoes } from "@/lib/shared/linksOracoes";
 import { PropsTextoNovena } from "@/types/novena";
 
 /**
  * Texto da novena em Markdown. O HTML cru é ignorado pelo react-markdown, então o
- * conteúdo importado nunca injeta marcação na página.
+ * conteúdo importado nunca injeta marcação na página. Orações citadas ("um Pai-Nosso")
+ * viram links para a página da oração.
  */
 export default function TextoNovena({ texto, capitular = false }: PropsTextoNovena) {
   return (
@@ -15,6 +18,7 @@ export default function TextoNovena({ texto, capitular = false }: PropsTextoNove
       }`}
     >
       <ReactMarkdown
+        rehypePlugins={[rehypeLinksOracoes]}
         components={{
           h1: ({ children }) => <h4 className="font-headline-md text-xl text-primary pt-4">{children}</h4>,
           h2: ({ children }) => <h4 className="font-headline-md text-xl text-primary pt-4">{children}</h4>,
@@ -29,11 +33,19 @@ export default function TextoNovena({ texto, capitular = false }: PropsTextoNove
           ul: ({ children }) => <ul className="list-disc pl-6 space-y-2 marker:text-secondary">{children}</ul>,
           ol: ({ children }) => <ol className="list-decimal pl-6 space-y-2 marker:text-secondary">{children}</ol>,
           hr: () => <hr className="border-secondary/20 my-8" />,
-          a: ({ children, href }) => (
-            <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary underline hover:no-underline">
-              {children}
-            </a>
-          ),
+          a: ({ children, href }) =>
+            href?.startsWith("/") ? (
+              <Link
+                href={href}
+                className="text-inherit underline decoration-secondary/50 decoration-dotted underline-offset-4 hover:text-primary hover:decoration-solid"
+              >
+                {children}
+              </Link>
+            ) : (
+              <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary underline hover:no-underline">
+                {children}
+              </a>
+            ),
         }}
       >
         {texto}

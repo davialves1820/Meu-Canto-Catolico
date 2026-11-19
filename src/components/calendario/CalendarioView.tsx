@@ -13,7 +13,7 @@ import CardTempoLiturgico from "./CardTempoLiturgico";
 import BuscaCalendario from "./BuscaCalendario";
 import { CalendarioSkeleton } from "@/components/ui/skeletons";
 
-export default function CalendarioView({ calendarioInicial }: PropsVisualizacaoCalendario) {
+export default function CalendarioView({ calendarioInicial, devocoes }: PropsVisualizacaoCalendario) {
   const cal = useCalendario(calendarioInicial);
 
   // Depois de uma busca, leva o usuário até a data destacada.
@@ -104,12 +104,14 @@ export default function CalendarioView({ calendarioInicial }: PropsVisualizacaoC
         <DaySidebar
           diaSelecionado={cal.diaSelecionado}
           dadosSelecionados={cal.dadosSelecionados}
+          devocoes={devocoes}
         />
       </div>
 
       <DaySheet
         diaSelecionado={cal.diaSelecionado}
         dadosSelecionados={cal.dadosSelecionados}
+        devocoes={devocoes}
         aoFechar={cal.limparDia}
       />
     </main>

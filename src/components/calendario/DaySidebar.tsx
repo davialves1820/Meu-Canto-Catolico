@@ -5,8 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { DateTime } from "luxon";
 import { Book, Music, BookOpen, Calendar as CalendarIcon } from "lucide-react";
 import { type PropsBarraLateralDia } from "@/types/calendario";
+import DevocoesDoDia from "./DevocoesDoDia";
 
-export default function DaySidebar({ diaSelecionado, dadosSelecionados }: PropsBarraLateralDia) {
+export default function DaySidebar({ diaSelecionado, dadosSelecionados, devocoes }: PropsBarraLateralDia) {
   const dataFormatada = diaSelecionado
     ? DateTime.fromISO(diaSelecionado).setLocale("pt-BR").toFormat("d 'de' MMMM 'de' yyyy")
     : "";
@@ -65,6 +66,8 @@ export default function DaySidebar({ diaSelecionado, dadosSelecionados }: PropsB
                   </li>
                 </ul>
               </div>
+
+              <DevocoesDoDia dia={diaSelecionado} devocoes={devocoes} />
 
               {dataUrl && (
                 <Link

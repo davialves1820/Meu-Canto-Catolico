@@ -1,4 +1,5 @@
 import novenasData from "@/data/novenas.json";
+import { NOVENAS_POR_SANTO } from "@/config/santosNovenas";
 
 import { Novena, NovenaResumo } from "@/types/novena";
 
@@ -22,6 +23,12 @@ export async function getNovenasResumo(): Promise<NovenaResumo[]> {
 
 export async function getNovenaPorSlug(slug: string): Promise<Novena | null> {
   return TODAS.find((n) => n.slug === slug) ?? null;
+}
+
+/** Novenas ligadas a um santo da página /santos/[slug]. */
+export async function getNovenasDoSanto(santoSlug: string): Promise<Novena[]> {
+  const slugs = NOVENAS_POR_SANTO[santoSlug] ?? [];
+  return slugs.map((s) => TODAS.find((n) => n.slug === s)).filter((n): n is Novena => !!n);
 }
 
 export async function buscarNovenas(query: string, limite: number): Promise<Novena[]> {
