@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { absoluteUrl } from "@/config/site";
 
@@ -11,11 +9,12 @@ export interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  /** Sem efeito desde que a trilha deixou de ser exibida; mantido para não mexer nos chamadores. */
   className?: string;
 }
 
-/** Trilha de navegação visível + BreadcrumbList (Schema.org) para SEO. */
-export function Breadcrumb({ items, className }: BreadcrumbProps) {
+/** BreadcrumbList (Schema.org) para SEO; não renderiza nada visível. */
+export function Breadcrumb({ items }: BreadcrumbProps) {
   const full: BreadcrumbItem[] = [{ label: "Início", href: "/" }, ...items];
 
   const jsonLd = {
@@ -29,30 +28,5 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
     })),
   };
 
-  return (
-    <>
-      <JsonLd data={jsonLd} />
-      <nav aria-label="Breadcrumb" className={className}>
-        <ol className="flex flex-wrap items-center gap-1.5 text-[11px] font-label-sm uppercase tracking-wider text-on-surface-variant">
-          {full.map((item, i) => {
-            const isLast = i === full.length - 1;
-            return (
-              <li key={`${item.label}-${i}`} className="flex items-center gap-1.5">
-                {item.href && !isLast ? (
-                  <Link href={item.href} className="hover:text-primary transition-colors">
-                    {item.label}
-                  </Link>
-                ) : (
-                  <span aria-current={isLast ? "page" : undefined} className={isLast ? "text-primary" : undefined}>
-                    {item.label}
-                  </span>
-                )}
-                {!isLast && <ChevronRight size={11} aria-hidden="true" className="opacity-50" />}
-              </li>
-            );
-          })}
-        </ol>
-      </nav>
-    </>
-  );
+  return <JsonLd data={jsonLd} />;
 }

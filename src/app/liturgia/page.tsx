@@ -53,9 +53,7 @@ export default async function LiturgiaPage({ searchParams }: PropsPaginaLiturgia
   return (
     <div className="flex flex-col bg-background min-h-screen">
       <main className="flex-1">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-6">
-          <Breadcrumb items={[{ label: "Liturgia Diária" }]} />
-        </div>
+        <Breadcrumb items={[{ label: "Liturgia Diária" }]} />
         <DateSelector
           dataInicial={dateForSelector}
           parametrosAtuais={{ dia, mes, ano }}

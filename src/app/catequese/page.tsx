@@ -14,9 +14,7 @@ export const metadata: Metadata = pageMetadata({
 export default function CatequesePage() {
   return (
     <div className="bg-[#fbf9f4] text-[#1b1c19] selection:bg-[#ffe08f]/30 selection:text-[#584400]">
-      <div className="max-w-container-max mx-auto px-margin-desktop pt-8">
-        <Breadcrumb items={[{ label: "Catequese" }]} />
-      </div>
+      <Breadcrumb items={[{ label: "Catequese" }]} />
       <HeroSection />
       <CategoryGrid />
     </div>
