@@ -7,12 +7,23 @@ import NoticiaCard from "@/components/noticias/NoticiaCard";
 import SantoDoDia from "@/components/santos/SantoDoDia";
 import NovenasDoDia from "@/components/novena/NovenasDoDia";
 import ExegeseButton from "@/components/liturgia/ExegeseButton";
-import { Leaf, Sparkles, BookOpenText, Book, ArrowRight, Newspaper, Compass } from "lucide-react";
+import { Leaf, Sparkles, BookOpenText, Book, ArrowRight, Newspaper, Compass, FlameKindling, Users, Cross } from "lucide-react";
 import { Suspense } from "react";
 import { SantoDoDiaSkeleton } from "@/components/ui/skeletons";
 
 // As notícias e a liturgia da home mudam ao longo do dia.
 export const revalidate = 3600;
+
+const ATALHOS = [
+  { href: "/biblia", rotulo: "Bíblia", Icone: Book },
+  { href: "/liturgia", rotulo: "Liturgia", Icone: BookOpenText },
+  { href: "/oracoes", rotulo: "Orações", Icone: Sparkles },
+  { href: "/novenas", rotulo: "Novenas", Icone: FlameKindling },
+  { href: "/santos", rotulo: "Santos", Icone: Users },
+  { href: "/rosario", rotulo: "Rosário", Icone: Cross },
+  { href: "/noticias", rotulo: "Notícias", Icone: Newspaper },
+  { href: "/recursos", rotulo: "Recursos", Icone: Compass },
+];
 
 export default async function Home() {
   const now = new Date();
@@ -63,27 +74,17 @@ export default async function Home() {
 
         {/* Main Categories Grid */}
         <section className="px-5 md:px-16 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            <Link className="flex flex-col items-center p-8 bg-[#f5f3ee] hover:bg-[#f0eee9] transition-all group border border-primary/30 hover:-translate-y-1 duration-300" href="/biblia">
-              <Book size={32} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-[#1b1c19]">Bíblia</span>
-            </Link>
-            <Link className="flex flex-col items-center p-8 bg-[#f5f3ee] hover:bg-[#f0eee9] transition-all group border border-primary/30 hover:-translate-y-1 duration-300" href="/liturgia">
-              <BookOpenText size={32} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-[#1b1c19]">Liturgia</span>
-            </Link>
-            <Link className="flex flex-col items-center p-8 bg-[#f5f3ee] hover:bg-[#f0eee9] transition-all group border border-primary/30 hover:-translate-y-1 duration-300" href="/oracoes">
-              <Sparkles size={32} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-[#1b1c19]">Orações</span>
-            </Link>
-            <Link className="flex flex-col items-center p-8 bg-[#f5f3ee] hover:bg-[#f0eee9] transition-all group border border-primary/30 hover:-translate-y-1 duration-300" href="/noticias">
-              <Newspaper size={32} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-[#1b1c19]">Notícias</span>
-            </Link>
-            <Link className="flex flex-col items-center p-8 bg-[#f5f3ee] hover:bg-[#f0eee9] transition-all group border border-primary/30 hover:-translate-y-1 duration-300" href="/recursos">
-              <Compass size={32} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <span className="text-[11px] font-semibold uppercase tracking-widest text-[#1b1c19]">Recursos</span>
-            </Link>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {ATALHOS.map(({ href, rotulo, Icone }) => (
+              <Link
+                key={href}
+                className="flex flex-col items-center p-6 md:p-8 bg-[#f5f3ee] hover:bg-[#f0eee9] transition-all group border border-primary/30 hover:-translate-y-1 duration-300"
+                href={href}
+              >
+                <Icone size={32} className="text-primary mb-4 group-hover:scale-110 transition-transform" />
+                <span className="text-[11px] font-semibold uppercase tracking-widest text-[#1b1c19]">{rotulo}</span>
+              </Link>
+            ))}
           </div>
         </section>
 

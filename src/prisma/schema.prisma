@@ -25,6 +25,20 @@ model User {
   avatarUrl           String?   @map("avatar_url")
   resetTokenHash      String?   @map("reset_token_hash")
   resetTokenExpiresAt DateTime? @map("reset_token_expires_at") @db.Timestamptz(6)
+  progressos          ProgressoUsuario[]
 
   @@map("users")
+}
+
+/// Progresso das devoções (novenas, Rosário) sincronizado entre aparelhos.
+/// `chave` identifica a devoção, ex.: "novena:santo-antonio:principal" ou "rosario".
+model ProgressoUsuario {
+  userId       String   @map("user_id") @db.Uuid
+  chave        String
+  dados        Json
+  atualizadoEm DateTime @map("atualizado_em") @db.Timestamptz(6)
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, chave])
+  @@map("progresso_usuario")
 }

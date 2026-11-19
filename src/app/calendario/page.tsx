@@ -2,6 +2,9 @@ import React from "react";
 import CalendarioView from "@/components/calendario/CalendarioView";
 import { type EntradaDiaJson, type DadosDiaLiturgico } from "@/types/calendario";
 import { getCalendarioLiturgico } from "@/lib/server/services/calendarioLiturgico";
+import { getCalendarioSantos } from "@/lib/server/services/calendarioSantos";
+import { getNovenasResumo } from "@/lib/server/services/novenas";
+import { type DevocoesCalendario } from "@/types/calendario";
 import { Metadata } from "next";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
@@ -27,7 +30,22 @@ function mapearEntrada(entries: EntradaDiaJson[]): DadosDiaLiturgico[] {
 }
 
 export default async function CalendarioPage() {
-  const dados = await getCalendarioLiturgico();
+  const [dados, santos, novenas] = await Promise.all([getCalendarioLiturgico(), getCalendarioSantos(), getNovenasResumo()]);
+
+  // Só nome e slug: o detalhe do dia é um link, o resto dos dados ficaria no HTML à toa.
+  const devocoes: DevocoesCalendario = {
+    santosPorDia: Object.fromEntries(
+      Object.entries(santos).map(([dia, lista]) => [dia, lista.map(({ nome, slug }) => ({ nome, slug }))])
+    ),
+    novenas: novenas.map(({ slug, santo, festa, inicio, pula_domingos, totalDias }) => ({
+      slug,
+      santo,
+      festa,
+      inicio,
+      pula_domingos,
+      totalDias,
+    })),
+  };
 
   const resultado: Record<string, DadosDiaLiturgico[]> = {};
   for (const [dateStr, entries] of Object.entries(dados)) {
@@ -45,7 +63,7 @@ export default async function CalendarioPage() {
           </p>
         </section>
       </div>
-      <CalendarioView calendarioInicial={resultado} />
+      <CalendarioView calendarioInicial={resultado} devocoes={devocoes} />
     </div>
   );
 }

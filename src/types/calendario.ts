@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import type { NovenaCalendario } from "@/types/novena";
 import { type TempoId } from "@/lib/shared/anoLiturgico";
 
 export interface DadosDiaLiturgico {
@@ -56,19 +57,34 @@ export interface CelulaDia {
   ehMesAtual: boolean;
 }
 
+/** Santos e novenas mostrados no detalhe de cada dia. */
+export interface DevocoesCalendario {
+  novenas: NovenaCalendario[];
+  /** Índice "MM-DD" -> santos com festa nesse dia. */
+  santosPorDia: Record<string, { nome: string; slug: string }[]>;
+}
+
+export interface PropsDevocoesDoDia {
+  dia: string;
+  devocoes: DevocoesCalendario;
+}
+
 export interface PropsBarraLateralDia {
   diaSelecionado: string | null;
   dadosSelecionados: DadosDiaLiturgico[] | null;
+  devocoes: DevocoesCalendario;
 }
 
 export interface PropsDrawerDia {
   diaSelecionado: string | null;
   dadosSelecionados: DadosDiaLiturgico[] | null;
+  devocoes: DevocoesCalendario;
   aoFechar: () => void;
 }
 
 export interface PropsVisualizacaoCalendario {
   calendarioInicial: Record<string, DadosDiaLiturgico[]>;
+  devocoes: DevocoesCalendario;
 }
 
 export interface PropsVisualizacaoListaCalendario {

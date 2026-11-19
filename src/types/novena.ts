@@ -51,6 +51,9 @@ export type NovenaResumo = Pick<
   "slug" | "titulo" | "santo" | "descricao" | "imagem_url" | "posicao_imagem" | "festa" | "inicio" | "pula_domingos"
 > & { totalDias: number };
 
+/** O mínimo para saber em que dia a novena está numa data (usado no Calendário). */
+export type NovenaCalendario = Pick<NovenaResumo, "slug" | "santo" | "festa" | "inicio" | "pula_domingos" | "totalDias">;
+
 /** Período da novena em um ano, com datas ISO "YYYY-MM-DD". */
 export interface PeriodoNovena {
   inicio: string;

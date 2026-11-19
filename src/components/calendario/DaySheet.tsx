@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { DateTime } from "luxon";
 import { Book, Music, BookOpen, X } from "lucide-react";
 import Link from "next/link";
-import { type PropsDrawerDia, type DadosDiaLiturgico } from "@/types/calendario";
+import { type PropsDrawerDia, type DadosDiaLiturgico, type DevocoesCalendario } from "@/types/calendario";
+import DevocoesDoDia from "./DevocoesDoDia";
 
 function Backdrop({ onClick }: { onClick: () => void }) {
   return (
@@ -22,10 +23,12 @@ function Backdrop({ onClick }: { onClick: () => void }) {
 function Sheet({
   diaSelecionado,
   dadosSelecionados,
+  devocoes,
   aoFechar,
 }: {
   diaSelecionado: string;
   dadosSelecionados: DadosDiaLiturgico[];
+  devocoes: DevocoesCalendario;
   aoFechar: () => void;
 }) {
   const main = dadosSelecionados[0];
@@ -91,6 +94,8 @@ function Sheet({
             </div>
           </div>
 
+          <DevocoesDoDia dia={diaSelecionado} devocoes={devocoes} />
+
           <Link
             href={`/liturgia?dia=${data.day}&mes=${data.month}&ano=${data.year}`}
             className="block w-full py-5 mt-4 bg-primary text-background text-center font-label-md uppercase tracking-widest rounded-lg shadow-xl shadow-primary/10 transition-transform active:scale-[0.98]"
@@ -103,7 +108,7 @@ function Sheet({
   );
 }
 
-export default function DaySheet({ diaSelecionado, dadosSelecionados, aoFechar }: PropsDrawerDia) {
+export default function DaySheet({ diaSelecionado, dadosSelecionados, devocoes, aoFechar }: PropsDrawerDia) {
   return (
     <AnimatePresence>
       {dadosSelecionados && diaSelecionado && (
@@ -112,6 +117,7 @@ export default function DaySheet({ diaSelecionado, dadosSelecionados, aoFechar }
           <Sheet
             diaSelecionado={diaSelecionado}
             dadosSelecionados={dadosSelecionados}
+            devocoes={devocoes}
             aoFechar={aoFechar}
           />
         </>
