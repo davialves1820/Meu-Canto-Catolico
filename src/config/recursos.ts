@@ -1,4 +1,4 @@
-import { Cross, HeartHandshake, Flame, Calendar, Users, History, ScrollText, type LucideIcon } from "lucide-react";
+import { Cross, HeartHandshake, Flame, Calendar, Users, History, ScrollText, FlameKindling, type LucideIcon } from "lucide-react";
 
 export interface ItemRecurso {
   href: string;
@@ -14,6 +14,12 @@ export const RECURSOS: ItemRecurso[] = [
     icone: Cross,
     titulo: "Rosário",
     descricao: "Reze o terço oração por oração, com os mistérios do dia.",
+  },
+  {
+    href: "/novenas",
+    icone: FlameKindling,
+    titulo: "Novenas",
+    descricao: "Mais de cem novenas completas, com as novenas de hoje e seu progresso dia a dia.",
   },
   {
     href: "/confissao",

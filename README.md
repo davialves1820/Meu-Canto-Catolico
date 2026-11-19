@@ -1,6 +1,6 @@
 # Meu Canto Católico
  
-O **Meu Canto Católico** é uma plataforma integrada para a vida de fé e a centralização de informações católicas. Ela oferece acesso à Bíblia Sagrada, ao Catecismo da Igreja Católica, Liturgia Diária, Calendário Litúrgico, Santos, Orações, Rosário, Exame de Consciência, Catequese e notícias atualizadas do Vaticano — com pesquisa em todo o site e conta de usuário.
+O **Meu Canto Católico** é uma plataforma integrada para a vida de fé e a centralização de informações católicas. Ela oferece acesso à Bíblia Sagrada, ao Catecismo da Igreja Católica, Liturgia Diária, Calendário Litúrgico, Santos, Orações, Novenas, Rosário, Exame de Consciência, Catequese e notícias atualizadas do Vaticano — com pesquisa em todo o site e conta de usuário.
 
 ## 🛠️ Tecnologias Principais
 
@@ -24,6 +24,7 @@ Para garantir a fidelidade e riqueza das informações, utilizei as seguintes fo
 - **Bíblia Sagrada**: Repositório JSON [fidalgobr/bibliaAveMariaJSON](https://github.com/fidalgobr/bibliaAveMariaJSON).
 - **Catecismo da Igreja Católica**: Texto integral em português extraído do site da [Santa Sé](https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html) via Web Scraping.
 - **Catequese**: Coletadas do site [Biblioteca Católica](https://bibliotecacatolica.com.br/).
+- **Novenas**: Repositório [LeBronTech/Coracoessagradosbsb](https://github.com/LeBronTech/Coracoessagradosbsb), do site [Corações Sagrados BSB](https://coracoessagradosbsb.vercel.app/).
 
 ## 🚀 Como começar
 

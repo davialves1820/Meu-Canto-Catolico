@@ -5,6 +5,7 @@ import { buscarNoticias } from "@/lib/server/services/noticias";
 import { TODAS_AS_FONTES } from "@/config/feeds";
 import NoticiaCard from "@/components/noticias/NoticiaCard";
 import SantoDoDia from "@/components/santos/SantoDoDia";
+import NovenasDoDia from "@/components/novena/NovenasDoDia";
 import ExegeseButton from "@/components/liturgia/ExegeseButton";
 import { Leaf, Sparkles, BookOpenText, Book, ArrowRight, Newspaper, Compass } from "lucide-react";
 import { Suspense } from "react";
@@ -122,6 +123,9 @@ export default async function Home() {
         <Suspense fallback={<SantoDoDiaSkeleton />}>
           <SantoDoDia />
         </Suspense>
+
+        {/* Novenas de Hoje */}
+        <NovenasDoDia />
 
         {/* Divider */}
         <div className="px-5 md:px-16">
