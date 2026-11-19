@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, X, Book, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, Book, Sparkles, Link2 } from "lucide-react";
 import { PropsDetalheOracao } from "@/types/oracao";
 import { useFocusTrap } from "@/lib/client/hooks/utils/useFocusTrap";
 
@@ -118,6 +119,14 @@ export default function DetalheOracao({
             >
               <ChevronRight size={20} />
             </button>
+            <Link
+              href={`/oracoes/${prayer.slug}`}
+              className="p-2 hover:bg-black/5 rounded-full transition-colors text-on-surface-variant"
+              aria-label="Abrir a página desta oração"
+              title="Abrir a página desta oração"
+            >
+              <Link2 size={20} />
+            </Link>
             <div className="w-px h-4 bg-secondary/10 mx-1" />
             <button
               onClick={onClose}

@@ -1,7 +1,7 @@
 import oracoesData from "@/data/oracoes.json";
 
 import { PAGINAS_BUSCA } from "@/config/paginasBusca";
-import { CONFIG_CAT, Oracao } from "@/types/oracao";
+import { Oracao } from "@/types/oracao";
 import { ResultadoBusca } from "@/types/busca";
 import { getSantos } from "./santos";
 import { buscarNovenas as pesquisarNovenas } from "./novenas";
@@ -11,8 +11,9 @@ import { pesquisarCatecismo } from "./catecismo";
 const TODAS_ORACOES = (oracoesData as { oracoes: Oracao[] }).oracoes;
 const LIMITE_POR_CATEGORIA = 5;
 
+// H\u00edfen vira espa\u00e7o: "salve rainha" encontra "Salve-Rainha".
 function normalizar(texto: string): string {
-  return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/-/g, " ");
 }
 
 function buscarPaginas(q: string): ResultadoBusca[] {
@@ -46,17 +47,12 @@ async function buscarNovenas(query: string): Promise<ResultadoBusca[]> {
 function buscarOracoes(q: string): ResultadoBusca[] {
   const encontradas = TODAS_ORACOES.filter((o) => normalizar(o.titulo).includes(q)).slice(0, LIMITE_POR_CATEGORIA);
 
-  return encontradas.reduce<ResultadoBusca[]>((acc, oracao) => {
-    const slugCategoria = CONFIG_CAT[oracao.categoria]?.slug;
-    if (!slugCategoria) return acc;
-    acc.push({
-      tipo: "oracao",
-      titulo: oracao.titulo,
-      descricao: `Oração — ${oracao.categoria}`,
-      href: `/oracoes/${slugCategoria}`,
-    });
-    return acc;
-  }, []);
+  return encontradas.map((oracao) => ({
+    tipo: "oracao" as const,
+    titulo: oracao.titulo,
+    descricao: `Oração — ${oracao.categoria}`,
+    href: `/oracoes/${oracao.slug}`,
+  }));
 }
 
 async function buscarBiblia(query: string): Promise<ResultadoBusca[]> {

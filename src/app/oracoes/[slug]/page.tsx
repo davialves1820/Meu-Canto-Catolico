@@ -7,15 +7,21 @@ import {
 } from "@/types/oracao";
 
 import OracoesCategoriaPage from "@/components/oracao/OracoesCategoriaPage";
+import PaginaOracao from "@/components/oracao/PaginaOracao";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
+import { getOracaoPorSlug, getOracoes, getOracoesRelacionadas } from "@/lib/server/services/oracoes";
 import { absoluteUrl } from "@/config/site";
 
+// O mesmo segmento atende as categorias (/oracoes/comunhao) e cada oração
+// (/oracoes/ave-maria): os slugs das duas listas não se repetem.
 export async function generateStaticParams() {
-    return Object.values(CONFIG_CAT).map((c) => ({
-        slug: c.slug,
-    }));
+    const oracoes = await getOracoes();
+    return [
+        ...Object.values(CONFIG_CAT).map((c) => ({ slug: c.slug })),
+        ...oracoes.map((o) => ({ slug: o.slug })),
+    ];
 }
 
 export async function generateMetadata({
@@ -26,15 +32,26 @@ export async function generateMetadata({
 
     const catName = SLUG_PARA_CAT[slug];
 
-    if (!catName) {
-        return { title: "Categoria não encontrada" };
+    if (catName) {
+        return pageMetadata({
+            title: catName,
+            description: `${CONFIG_CAT[catName].descricao} — orações católicas da categoria ${catName} no Livro de Orações do Meu Canto Católico.`,
+            path: `/oracoes/${slug}`,
+            keywords: [catName, "orações católicas", "livro de orações"],
+        });
+    }
+
+    const oracao = await getOracaoPorSlug(slug);
+    if (!oracao) {
+        return { title: "Oração não encontrada" };
     }
 
     return pageMetadata({
-        title: catName,
-        description: `${CONFIG_CAT[catName].descricao} — orações católicas da categoria ${catName} no Livro de Orações do Meu Canto Católico.`,
+        title: oracao.titulo,
+        description: `${oracao.texto.replace(/\s+/g, " ").slice(0, 150).trim()}…`,
         path: `/oracoes/${slug}`,
-        keywords: [catName, "orações católicas", "livro de orações"],
+        type: "article",
+        keywords: [oracao.titulo, `oração ${oracao.titulo}`, oracao.categoria, "orações católicas"],
     });
 }
 
@@ -46,7 +63,36 @@ export default async function Page({
 
     const catName = SLUG_PARA_CAT[slug];
     if (!catName) {
-        notFound();
+        const oracao = await getOracaoPorSlug(slug);
+        if (!oracao) {
+            notFound();
+        }
+        const categoria = CONFIG_CAT[oracao.categoria];
+        const relacionadas = await getOracoesRelacionadas(oracao, 6);
+
+        return (
+            <>
+                <JsonLd
+                    data={{
+                        "@context": "https://schema.org",
+                        "@type": "CreativeWork",
+                        name: oracao.titulo,
+                        text: oracao.texto,
+                        genre: oracao.categoria,
+                        url: absoluteUrl(`/oracoes/${slug}`),
+                        inLanguage: "pt-BR",
+                    }}
+                />
+                <Breadcrumb
+                    items={[
+                        { label: "Orações", href: "/oracoes" },
+                        { label: oracao.categoria, href: `/oracoes/${categoria.slug}` },
+                        { label: oracao.titulo },
+                    ]}
+                />
+                <PaginaOracao oracao={oracao} relacionadas={relacionadas} />
+            </>
+        );
     }
 
     const webPageJsonLd = {

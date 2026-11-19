@@ -5,6 +5,8 @@ import { getIndiceCatecismo } from "@/lib/server/services/catecismo";
 import { CONFIG_CAT } from "@/types/oracao";
 import { CATEQUESE } from "@/config/catequese";
 import santosData from "@/data/santos.json";
+import oracoesData from "@/data/oracoes.json";
+import type { Oracao } from "@/types/oracao";
 import type { Santo } from "@/types/santos";
 import novenasData from "@/data/novenas.json";
 import type { Novena } from "@/types/novena";
@@ -63,6 +65,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  const oracoes = (oracoesData as { oracoes: Oracao[] }).oracoes;
+  const entradasPaginasOracoes: MetadataRoute.Sitemap = oracoes.map((o) => ({
+    url: url(`/oracoes/${o.slug}`),
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.6,
+  }));
+
   const entradasCatequese: MetadataRoute.Sitemap = CATEQUESE.flatMap((secao) =>
     secao.itens.map((item) => ({
       url: url(secao.id === "missa" ? "/catequese/missa" : `/catequese/${secao.id}/${item.slug}`),
@@ -97,6 +107,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entradasSantos,
     ...entradasNovenas,
     ...entradasOracoes,
+    ...entradasPaginasOracoes,
     ...entradasCatequese,
     ...entradasBiblia,
     ...entradasCatecismo,
