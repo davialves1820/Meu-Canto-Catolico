@@ -7,7 +7,7 @@
       "titulo": "Novena a São José",
       "santo": "São José",
       "descricao": "Esta é uma novena tradicional em honra a São José, pai virginal de Nosso Senhor. A oração pode ser feita a qualquer tempo do ano, mas é especialmente recomendada em preparação para as suas festas.",
-      "imagem_url": "https://iili.io/fj7jrtj.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-jose.webp",
       "versoes": [
         {
           "id": "principal",
@@ -60,7 +60,7 @@
       "titulo": "Novena a São José Operário",
       "santo": "São José Operário",
       "descricao": "Padroeiro dos trabalhadores. A mesma oração é rezada nos 9 dias.",
-      "imagem_url": "https://i.postimg.cc/9QfFWvTB/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-jose-operario.webp",
       "festa": {
         "mes": 5,
         "dia": 1
@@ -158,7 +158,7 @@
       "titulo": "Novena a São José - 19 de Março",
       "santo": "São José (19 de março)",
       "descricao": "Novena em honra a São José, esposo de Maria Santíssima e pai nutrício de Jesus, celebrada em preparação para sua festa em 19 de março.",
-      "imagem_url": "https://iili.io/fj7jrtj.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-jose.webp",
       "festa": {
         "mes": 3,
         "dia": 19
@@ -302,7 +302,7 @@
       "titulo": "Novena a Santa Isabel da Hungria",
       "santo": "Santa Isabel da Hungria",
       "descricao": "Rainha e terciária franciscana, padroeira da caridade. Peça sua intercessão para amar e servir a Cristo nos pobres.",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/santa-isabel-hungria.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-isabel-da-hungria.webp",
       "festa": {
         "mes": 11,
         "dia": 17
@@ -359,7 +359,7 @@
       "titulo": "Novena da Apresentação de Nossa Senhora",
       "santo": "Apresentação de Nossa Senhora",
       "descricao": "Celebre a entrega de Maria a Deus ainda criança no Templo e peça a graça de se consagrar totalmente à vontade do Pai.",
-      "imagem_url": "https://i.postimg.cc/3Js86PzK/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/apresentacao-de-nossa-senhora.webp",
       "festa": {
         "mes": 11,
         "dia": 21
@@ -414,7 +414,7 @@
       "titulo": "Novena a Nossa Senhora da Saúde",
       "santo": "Nossa Senhora da Saúde",
       "descricao": "Invoque a Mãe de Deus sob este título e peça a cura das doenças do corpo e da alma, confiando na Sua materna intercessão.",
-      "imagem_url": "https://i.postimg.cc/RCdhqSqh/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-da-saude.webp",
       "festa": {
         "mes": 11,
         "dia": 21
@@ -471,7 +471,7 @@
       "titulo": "Novena a Santa Cecília",
       "santo": "Santa Cecília",
       "descricao": "Padroeira dos músicos e da música sacra, Santa Cecília intercede para que a sua vida seja um cântico de louvor a Deus.",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/santa-cecilia.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-cecilia.webp",
       "martir": true,
       "festa": {
         "mes": 11,
@@ -529,7 +529,7 @@
       "titulo": "Novena a Cristo Rei",
       "santo": "Cristo Rei",
       "descricao": "Prepare-se para a Solenidade de Nosso Senhor Jesus Cristo, Rei do Universo, reconhecendo Sua soberania sobre sua vida e o mundo.",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/solenidade-cristo-rei.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/cristo-rei.webp",
       "festa": {
         "movel": "cristo-rei"
       },
@@ -642,7 +642,7 @@
       "titulo": "Novena Milagrosa de Santa Terezinha do Menino Jesus",
       "santo": "Santa Teresinha",
       "descricao": "A Novena das Rosas — “Do céu eu farei cair sobre a Terra uma chuva de Rosas”.",
-      "imagem_url": "https://i.postimg.cc/G2y7k85b/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-teresinha.webp",
       "festa": {
         "mes": 10,
         "dia": 1
@@ -699,7 +699,7 @@
       "titulo": "Novena a São Pedro de Alcântara",
       "santo": "São Pedro de Alcântara",
       "descricao": "Reformador da Ordem Franciscana e grande penitente, São Pedro intercede pela conversão e pela busca da santidade.",
-      "imagem_url": "https://i.postimg.cc/LnDZnwJ2/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-pedro-de-alcantara.webp",
       "festa": {
         "mes": 10,
         "dia": 19
@@ -756,7 +756,7 @@
       "titulo": "Novena a Santa Edwiges",
       "santo": "Santa Edwiges",
       "descricao": "Padroeira dos pobres e endividados, Santa Edwiges é um modelo de caridade e desapego dos bens materiais.",
-      "imagem_url": "https://i.postimg.cc/pTPYrzkQ/formacao-1600x1200-novena-sta-edwigens.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-edwiges.webp",
       "festa": {
         "mes": 10,
         "dia": 16
@@ -813,7 +813,7 @@
       "titulo": "Novena à Santa Faustina",
       "santo": "Santa Faustina Kowalska",
       "descricao": "Peça a intercessão da secretária da Divina Misericórdia, Apóstola da Misericórdia.",
-      "imagem_url": "https://i.postimg.cc/qBKkbHTj/39a80df1d720976f7e55e00f40eadc90-1.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-faustina-kowalska.webp",
       "festa": {
         "mes": 10,
         "dia": 5
@@ -870,7 +870,7 @@
       "titulo": "Novena a Nossa Senhora do Rosário",
       "santo": "Nossa Senhora do Rosário",
       "descricao": "Invoque a Mãe de Deus sob este título para que ela ajude você a rezar com mais devoção o Santo Rosário.",
-      "imagem_url": "https://i.postimg.cc/2669v1gr/nsr.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-do-rosario.webp",
       "festa": {
         "mes": 10,
         "dia": 7
@@ -927,7 +927,7 @@
       "titulo": "Novena a Nossa Senhora Aparecida",
       "santo": "Nossa Senhora Aparecida",
       "descricao": "Padroeira do Brasil, a Novena de Nossa Senhora Aparecida é a preparação para a grande Festa do Dia 12 de Outubro.",
-      "imagem_url": "https://i.postimg.cc/Lsyj4XMh/4011bde1376c5422265a41f3a652c540.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-aparecida.webp",
       "festa": {
         "mes": 10,
         "dia": 12
@@ -984,7 +984,7 @@
       "titulo": "Novena a São Carlo Acutis",
       "santo": "São Carlo Acutis",
       "descricao": "Jovem santo que usou a internet para evangelizar, é um modelo de santidade na vida cotidiana e um poderoso intercessor pela juventude.",
-      "imagem_url": "https://i.postimg.cc/CKrbWHjb/8a6ca2d967cbe5b8b65b068da82f495e.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-carlo-acutis.webp",
       "festa": {
         "mes": 10,
         "dia": 12
@@ -1041,7 +1041,7 @@
       "titulo": "Novena a Santa Teresa de Jesus (Ávila)",
       "santo": "Santa Teresa de Ávila",
       "descricao": "Padroeira dos místicos e Doutora da Igreja, Santa Teresa intercede para que possamos aprofundar nossa vida de oração.",
-      "imagem_url": "https://i.postimg.cc/ht19wsyQ/32654687eb30f846f1f2e9e3edb6f4af.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-teresa-de-avila.webp",
       "festa": {
         "mes": 10,
         "dia": 15
@@ -1098,7 +1098,7 @@
       "titulo": "Novena a Santa Margarida Maria Alacoque",
       "santo": "Santa Margarida Maria Alacoque",
       "descricao": "A grande mensageira do Sagrado Coração de Jesus, Santa Margarida intercede pela devoção e reparação ao Coração de Cristo.",
-      "imagem_url": "https://i.postimg.cc/J7QHR03S/66339fa28370276f90d041991767bebd.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-margarida-maria-alacoque.webp",
       "festa": {
         "mes": 10,
         "dia": 16
@@ -1154,7 +1154,7 @@
       "titulo": "Novena a Santo Inácio de Antioquia",
       "santo": "São Inácio de Antioquia",
       "descricao": "Bispo e mártir dos primeiros séculos, Santo Inácio intercede pela unidade da Igreja e pela fidelidade à fé.",
-      "imagem_url": "https://i.postimg.cc/cvWXNVVK/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-inacio-de-antioquia.webp",
       "martir": true,
       "festa": {
         "mes": 10,
@@ -1212,7 +1212,7 @@
       "titulo": "Novena a São João Paulo II",
       "santo": "São João Paulo II",
       "descricao": "Reze conosco a novena a São João Paulo II, um dos maiores santos de nossos tempos, grande defensor da vida e das famílias.",
-      "imagem_url": "https://i.postimg.cc/bsw1Hqcq/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-joao-paulo-ii.webp",
       "festa": {
         "mes": 10,
         "dia": 22
@@ -1269,7 +1269,7 @@
       "titulo": "Novena a Santo Antônio Galvão",
       "santo": "São Frei Galvão",
       "descricao": "O primeiro santo brasileiro, Frei Galvão intercede por todos que buscam a saúde do corpo e da alma, especialmente com suas pílulas.",
-      "imagem_url": "https://i.postimg.cc/sBYBCLdn/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-frei-galvao.webp",
       "festa": {
         "mes": 10,
         "dia": 25
@@ -1326,7 +1326,7 @@
       "titulo": "Novena a São Judas Tadeu",
       "santo": "São Judas Tadeu",
       "descricao": "Considerado o advogado das causas desesperadas, São Judas Tadeu intercede por todos que enfrentam grandes dificuldades.",
-      "imagem_url": "https://i.postimg.cc/9wrF08KF/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-judas-tadeu.webp",
       "martir": true,
       "festa": {
         "mes": 10,
@@ -1383,7 +1383,7 @@
       "titulo": "Novena a Todos os Santos",
       "santo": "Todos os Santos",
       "descricao": "Prepare-se para a grande Festa de Todos os Santos e peça a intercessão de todos aqueles que já estão no Céu.",
-      "imagem_url": "https://i.postimg.cc/j29jkK7b/download.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/todos-os-santos.webp",
       "festa": {
         "mes": 11,
         "dia": 1
@@ -1439,7 +1439,7 @@
       "titulo": "Novena à Beata Chiara Luce Badano",
       "santo": "Beata Chiara Luce",
       "descricao": "Chiara Badano nasceu depois de 11 anos de orações de seus pais. Aos nove anos conheceu o Movimento dos Focolares. Aos 17 anos foi diagnosticada com câncer nos ossos. Chiara Lubich, fundadora dos Focolares, acompanha sua trajetória e lhe dá o nome de “Chiara Luce”.",
-      "imagem_url": "https://i.postimg.cc/YSW99892/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/beata-chiara-luce.webp",
       "festa": {
         "mes": 10,
         "dia": 29
@@ -1495,7 +1495,7 @@
       "titulo": "Novena a Nossa Senhora das Graças",
       "santo": "Nossa Senhora das Graças",
       "descricao": "Novena da Medalha Milagrosa — orações iniciais, meditações dos 9 dias e oração final.",
-      "imagem_url": "https://i.postimg.cc/SsBDK7HJ/Design-sem-nome-2.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-das-gracas.webp",
       "festa": {
         "mes": 11,
         "dia": 27
@@ -1552,7 +1552,7 @@
       "titulo": "Novena pelas Almas do Purgatório",
       "santo": "Fiéis Defuntos",
       "descricao": "Ofereça suas orações pelas almas que se purificam no Purgatório, ajudando-as a alcançar a visão beatífica de Deus.",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/fiei-defuntos.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/fieis-defuntos.webp",
       "festa": {
         "mes": 11,
         "dia": 2
@@ -1608,7 +1608,7 @@
       "titulo": "Novena à Imaculada Conceição",
       "santo": "Imaculada Conceição",
       "descricao": "Prepare seu coração com Maria para a vinda de Jesus, celebrando a concepção de Maria sem a mancha do pecado original.",
-      "imagem_url": "https://iili.io/KpAtISf.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/imaculada-conceicao.webp",
       "festa": {
         "mes": 12,
         "dia": 8
@@ -1665,7 +1665,7 @@
       "titulo": "Novena de Nossa Senhora de Guadalupe",
       "santo": "Nossa Senhora de Guadalupe",
       "descricao": "Padroeira das Américas. Reze pedindo proteção e consolo maternal.",
-      "imagem_url": "https://images.cdn-files-a.com/uploads/5860772/2000_63cdf81a70b88.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-de-guadalupe.webp",
       "festa": {
         "mes": 12,
         "dia": 12
@@ -1722,7 +1722,7 @@
       "titulo": "Novena a Santa Luzia",
       "santo": "Santa Luzia",
       "descricao": "Padroeira dos olhos. Peça pela saúde da visão física e espiritual.",
-      "imagem_url": "https://iili.io/ffgqFiN.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-luzia.webp",
       "martir": true,
       "festa": {
         "mes": 12,
@@ -1780,7 +1780,7 @@
       "titulo": "Novena a São João da Cruz",
       "santo": "São João da Cruz",
       "descricao": "Doutor da Igreja. Mestre da vida espiritual na busca pela união com Deus.",
-      "imagem_url": "https://iili.io/ffgFMWN.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-joao-da-cruz.webp",
       "festa": {
         "mes": 12,
         "dia": 14
@@ -1837,7 +1837,7 @@
       "titulo": "Novena de Natal (São Leão Magno)",
       "santo": "Natal com São Leão Magno",
       "descricao": "Prepare-se para o Natal com as meditações profundas de São Leão Magno.",
-      "imagem_url": "https://iili.io/ffgFVsI.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/natal-com-sao-leao-magno.webp",
       "festa": {
         "mes": 12,
         "dia": 25
@@ -1894,7 +1894,7 @@
       "titulo": "Novena de Natal em Família",
       "santo": "Natal em Família",
       "descricao": "Reúna sua família para celebrar o nascimento de Jesus com meditações diárias.",
-      "imagem_url": "https://iili.io/ffgFVsI.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/natal-com-sao-leao-magno.webp",
       "festa": {
         "mes": 12,
         "dia": 25
@@ -1951,7 +1951,7 @@
       "titulo": "Novena a Santa Maria Mãe de Deus",
       "santo": "Santa Maria Mãe de Deus",
       "descricao": "Comece o ano novo sob a proteção da Mãe de Deus e da Igreja.",
-      "imagem_url": "https://i.postimg.cc/5jcQ5mG4/santa-maria-mae-de-deus.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-maria-mae-de-deus.webp",
       "festa": {
         "mes": 1,
         "dia": 1
@@ -2008,7 +2008,7 @@
       "titulo": "Novena da Epifania",
       "santo": "Epifania",
       "descricao": "Contemple a manifestação de Jesus aos Reis Magos e a todos os povos.",
-      "imagem_url": "https://iili.io/ffgF6ge.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/epifania.webp",
       "festa": {
         "movel": "epifania"
       },
@@ -2064,7 +2064,7 @@
       "titulo": "Novena a Santo Antão",
       "santo": "Santo Antão",
       "descricao": "Pai do monaquismo cristão e protetor contra as tentações.",
-      "imagem_url": "https://i.pinimg.com/736x/cf/a9/b6/cfa9b672576ad12bf372aecd49d2ef60.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santo-antao.webp",
       "festa": {
         "mes": 1,
         "dia": 17
@@ -2121,7 +2121,7 @@
       "titulo": "Novena de São Sebastião",
       "santo": "São Sebastião",
       "descricao": "Novena em honra a São Sebastião, mártir da fé e protetor contra pestes e adversidades.",
-      "imagem_url": "https://iili.io/fWNLcba.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-sebastiao.webp",
       "martir": true,
       "festa": {
         "mes": 1,
@@ -2179,7 +2179,7 @@
       "titulo": "Novena a Santo Tomás de Aquino",
       "santo": "Santo Tomás de Aquino",
       "descricao": "Doutor Angélico e padroeiro dos estudos superiores. Peça sua intercessão para crescer em sabedoria e conhecimento de Deus.",
-      "imagem_url": "https://iili.io/fWNLA0B.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santo-tomas-de-aquino.webp",
       "festa": {
         "mes": 1,
         "dia": 28
@@ -2236,7 +2236,7 @@
       "titulo": "Novena de São Francisco de Sales",
       "santo": "São Francisco de Sales",
       "descricao": "Doutor da Igreja, mestre da mansidão e padroeiro dos escritores.",
-      "imagem_url": "https://iili.io/fWNLRUP.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-francisco-de-sales.webp",
       "festa": {
         "mes": 1,
         "dia": 24
@@ -2293,7 +2293,7 @@
       "titulo": "Novena a Nossa Senhora das Candeias",
       "santo": "Nossa Senhora das Candeias",
       "descricao": "Celebração da Apresentação do Senhor e Purificação de Maria.",
-      "imagem_url": "https://i.postimg.cc/d1wh01Cn/ns-candeias.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-das-candeias.webp",
       "festa": {
         "mes": 2,
         "dia": 2
@@ -2350,7 +2350,7 @@
       "titulo": "Novena a São Brás",
       "santo": "São Brás",
       "descricao": "Protetor contra os males da garganta.",
-      "imagem_url": "https://i.postimg.cc/3wLskf4q/sao-bras.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-bras.webp",
       "martir": true,
       "festa": {
         "mes": 2,
@@ -2408,7 +2408,7 @@
       "titulo": "Novena ao Menino Jesus de Praga",
       "santo": "Menino Jesus de Praga",
       "descricao": "Peça as graças da infância espiritual e a proteção do Divino Infante com esta poderosa novena.",
-      "imagem_url": "https://iili.io/fj7eCDg.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/menino-jesus-de-praga.webp",
       "festa": {
         "mes": 1,
         "dia": 14
@@ -2465,7 +2465,7 @@
       "titulo": "Novena a São João Bosco",
       "santo": "São João Bosco",
       "descricao": "Pai e mestre da juventude, São João Bosco dedicou sua vida à educação e salvação dos jovens. Peça sua intercessão para a juventude e para todos que trabalham na educação.",
-      "imagem_url": "https://iili.io/fWNLufV.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-joao-bosco.webp",
       "festa": {
         "mes": 1,
         "dia": 31
@@ -2522,7 +2522,7 @@
       "titulo": "Novena de São Luís Maria Grignion de Montfort",
       "santo": "São Luís de Montfort",
       "descricao": "Grande propagador da devoção à Virgem Maria e autor do Tratado da Verdadeira Devoção.",
-      "imagem_url": "https://i.pinimg.com/736x/de/a5/30/dea530bc046eef333dcde4daec597717.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-luis-de-montfort.webp",
       "festa": {
         "mes": 4,
         "dia": 28
@@ -2578,7 +2578,7 @@
       "titulo": "Novena a Nossa Senhora de Lourdes",
       "santo": "Nossa Senhora de Lourdes",
       "descricao": "Novena em preparação à festa de Nossa Senhora de Lourdes (11 de fevereiro).",
-      "imagem_url": "https://i.postimg.cc/RF4W0Ftw/ns-lourdes.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-de-lourdes.webp",
       "festa": {
         "mes": 2,
         "dia": 11
@@ -2634,7 +2634,7 @@
       "titulo": "Novena à Sagrada Face",
       "santo": "Sagrada Face",
       "descricao": "Novena de reparação a Nosso Senhor ultrajado por nossos pecados. Festa: Terça-feira de Carnaval.",
-      "imagem_url": "https://iili.io/f6UfDCl.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sagrada-face.webp",
       "festa": {
         "mes": 2,
         "dia": 17
@@ -2691,7 +2691,7 @@
       "titulo": "Novena à Cátedra de São Pedro",
       "santo": "Cátedra de São Pedro",
       "descricao": "Novena em preparação à festa da Cátedra de São Pedro (22 de fevereiro).",
-      "imagem_url": "https://iili.io/f6UfQjf.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/catedra-de-sao-pedro.webp",
       "festa": {
         "mes": 2,
         "dia": 22
@@ -2748,7 +2748,7 @@
       "titulo": "Novena a São Casimiro",
       "santo": "São Casimiro",
       "descricao": "Novena em honra a São Casimiro, príncipe da Polônia e modelo de pureza. Reza-se de 24 de fevereiro a 3 de março, preparando a festa de 4 de março.",
-      "imagem_url": "https://i.postimg.cc/8zRMHqTg/sao-casimiro-alt.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-casimiro.webp",
       "festa": {
         "mes": 3,
         "dia": 4
@@ -2805,7 +2805,7 @@
       "titulo": "Novena a São Gabriel de Nossa Senhora das Dores",
       "santo": "São Gabriel das Dores",
       "descricao": "Jovem passionista, modelo de obediência, desprendimento e amor à Paixão de Cristo. Intercessor da juventude. Reza-se de 18 a 26 de fevereiro, preparando a festa de 27 de fevereiro.",
-      "imagem_url": "https://i.postimg.cc/qvV22kVL/sao-gabriel-dores.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-gabriel-das-dores.webp",
       "festa": {
         "mes": 2,
         "dia": 27
@@ -2862,7 +2862,7 @@
       "titulo": "Novena a São João de Deus",
       "santo": "São João de Deus",
       "descricao": "Confessor, Fundador da Ordem Hospitaleira, Padroeiro dos doentes, dos enfermeiros e dos hospitais. Reza-se de 27 de fevereiro a 7 de março, preparando a festa de 8 de março.",
-      "imagem_url": "https://i.postimg.cc/JzVjj1VN/sao-joao-de-deus.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-joao-de-deus.webp",
       "festa": {
         "mes": 3,
         "dia": 8
@@ -2919,7 +2919,7 @@
       "titulo": "Novena a São Patrício",
       "santo": "São Patrício",
       "descricao": "Novena em honra a São Patrício, apóstolo da Irlanda. Reza-se de 8 a 16 de março, preparando a festa de 17 de março.",
-      "imagem_url": "https://i.postimg.cc/jq1HdH8R/sao-patricio.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-patricio.webp",
       "festa": {
         "mes": 3,
         "dia": 17
@@ -2976,7 +2976,7 @@
       "titulo": "Novena de São Vicente Ferrer",
       "santo": "São Vicente Ferrer",
       "descricao": "Novena em honra a São Vicente Ferrer, religioso dominicano aclamado como 'Anjo do Apocalipse'. Festa: 5 de abril.",
-      "imagem_url": "https://i.pinimg.com/736x/e9/43/97/e943975488f8321ecfebee550dd3435c.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-vicente-ferrer.webp",
       "festa": {
         "mes": 4,
         "dia": 5
@@ -3033,7 +3033,6 @@
       "titulo": "Novena a São João Batista de La Salle",
       "santo": "São João Batista de La Salle",
       "descricao": "Padroeiro dos Educadores e Fundador dos Irmãos Lassalistas. (29 de março a 7 de abril)",
-      "imagem_url": "https://th.bing.com/th/id/R.4ff119f01df9bff97b9baf010591458f?rik=0JiQUu13fapdgw&pid=ImgRaw&r=0",
       "posicao_imagem": "top",
       "festa": {
         "mes": 4,
@@ -3091,7 +3090,7 @@
       "titulo": "Novena a Santa Júlia Billiart",
       "santo": "Santa Júlia Billiart",
       "descricao": "A Santa do Sorriso e fundadora das Irmãs de N.S.. (30 de março a 8 de abril)",
-      "imagem_url": "https://institutohesed.org.br/wp-content/uploads/2019/04/Santa-Julia-Billiart.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-julia-billiart.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 4,
@@ -3149,7 +3148,7 @@
       "titulo": "Novena a Santa Valtrudes",
       "santo": "Santa Valtrudes",
       "descricao": "Mãe de santos e fundadora em Mons. (31 de março a 9 de abril)",
-      "imagem_url": "https://gaudiumpress.org/wp-content/uploads/2021/11/Historia-Oracao-e-Frases-de-Santa-Gertrudes-3-768x432.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-valtrudes.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 4,
@@ -3207,7 +3206,7 @@
       "titulo": "Novena a Santa Madalena de Canossa",
       "santo": "Santa Madalena de Canossa",
       "descricao": "Fundadora das Filhas e Filhos da Caridade.",
-      "imagem_url": "https://tse1.explicit.bing.net/th/id/OIP.olSSpkMIxL2-abgq8gz9igHaFj?rs=1&pid=ImgDetMain&o=7&rm=3",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-madalena-de-canossa.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 4,
@@ -3265,7 +3264,7 @@
       "titulo": "Novena da Divina Misericórdia",
       "santo": "Divina Misericórdia",
       "descricao": "Novena iniciada na Sexta-feira Santa em preparação ao Domingo da Divina Misericórdia.",
-      "imagem_url": "https://i.pinimg.com/736x/07/32/73/073273a0d0f34f3e0241377c516aa140.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/divina-misericordia.webp",
       "posicao_imagem": "top",
       "festa": {
         "movel": "divina-misericordia"
@@ -3320,7 +3319,7 @@
       "titulo": "Novena a Santo Expedito",
       "santo": "Santo Expedito",
       "descricao": "Novena em honra a Santo Expedito (19 de abril).",
-      "imagem_url": "https://i.pinimg.com/1200x/b7/44/62/b7446207d5dd9ed23c8adba86d6f432f.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santo-expedito.webp",
       "posicao_imagem": "top",
       "martir": true,
       "festa": {
@@ -3379,7 +3378,7 @@
       "titulo": "Novena a São Jorge",
       "santo": "São Jorge",
       "descricao": "Novena em honra a São Jorge, mártir e guerreiro da fé. (Fonte: Devocionário e Novena a São Jorge. 8ª edição: 2014. Editora Loyola.)",
-      "imagem_url": "https://i.pinimg.com/736x/5a/04/7d/5a047d8750cc4fced440dbc6d3c6e40a.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-jorge.webp",
       "martir": true,
       "festa": {
         "mes": 4,
@@ -3436,7 +3435,7 @@
       "titulo": "Novena a São Marcos Evangelista",
       "santo": "São Marcos Evangelista",
       "descricao": "Novena em honra a São Marcos, o autor do Evangelho do Leão, padroeiro de Veneza, dos advogados, tabeliães e de todos os que propagam a Palavra de Deus (25 de abril).",
-      "imagem_url": "https://i.pinimg.com/1200x/13/d9/a0/13d9a05cfc1153588391d66d6ce20c88.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-marcos-evangelista.webp",
       "festa": {
         "mes": 4,
         "dia": 25
@@ -3493,7 +3492,7 @@
       "titulo": "Novena a Santa Gianna Beretta Molla",
       "santo": "Santa Gianna Beretta Molla",
       "descricao": "Médica, esposa, mãe e mártir. Uma mulher como tantas outras, mas com alguma coisa a mais.",
-      "imagem_url": "https://i.pinimg.com/1200x/3e/f0/b2/3ef0b28700ca5d1dbeba832b30a43ff3.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-gianna-beretta-molla.webp",
       "festa": {
         "mes": 4,
         "dia": 28
@@ -3549,7 +3548,7 @@
       "titulo": "Novena a Santa Catarina de Siena",
       "santo": "Santa Catarina de Sena",
       "descricao": "Doutora da Igreja e Padroeira da Europa. Novena de 20 a 28 de abril.",
-      "imagem_url": "https://i.pinimg.com/736x/fc/e8/7d/fce87d41f3daf1f431638303ccb0d14c.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-catarina-de-sena.webp",
       "festa": {
         "mes": 4,
         "dia": 29
@@ -3605,7 +3604,7 @@
       "titulo": "Novena a Nossa Senhora da África",
       "santo": "Nossa Senhora da África",
       "descricao": "Devoção a Nossa Senhora da África e pelo diálogo entre os povos. A mesma oração é rezada nos 9 dias.",
-      "imagem_url": "https://www.a12.com/source/files/originals/Nossa_Senhora_da_Africa.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-da-africa.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 4,
@@ -3661,7 +3660,7 @@
       "titulo": "Novena a Santo Atanásio",
       "santo": "Santo Atanásio Diácono",
       "descricao": "Pai da Ortodoxia e defensor da divindade de Cristo.",
-      "imagem_url": "https://i.pinimg.com/1200x/d6/90/61/d69061c1e40057ed9e54e0cd189b1e5e.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santo-atanasio-diacono.webp",
       "festa": {
         "mes": 5,
         "dia": 2
@@ -3716,7 +3715,7 @@
       "titulo": "Novena a Nossa Senhora de Fátima",
       "santo": "Nossa Senhora de Fátima",
       "descricao": "Apresente seus pedidos a Deus por meio da novena a Nossa Senhora de Fátima e conte com a poderosa intercessão de nossa Mãe Santíssima.",
-      "imagem_url": "https://i.postimg.cc/cH0vJH31/ns-fatima.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-de-fatima.webp",
       "festa": {
         "mes": 5,
         "dia": 13
@@ -3773,7 +3772,7 @@
       "titulo": "Novena a Santa Rita de Cássia",
       "santo": "Santa Rita de Cássia",
       "descricao": "Santa das causas impossíveis e desesperadas. Peça sua intercessão pelas causas que parecem sem solução.",
-      "imagem_url": "https://i.pinimg.com/736x/db/68/3f/db683f0e1b68ee4b60800f26ae5ca7f0.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-rita-de-cassia.webp",
       "festa": {
         "mes": 5,
         "dia": 22
@@ -3829,7 +3828,7 @@
       "titulo": "Novena de Pentecostes",
       "santo": "Pentecostes",
       "descricao": "Novena em honra à vinda do Espírito Santo.",
-      "imagem_url": "https://i.pinimg.com/736x/a8/8d/d8/a88dd8930bd3ecfa5be8cdff0601516d.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/pentecostes.webp",
       "festa": {
         "movel": "pentecostes"
       },
@@ -3885,7 +3884,7 @@
       "titulo": "Novena a Nossa Senhora Auxiliadora",
       "santo": "Nossa Senhora Auxiliadora",
       "descricao": "Peça o poderoso auxílio de Maria Santíssima nesta novena em preparação à festa de Nossa Senhora Auxiliadora.",
-      "imagem_url": "https://i.pinimg.com/736x/13/4d/b4/134db4459382d5e9ecc6f4ce276edd5e.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-auxiliadora.webp",
       "festa": {
         "mes": 5,
         "dia": 24
@@ -3941,7 +3940,7 @@
       "titulo": "Novena da Visitação",
       "santo": "Visitação de Nossa Senhora",
       "descricao": "Novena em preparação à festa da Visitação de Maria. A mesma oração é rezada nos 9 dias.",
-      "imagem_url": "https://i.pinimg.com/736x/46/49/63/464963169ef6da9d7829305e5e6727e8.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/visitacao-de-nossa-senhora.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 5,
@@ -3997,7 +3996,7 @@
       "titulo": "Novena a São Filipe Néri",
       "santo": "São Filipe Néri",
       "descricao": "Novena em honra ao 'Apóstolo de Roma', conhecido por sua alegria e caridade (26 de maio).",
-      "imagem_url": "https://i.pinimg.com/736x/2c/9d/d7/2c9dd74d2a6cfd7ceae29962c5613d9c.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-filipe-neri.webp",
       "festa": {
         "mes": 5,
         "dia": 26
@@ -4053,7 +4052,7 @@
       "titulo": "Novena a São José de Anchieta",
       "santo": "São José de Anchieta",
       "descricao": "Novena ao Apóstolo do Brasil e Poeta da Virgem Maria (09 de junho).",
-      "imagem_url": "https://i.pinimg.com/736x/ae/1f/8b/ae1f8b16557fdbac53a42c25380cf301.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-jose-de-anchieta.webp",
       "festa": {
         "mes": 6,
         "dia": 9
@@ -4109,7 +4108,7 @@
       "titulo": "Trezena de Santo Antônio",
       "santo": "Santo Antônio",
       "descricao": "Trezena (13 dias) em honra a Santo Antônio de Pádua (13 de junho).",
-      "imagem_url": "https://i.pinimg.com/736x/51/68/18/516818cb2bec324df6aecb722aea3d48.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santo-antonio.webp",
       "festa": {
         "mes": 6,
         "dia": 13
@@ -4182,7 +4181,7 @@
       "titulo": "Novena ao Sagrado Coração de Jesus",
       "santo": "Sagrado Coração",
       "descricao": "Novena em preparação à solenidade do Sagrado Coração de Jesus. Disponível na versão tradicional (Canção Nova) e na versão do Padre Paulo Ricardo.",
-      "imagem_url": "https://www.vaticannews.va/content/dam/vaticannews/multimedia/2024/ottobre/22/sacro-cuore2AEM.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.750.422.jpeg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sagrado-coracao.webp",
       "posicao_imagem": "center",
       "festa": {
         "movel": "sagrado-coracao"
@@ -4283,7 +4282,7 @@
       "titulo": "Novena ao Imaculado Coração de Maria",
       "santo": "Imaculado Coração",
       "descricao": "Novena em honra ao Imaculado Coração de Maria, revelada aos pastorinhos em Fátima como fonte de paz e graças.",
-      "imagem_url": "https://img.cancaonova.com/cnimages/canais/uploads/sites/6/2023/06/formacao_imaculado-coracao-de-maria--768x432.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/imaculado-coracao.webp",
       "festa": {
         "movel": "imaculado-coracao"
       },
@@ -4339,7 +4338,7 @@
       "titulo": "Novena a São João Batista",
       "santo": "São João Batista",
       "descricao": "O precursor do Messias, São João Batista é modelo de humildade, penitência e zelo pela justiça. Sua novena prepara os corações para a grande solenidade do nascimento do santo, em 24 de junho. É ideal para aqueles que buscam conversão, coragem para anunciar o Evangelho e fidelidade à missão pessoal.",
-      "imagem_url": "https://img.cancaonova.com/cnimages/canais/uploads/sites/2/2022/06/santododia-solenidade-do-nascimento-de-joao-batista-2-300x225.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-joao-batista.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 6,
@@ -4397,7 +4396,7 @@
       "titulo": "Novena a São Pedro e São Paulo",
       "santo": "São Pedro e São Paulo",
       "descricao": "Celebrando dois pilares da Igreja, esta novena honra o primeiro Papa e o maior missionário do cristianismo. Ideal para rezar pela Igreja, pelo Papa, pelas vocações sacerdotais e pela unidade dos cristãos. Pedro representa a autoridade, Paulo o anúncio — juntos, são modelos de entrega total ao Evangelho.",
-      "imagem_url": "https://i.pinimg.com/736x/57/cc/70/57cc709acf0ab6b69ae01b230bb2c1e5.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-pedro-e-sao-paulo.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 6,
@@ -4454,7 +4453,7 @@
       "titulo": "Novena a Nossa Senhora do Carmo",
       "santo": "Nossa Senhora do Carmo",
       "descricao": "Novena em honra a Nossa Senhora do Carmo (16 de julho).",
-      "imagem_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0K3bRQTrYCLAaf6mIt3aqOikoZlGiCAkMZQ&s",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-do-carmo.webp",
       "festa": {
         "mes": 7,
         "dia": 16
@@ -4511,7 +4510,7 @@
       "titulo": "Novena a Santa Maria Madalena",
       "santo": "Santa Maria Madalena",
       "descricao": "Novena em honra a Santa Maria Madalena, Apóstola dos Apóstolos, modelo sublime de conversão, amor penitente e fidelidade à Cruz (13 a 21 de julho).",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/santa-maria-madalena.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-maria-madalena.webp",
       "festa": {
         "mes": 7,
         "dia": 22
@@ -4568,7 +4567,7 @@
       "titulo": "Novena a São Cristóvão Mártir",
       "santo": "São Cristóvão",
       "descricao": "Novena em honra a São Cristóvão mártir, padroeiro dos motoristas, caminhoneiros, viajantes e de todos os que trilham os caminhos da vida (16 a 24 de julho).",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/sao-cristovao.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-cristovao.webp",
       "martir": true,
       "festa": {
         "mes": 7,
@@ -4626,7 +4625,7 @@
       "titulo": "Novena a Sant'Ana e São Joaquim",
       "santo": "Sant'Ana e São Joaquim",
       "descricao": "Novena em honra a Sant'Ana e São Joaquim, pais da Virgem Maria e avós de Nosso Senhor Jesus Cristo, padroeiros dos avós e protetores das famílias (17 a 25 de julho).",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/santa-ana-sao-joaquim.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sant-ana-e-sao-joaquim.webp",
       "festa": {
         "mes": 7,
         "dia": 26
@@ -4683,7 +4682,7 @@
       "titulo": "Novena Milagrosa a Santa Marta de Betânia",
       "santo": "Santa Marta",
       "descricao": "Novena milagrosa em honra a Santa Marta de Betânia, discípula do Senhor, modelo de serviço e amor, e poderosa intercessora nas necessidades urgentes e difíceis (20 a 28 de julho).",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/santa-marta.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-marta.webp",
       "festa": {
         "mes": 7,
         "dia": 29
@@ -4740,7 +4739,7 @@
       "titulo": "Novena a Santo Inácio de Loyola",
       "santo": "Santo Inácio de Loyola",
       "descricao": "Novena tradicional em honra a Santo Inácio de Loyola, fundador da Companhia de Jesus, mestre dos Exercícios Espirituais e valoroso soldado de Cristo na defesa da fé e pela maior glória de Deus (22 a 30 de julho).",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/santo-inacio-loyola.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santo-inacio-de-loyola.webp",
       "festa": {
         "mes": 7,
         "dia": 31
@@ -4797,7 +4796,7 @@
       "titulo": "Novena da Assunção de Nossa Senhora",
       "santo": "Assunção de Nossa Senhora",
       "descricao": "Textos breves para meditar sobre a Assunção da Bem-aventurada Virgem Maria, nos dias que precedem esta grande solenidade do mês de agosto.",
-      "imagem_url": "https://i.pinimg.com/736x/68/ae/53/68ae533a2ee7848b55ad14301a45bb72.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/assuncao-de-nossa-senhora.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 8,
@@ -4855,7 +4854,7 @@
       "titulo": "Novena da Exaltação da Santa Cruz",
       "santo": "Exaltação da Santa Cruz",
       "descricao": "Novena inspirada nas «Reflexões sobre a Paixão de Jesus Cristo» de Santo Afonso Maria de Ligório para a Festa da Exaltação da Santa Cruz (14 de setembro).",
-      "imagem_url": "https://r2.padrepauloricardo.org/nof4tf5546glvqmyt87zehnvqere",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/exaltacao-da-santa-cruz.webp",
       "festa": {
         "mes": 9,
         "dia": 14
@@ -4912,7 +4911,7 @@
       "titulo": "Novena a Nossa Senhora das Dores",
       "santo": "Nossa Senhora das Dores",
       "descricao": "Novena em honra a Nossa Senhora das Dores (15 de setembro), rogando sua intercessão e consolação ao pé da Cruz.",
-      "imagem_url": "https://i.postimg.cc/mkrhQ58s/ns-dores-setembro.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-das-dores.webp",
       "festa": {
         "mes": 9,
         "dia": 15
@@ -4969,7 +4968,7 @@
       "titulo": "Novena a São Pio de Pietrelcina",
       "santo": "São Pio de Pietrelcina",
       "descricao": "Novena a São Padre Pio de Pietrelcina, frade capuchinho marcado pelos estigmas de Cristo, mestre da oração e do amor a Deus.",
-      "imagem_url": "https://img.cancaonova.com/cnimages/canais/uploads/sites/2/2022/09/23-S%C3%A3o-Pio-de-Pietrelcina-2.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-pio-de-pietrelcina.webp",
       "festa": {
         "mes": 9,
         "dia": 23
@@ -5025,7 +5024,7 @@
       "titulo": "Novena a São Cosme e Damião",
       "santo": "São Cosme e São Damião",
       "descricao": "Novena e orações aos Santos Cosme e Damião, irmãos mártires, médicos caridosos, protetores das crianças e padroeiros da medicina e farmácia.",
-      "imagem_url": "https://cleofas.com.br/wp-content/uploads/2017/09/cosme-damiao.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-cosme-e-sao-damiao.webp",
       "festa": {
         "mes": 9,
         "dia": 26
@@ -5082,7 +5081,7 @@
       "titulo": "Quaresma de São Miguel Arcanjo 2026",
       "santo": "Quaresma de São Miguel Arcanjo",
       "descricao": "Quaresma de São Miguel Arcanjo (15 de agosto a 29 de setembro): 40 dias de penitência, combate espiritual, ladainha e consagração ao Príncipe da Milícia Celeste.",
-      "imagem_url": "https://r2.padrepauloricardo.org/a5ymh72r8njhd15g6mxf18mjx5s7",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/quaresma-de-sao-miguel-arcanjo.webp",
       "festa": {
         "mes": 9,
         "dia": 29
@@ -5268,7 +5267,7 @@
       "titulo": "Novena de São Miguel Arcanjo",
       "santo": "São Miguel Arcanjo",
       "descricao": "Tradicional Novena em honra a São Miguel Arcanjo e aos Nove Coros dos Santos Anjos (festa litúrgica em 29 de setembro).",
-      "imagem_url": "https://r2.padrepauloricardo.org/a5ymh72r8njhd15g6mxf18mjx5s7",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/quaresma-de-sao-miguel-arcanjo.webp",
       "festa": {
         "mes": 9,
         "dia": 29
@@ -5325,7 +5324,7 @@
       "titulo": "Novena ao Santo Anjo da Guarda",
       "santo": "Anjo da Guarda",
       "descricao": "Novena aos Santos Anjos da Guarda (festa em 2 de outubro). “Cada fiel é ladeado por um anjo como protetor e pastor para conduzi-lo à vida” (CIC 336).",
-      "imagem_url": "https://i.postimg.cc/251LGdkn/image.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/anjo-da-guarda.webp",
       "festa": {
         "mes": 10,
         "dia": 2
@@ -5382,7 +5381,7 @@
       "titulo": "Novena a São Francisco de Assis",
       "santo": "São Francisco de Assis",
       "descricao": "Novena a São Francisco de Assis, o Pobrezinho de Assis, arauto da paz, da humildade e do amor a Deus e a toda a Criação (festa litúrgica em 4 de outubro).",
-      "imagem_url": "https://i.postimg.cc/fVs0LZz6/sao-francisco-assis.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-francisco-de-assis.webp",
       "festa": {
         "mes": 10,
         "dia": 4
@@ -5439,7 +5438,7 @@
       "titulo": "Novena a Santa Filomena",
       "santo": "Santa Filomena",
       "descricao": "Novena em honra a Santa Filomena, virgem e mártir. Preparação para a sua festa em 11 de agosto.",
-      "imagem_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuLi6GT6v9yke7mPy5LxdsSRrK0d54SrfOve_Ij9Nk575fvhtkZUAZhLlJ2b490Amg-VXICRo6xkJGbAyHtHHa3jvKvbiJdMUQiNvdUYFotoaOIDKLlu-K3yKbdb-P41fAPGOmBW0tnXY/s1600/Santa+Filomena,+Virgem+e+M%C3%A1rtir+(1).jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-filomena.webp",
       "posicao_imagem": "top",
       "martir": true,
       "festa": {
@@ -5498,7 +5497,7 @@
       "titulo": "Novena a Santa Josefina Bakhita",
       "santo": "Santa Josefina Bakhita",
       "descricao": "Ex-escrava e santa da esperança. Peça libertação das amarras.",
-      "imagem_url": "https://iili.io/f6UqHve.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-josefina-bakhita.webp",
       "festa": {
         "mes": 2,
         "dia": 8
@@ -5555,7 +5554,7 @@
       "titulo": "Novena a Santo Onofre do Egito",
       "santo": "Santo Onofre do Egito",
       "descricao": "Novena de preparação para a Festa de Santo Onofre de 3 a 11 de junho. Poderoso intercessor contra vícios, pelo sucesso nos negócios e sustento familiar.",
-      "imagem_url": "https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/bd34/live/17a73f20-27e7-11ef-b0c1-85d9ceb9fef8.jpg.webp",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santo-onofre-do-egito.webp",
       "festa": {
         "mes": 6,
         "dia": 12
@@ -5611,7 +5610,7 @@
       "titulo": "Novena a Nossa Senhora do Perpétuo Socorro",
       "santo": "Nossa Senhora Perpétuo Socorro",
       "descricao": "Reze conosco a novena a Nossa Senhora do Perpétuo Socorro. A exemplo de Jesus, também nós recorremos a Nossa Senhora do Perpétuo Socorro diante das angústias de nosso coração.",
-      "imagem_url": "https://img.cancaonova.com/cnimages/canais/uploads/sites/6/2015/06/formacao_1600x1200-conheca-a-novena-a-nossa-senhora-do-perpetuo-socorro-768x576.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-perpetuo-socorro.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 6,
@@ -5668,7 +5667,7 @@
       "titulo": "Novena a Santa Paulina do Brasil",
       "santo": "Santa Paulina do Brasil",
       "descricao": "Primeira santa do Brasil. Dedicação total aos doentes e pobres.",
-      "imagem_url": "https://cdnv2.moovin.com.br/sjo/imagens/produtos/det/santinhos_de_papel-santa_paulina_-_frente.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-paulina-do-brasil.webp",
       "festa": {
         "mes": 7,
         "dia": 9
@@ -5725,7 +5724,7 @@
       "titulo": "Novena a São Bento",
       "santo": "São Bento Abade",
       "descricao": "Novena em honra a São Bento, patriarca dos monges do Ocidente. Serve para ambas as festas: 11 de julho (São Bento) e 21 de março (Trânsito de São Bento).",
-      "imagem_url": "https://igrejadoscapuchinhos.org/wp-content/uploads/4ad94e1ccf05dc4df776c5a881864a4f.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-bento-abade.webp",
       "festa": {
         "mes": 7,
         "dia": 11
@@ -5782,7 +5781,7 @@
       "titulo": "Novena a São Bento (Trânsito)",
       "santo": "Trânsito de São Bento",
       "descricao": "Novena em honra a São Bento, patriarca dos monges do Ocidente. Celebração do Trânsito de São Bento (21 de março).",
-      "imagem_url": "https://i.postimg.cc/3JSmbgvb/sao-bento.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/transito-de-sao-bento.webp",
       "festa": {
         "mes": 3,
         "dia": 21
@@ -5839,7 +5838,7 @@
       "titulo": "Novena da Anunciação do Senhor",
       "santo": "Anunciação",
       "descricao": "Novena em preparação à Solenidade da Anunciação do Senhor (25 de março).",
-      "imagem_url": "https://i.postimg.cc/KjsjQDHk/anunciacao.png",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/anunciacao.webp",
       "festa": {
         "mes": 3,
         "dia": 25
@@ -5896,7 +5895,7 @@
       "titulo": "Novena a Santa Gemma Galgani",
       "santo": "Santa Gemma Galgani",
       "descricao": "Jovem mística e estigmatizada. Intercessora nas tentações e pureza.",
-      "imagem_url": "https://i.pinimg.com/1200x/8a/e9/88/8ae9882bcb83a868f759277dc575965d.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-gemma-galgani.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 4,
@@ -5954,7 +5953,7 @@
       "titulo": "Novena a Nossa Senhora Auxiliadora",
       "santo": "Nossa Senhora Auxiliadora (Austrália)",
       "descricao": "Padroeira da Austrália. Invocada como socorro dos cristãos em todas as batalhas da vida.",
-      "imagem_url": "https://i.postimg.cc/854jfSdv/ns-auxiliadora-australia.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-auxiliadora-australia.webp",
       "festa": {
         "mes": 5,
         "dia": 24
@@ -6011,7 +6010,7 @@
       "titulo": "Novena a Nossa Senhora da Assunção",
       "santo": "Nossa Senhora da Assunção (Nova Zelândia)",
       "descricao": "Padroeira da Nova Zelândia (Aotearoa). Celebramos a subida de Maria ao céu em corpo e alma.",
-      "imagem_url": "https://i.postimg.cc/qMbyZ8KH/ns-assuncao-nz.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-da-assuncao-nova-zelandia.webp",
       "festa": {
         "mes": 8,
         "dia": 15
@@ -6068,7 +6067,7 @@
       "titulo": "Novena a Nossa Senhora Rainha da Paz",
       "santo": "Nossa Senhora Rainha da Paz (Oceania)",
       "descricao": "Invocada por toda a Oceania como a guardiã da harmonia e do entendimento entre os povos das ilhas.",
-      "imagem_url": "https://i.postimg.cc/sxnQqrvj/ns-paz-oceania.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-rainha-da-paz-oceania.webp",
       "versoes": [
         {
           "id": "principal",
@@ -6121,7 +6120,7 @@
       "titulo": "Novena a Nossa Senhora Estrela do Mar",
       "santo": "Nossa Senhora Estrela do Mar (Pacífico)",
       "descricao": "Invocada pelos navegantes e povos das ilhas do Pacífico como a guia segura nas tempestades da vida.",
-      "imagem_url": "https://i.postimg.cc/qvNyfzcB/ns-estrela-do-mar-pacifico.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/nossa-senhora-estrela-do-mar-pacifico.webp",
       "versoes": [
         {
           "id": "principal",
@@ -6174,7 +6173,7 @@
       "titulo": "Novena à Santíssima Trindade",
       "santo": "Santíssima Trindade",
       "descricao": "Esta novena contempla o mistério inefável de Deus Uno e Trino, Um na Essência e Trino nas Pessoas (Pai, Filho e Espírito Santo).",
-      "imagem_url": "https://cruzterrasanta.com.br/_global/_ssf/ssf.aspx?d=/_upload/significados_de_santos/&arquivo=20230622182805-santissima-trindade_680.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santissima-trindade.webp",
       "festa": {
         "movel": "trindade"
       },
@@ -6230,7 +6229,7 @@
       "titulo": "Novena do Trabalho",
       "santo": "São Josemaria Escrivá",
       "descricao": "Composta pelo Pe. Francisco Faus, a Novena do Trabalho a São Josemaria Escrivá é uma poderosa oração de intercessão baseada nos ensinamentos do santo. É destinada a quem busca um emprego digno e estável, ou a quem deseja santificar o seu trabalho diário, oferecendo-o com amor a Deus.",
-      "imagem_url": "https://imgs.search.brave.com/pQJ3bX40nmh-Vf5ww0ZVAzn3JcfSlv2-qLrmV0Wq7uA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWdz/LnNlYXJjaC5icmF2/ZS5jb20vckpUOXBl/dTN2MG1kREY2a2U3/T1JxSWlNS2Z4dTdx/UVVYaWk1cmRjcFh3/US9yczpmaXQ6NTAw/OjA6MDowL2c6Y2Uv/YUhSMGNEb3ZMMkpz/YjJjdS9ZMkZ1WTJG/dmJtOTJZUzVqL2Iy/MHZabVZzYVhCbFlY/RjEvYVc1dkwyWnBi/R1Z6THpJdy9NVFV2/TURRdmFtOXpaVzFo/L2NtbGhMV1Z6WTNK/cGRtRXQvT0MweU1E/aDRNekF3TG1wdy9a/dw",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-josemaria-escriva.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 6,
@@ -6288,7 +6287,7 @@
       "titulo": "Novena aos Santos Luís e Zélia Martin",
       "santo": "São Luís e Santa Zélia Martin",
       "descricao": "Os primeiros esposos canonizados juntos. Pais de Santa Teresinha. Festa: 12 de julho.",
-      "imagem_url": "https://comshalom.org/wp-content/uploads/2020/07/louis-et-zlie-martin-dalenon-840x502.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-luis-e-santa-zelia-martin.webp",
       "festa": {
         "mes": 7,
         "dia": 12
@@ -6345,7 +6344,7 @@
       "titulo": "Novena a Santa Clara",
       "santo": "Santa Clara de Assis",
       "descricao": "Novena em honra a Santa Clara de Assis, fundadora das Clarissas e companheira espiritual de São Francisco.",
-      "imagem_url": "https://i.pinimg.com/1200x/d7/b0/23/d7b0236f1f90e81037fe208b1459b797.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-clara-de-assis.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 8,
@@ -6403,7 +6402,7 @@
       "titulo": "Novena a São Maximiliano Kolbe",
       "santo": "São Maximiliano Kolbe",
       "descricao": "Novena em honra a São Maximiliano Kolbe, o mártir da caridade de Auschwitz.",
-      "imagem_url": "https://coracoessagradosbsb.vercel.app/images/santos/sao-maximiliano-kolbe.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-maximiliano-kolbe.webp",
       "posicao_imagem": "top",
       "martir": true,
       "festa": {
@@ -6462,7 +6461,7 @@
       "titulo": "Novena a Santa Dulce dos Pobres",
       "santo": "Santa Dulce dos Pobres",
       "descricao": "Santa Dulce Lopes Pontes, o anjo bom da Bahia, dedicou sua vida ao serviço dos mais necessitados, vivendo a caridade de Cristo de forma heroica.",
-      "imagem_url": "https://img.cancaonova.com/cnimages/canais/uploads/sites/6/2023/07/formacao_reze-a-novena-a-santa-dulce-dos-pobres-1-768x432.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-dulce-dos-pobres.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 8,
@@ -6520,7 +6519,7 @@
       "titulo": "Novena a Santo Afonso de Ligório",
       "santo": "Santo Afonso Maria de Ligório",
       "descricao": "Doutor da Igreja e fundador dos Redentoristas. Grande mestre da teologia moral e do amor a Cristo e a Maria.",
-      "imagem_url": "https://i.pinimg.com/736x/33/ed/95/33ed9547ad83c347108e5904154f27d5.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santo-afonso-maria-de-ligorio.webp",
       "posicao_imagem": "top",
       "festa": {
         "mes": 8,
@@ -6578,7 +6577,7 @@
       "titulo": "Novena a São João Maria Vianney",
       "santo": "São João Vianney",
       "descricao": "Novena em honra ao Santo Cura d'Ars, padroeiro dos párocos e modelo de amor à Eucaristia e à reconciliação.",
-      "imagem_url": "https://img.cancaonova.com/cnimages/canais/uploads/sites/2/2022/08/S%C3%A3o-Jo%C3%A3o-Maria-Vianney-padroeiro-dos-sacerdotes-1-300x225.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/sao-joao-vianney.webp",
       "festa": {
         "mes": 8,
         "dia": 4
@@ -6635,7 +6634,7 @@
       "titulo": "Novena a Santa Mônica",
       "santo": "Santa Mônica",
       "descricao": "Novena a Santa Mônica, espelho de esposas, modelo de mães e intercessora poderosa pela conversão dos filhos e da família.",
-      "imagem_url": "https://img.cancaonova.com/cnimages/canais/uploads/sites/2/2022/08/Santa-M%C3%B4nica-2-300x225.jpg",
+      "imagem_url": "https://lmkrzsfjuq5bzqoa.public.blob.vercel-storage.com/novenas/santa-monica.webp",
       "festa": {
         "mes": 8,
         "dia": 27
