@@ -61,9 +61,7 @@ export default async function Page({
     return (
         <>
             <JsonLd data={webPageJsonLd} />
-            <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-8">
-                <Breadcrumb items={[{ label: "Orações", href: "/oracoes" }, { label: catName }]} />
-            </div>
+            <Breadcrumb items={[{ label: "Orações", href: "/oracoes" }, { label: catName }]} />
             <OracoesCategoriaPage slug={slug} />
         </>
     );

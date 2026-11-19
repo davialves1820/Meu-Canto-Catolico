@@ -14,9 +14,7 @@ export const metadata: Metadata = pageMetadata({
 export default function PaginaConfissao() {
   return (
     <>
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-6">
-        <Breadcrumb items={[{ label: "Confissão" }]} />
-      </div>
+      <Breadcrumb items={[{ label: "Confissão" }]} />
       <ConfissaoApp />
     </>
   );

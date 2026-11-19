@@ -6,6 +6,8 @@ import { CONFIG_CAT } from "@/types/oracao";
 import { CATEQUESE } from "@/config/catequese";
 import santosData from "@/data/santos.json";
 import type { Santo } from "@/types/santos";
+import novenasData from "@/data/novenas.json";
+import type { Novena } from "@/types/novena";
 
 const url = (path: string) => `${siteConfig.url}${path}`;
 
@@ -25,6 +27,7 @@ const STATIC_ROUTES: { path: string; changeFrequency: MetadataRoute.Sitemap[numb
   { path: "/catequese", changeFrequency: "monthly", priority: 0.7 },
   { path: "/confissao", changeFrequency: "monthly", priority: 0.6 },
   { path: "/rosario", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/novenas", changeFrequency: "weekly", priority: 0.8 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -40,6 +43,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const santos = (santosData as { santos: Santo[] }).santos;
   const entradasSantos: MetadataRoute.Sitemap = santos.map((s) => ({
     url: url(`/santos/${s.slug}`),
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.6,
+  }));
+
+  const novenas = (novenasData as { novenas: Novena[] }).novenas;
+  const entradasNovenas: MetadataRoute.Sitemap = novenas.map((n) => ({
+    url: url(`/novenas/${n.slug}`),
     lastModified: now,
     changeFrequency: "yearly",
     priority: 0.6,
@@ -84,6 +95,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...entradasEstaticas,
     ...entradasSantos,
+    ...entradasNovenas,
     ...entradasOracoes,
     ...entradasCatequese,
     ...entradasBiblia,

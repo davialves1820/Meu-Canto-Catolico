@@ -4,6 +4,7 @@ import { PAGINAS_BUSCA } from "@/config/paginasBusca";
 import { CONFIG_CAT, Oracao } from "@/types/oracao";
 import { ResultadoBusca } from "@/types/busca";
 import { getSantos } from "./santos";
+import { buscarNovenas as pesquisarNovenas } from "./novenas";
 import { pesquisarBiblia } from "./biblia";
 import { pesquisarCatecismo } from "./catecismo";
 
@@ -29,6 +30,16 @@ async function buscarSantos(query: string): Promise<ResultadoBusca[]> {
     titulo: s.nome,
     descricao: s.data_festa ? `Santo — festa em ${s.data_festa}` : "Santo",
     href: `/santos/${s.slug}`,
+  }));
+}
+
+async function buscarNovenas(query: string): Promise<ResultadoBusca[]> {
+  const novenas = await pesquisarNovenas(query, LIMITE_POR_CATEGORIA);
+  return novenas.map((n) => ({
+    tipo: "novena" as const,
+    titulo: n.titulo,
+    descricao: `Novena — ${n.versoes[0].dias.length} dias`,
+    href: `/novenas/${n.slug}`,
   }));
 }
 
@@ -76,13 +87,14 @@ export async function buscaGlobal(query: string): Promise<ResultadoBusca[]> {
   const q = normalizar(query.trim());
   if (!q) return [];
 
-  const [paginas, santos, oracoes, biblia, catecismo] = await Promise.all([
+  const [paginas, santos, novenas, oracoes, biblia, catecismo] = await Promise.all([
     Promise.resolve(buscarPaginas(q)),
     buscarSantos(query),
+    buscarNovenas(query),
     Promise.resolve(buscarOracoes(q)),
     buscarBiblia(query),
     buscarCatecismo(query),
   ]);
 
-  return [...paginas, ...santos, ...oracoes, ...biblia, ...catecismo];
+  return [...paginas, ...santos, ...novenas, ...oracoes, ...biblia, ...catecismo];
 }
