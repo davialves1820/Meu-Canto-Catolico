@@ -4,7 +4,13 @@ import { PropsCartaoNovena } from "@/types/novena";
 
 export default function CartaoNovena({ novena, detalhe, diaAtual }: PropsCartaoNovena) {
   return (
-    <Link href={`/novenas/${novena.slug}`} className="group cursor-pointer block" aria-label={`Rezar a ${novena.titulo}`}>
+    // Sem prefetch: a lista tem mais de cem cartões, e cada um visível carregaria uma página do cache.
+    <Link
+      href={`/novenas/${novena.slug}`}
+      prefetch={false}
+      className="group cursor-pointer block"
+      aria-label={`Rezar a ${novena.titulo}`}
+    >
       <div className="relative aspect-[3/4] overflow-hidden mb-4 border border-outline-variant/30 bg-surface-container">
         {novena.imagem_url ? (
           <Image

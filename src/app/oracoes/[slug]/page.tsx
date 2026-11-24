@@ -14,6 +14,9 @@ import { pageMetadata } from "@/lib/shared/pageMetadata";
 import { getOracaoPorSlug, getOracoes, getOracoesRelacionadas } from "@/lib/server/services/oracoes";
 import { absoluteUrl } from "@/config/site";
 
+// Todos os slugs são conhecidos no build: sem isto, cada URL inventada grava um 404 no cache (ISR).
+export const dynamicParams = false;
+
 // O mesmo segmento atende as categorias (/oracoes/comunhao) e cada oração
 // (/oracoes/ave-maria): os slugs das duas listas não se repetem.
 export async function generateStaticParams() {

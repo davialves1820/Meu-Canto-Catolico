@@ -24,6 +24,9 @@ const FESTAS_MOVEIS: Record<string, string> = {
   "cristo-rei": "Último domingo do Tempo Comum",
 };
 
+// Todos os slugs são conhecidos no build: sem isto, cada URL inventada grava um 404 no cache (ISR).
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const novenas = await getNovenasResumo();
   return novenas.map((n) => ({ slug: n.slug }));
