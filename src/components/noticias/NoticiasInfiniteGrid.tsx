@@ -22,6 +22,7 @@ export default function NoticiasInfiniteGrid({ noticiasIniciais, temMaisInicial 
   // Quando a busca muda, a página troca (novo SSR de "página 1") — reseta o
   // estado do scroll infinito pra recomeçar a paginação do zero.
   useEffect(() => {
+    /* eslint-disable-next-line react-hooks/set-state-in-effect */
     setNoticias(noticiasIniciais);
     setPagina(1);
     setTemMais(temMaisInicial);

@@ -43,6 +43,7 @@ export default function PaginaBuscaBiblia() {
 
   useEffect(() => {
     if (query.length < 3) {
+      /* eslint-disable-next-line react-hooks/set-state-in-effect */
       setResults([]);
       setSearched(false);
       setError(false);

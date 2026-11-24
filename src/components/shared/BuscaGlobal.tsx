@@ -77,7 +77,10 @@ export default function BuscaGlobal() {
 
   // O header tem backdrop-blur, que cria um containing block novo para position:fixed
   // e prende o modal dentro da caixa do header. Um portal para o body evita isso.
-  useEffect(() => setMontado(true), []);
+  useEffect(() => {
+    /* eslint-disable-next-line react-hooks/set-state-in-effect */
+    setMontado(true);
+  }, []);
 
   // Atalho global Ctrl/Cmd+K e Esc
   useEffect(() => {
@@ -154,8 +157,6 @@ export default function BuscaGlobal() {
       if (alvo) irPara(alvo.href);
     }
   };
-
-  let contadorGlobal = -1;
 
   return (
     <>
@@ -262,8 +263,8 @@ export default function BuscaGlobal() {
                       </p>
                       <ul role="listbox" aria-label={label}>
                         {itens.map((item) => {
-                          contadorGlobal += 1;
-                          const idx = contadorGlobal;
+                          // A API já devolve os resultados na ordem de ORDEM_TIPOS.
+                          const idx = state.resultados.indexOf(item);
                           const ativo = idx === state.indiceAtivo;
                           return (
                             <li key={`${item.tipo}-${item.href}-${item.titulo}`} role="option" aria-selected={ativo}>
