@@ -32,7 +32,9 @@ export async function getNovenasDoSanto(santoSlug: string): Promise<Novena[]> {
 }
 
 export async function buscarNovenas(query: string, limite: number): Promise<Novena[]> {
-  const normalizar = (t: string) => t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  // Hífen vira espaço, como na busca global.
+  const normalizar = (t: string) =>
+    t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/-/g, " ");
   const q = normalizar(query.trim());
   if (!q) return [];
   return TODAS.filter((n) => normalizar(n.santo).includes(q) || normalizar(n.titulo).includes(q)).slice(0, limite);
