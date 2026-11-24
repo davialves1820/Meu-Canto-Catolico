@@ -51,6 +51,13 @@ export default function manifest(): MetadataRoute.Manifest {
         icons: [{ src: "/images/icon-96.png", sizes: "96x96" }],
       },
       {
+        name: "Novenas",
+        short_name: "Novenas",
+        description: "Ver as novenas de hoje",
+        url: "/novenas",
+        icons: [{ src: "/images/icon-96.png", sizes: "96x96" }],
+      },
+      {
         name: "Orações",
         short_name: "Orações",
         description: "Ver o livro de orações",
