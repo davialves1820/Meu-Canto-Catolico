@@ -1,76 +1,39 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
-import { lerProgressoRemoto, salvarProgressoRemoto } from "@/lib/client/progressoRemoto";
+import { useCallback, useState } from "react";
+import { useProgressoSincronizado } from "@/lib/client/hooks/utils/useProgressoSincronizado";
+import type { ConfigProgresso } from "@/lib/client/progressoLocal";
 import type { ProgressoRosario, SlugMisterio } from "@/types/rosario";
 
-const CHAVE_PROGRESSO = "rosario-progresso";
-
-interface ProgressoSalvo {
-  misterioSlug: SlugMisterio;
-  passoIndex: number;
-}
+const CONFIG: ConfigProgresso<ProgressoRosario> = {
+  chave: "rosario",
+  base: "rosario-progresso",
+  converterAntigo: (bruto) => {
+    const antigo = bruto as ProgressoRosario | null;
+    return typeof antigo?.passoIndex === "number" ? { dados: antigo, atualizadoEm: antigo.atualizadoEm ?? 0 } : null;
+  },
+  // Dois terços em andamento não se somam: vale o último rezado.
+  mesclar: (a, b) => (b.atualizadoEm > a.atualizadoEm ? b.dados : a.dados),
+};
 
 export function useRosarioProgresso(misterioInicial: SlugMisterio) {
-  const { status } = useSession();
   const [misterioSlug, setMisterioSlugState] = useState<SlugMisterio>(misterioInicial);
   const [passoIndex, setPassoIndexState] = useState(-1);
   const [concluidos, setConcluidos] = useState<Set<number>>(new Set());
-  const [progressoSalvo, setProgressoSalvo] = useState<ProgressoSalvo | null>(null);
+  const [progressoSalvo, setProgressoSalvo] = useState<ProgressoRosario | null>(null);
 
-  // Lê o progresso salvo no mount (e de novo quando a sessão carrega) — apenas oferece
-  // "continuar", não aplica automaticamente (o usuário decide na tela inicial).
-  useEffect(() => {
-    let local: ProgressoRosario | null = null;
-    /* eslint-disable react-hooks/set-state-in-effect */
-    try {
-      const bruto = localStorage.getItem(CHAVE_PROGRESSO);
-      local = bruto ? (JSON.parse(bruto) as ProgressoRosario) : null;
-      if (local && typeof local.passoIndex === "number" && local.passoIndex >= 0) {
-        setProgressoSalvo({ misterioSlug: local.misterioSlug, passoIndex: local.passoIndex });
-      }
-    } catch {
-      // localStorage indisponível ou dado corrompido — ignora silenciosamente
-    }
-    /* eslint-enable react-hooks/set-state-in-effect */
-    if (status !== "authenticated") return;
+  // Apenas oferece "continuar" (inclusive de outro aparelho, com login): não aplica
+  // automaticamente, o usuário decide na tela inicial.
+  const { gravar } = useProgressoSincronizado(CONFIG, (registro) =>
+    setProgressoSalvo(registro && registro.dados.passoIndex >= 0 ? registro.dados : null)
+  );
 
-    // Com login, o terço começado em outro aparelho também pode ser continuado aqui.
-    let cancelado = false;
-    lerProgressoRemoto<ProgressoRosario>("rosario").then((remoto) => {
-      if (cancelado) return;
-      const salvo = remoto?.dados;
-      if (salvo && remoto.atualizadoEm > (local?.atualizadoEm ?? 0)) {
-        try {
-          localStorage.setItem(CHAVE_PROGRESSO, JSON.stringify(salvo));
-        } catch {
-          // segue só em memória
-        }
-        setProgressoSalvo(salvo.passoIndex >= 0 ? { misterioSlug: salvo.misterioSlug, passoIndex: salvo.passoIndex } : null);
-      } else if (local && (!remoto || local.atualizadoEm > remoto.atualizadoEm)) {
-        salvarProgressoRemoto("rosario", local, local.atualizadoEm);
-      }
-    });
-    return () => {
-      cancelado = true;
-    };
-  }, [status]);
-
-  const persistir = useCallback((slug: SlugMisterio, indice: number, done: Set<number>) => {
-    const dado: ProgressoRosario = {
-      misterioSlug: slug,
-      passoIndex: indice,
-      concluidos: Array.from(done),
-      atualizadoEm: Date.now(),
-    };
-    try {
-      localStorage.setItem(CHAVE_PROGRESSO, JSON.stringify(dado));
-    } catch {
-      // armazenamento cheio/indisponível — progresso segue funcionando em memória
-    }
-    if (status === "authenticated") salvarProgressoRemoto("rosario", dado, dado.atualizadoEm);
-  }, [status]);
+  const persistir = useCallback(
+    (slug: SlugMisterio, indice: number, done: Set<number>) => {
+      gravar({ misterioSlug: slug, passoIndex: indice, concluidos: Array.from(done), atualizadoEm: Date.now() });
+    },
+    [gravar]
+  );
 
   const selecionarMisterio = useCallback(
     (slug: SlugMisterio) => {
@@ -119,16 +82,9 @@ export function useRosarioProgresso(misterioInicial: SlugMisterio) {
 
   const continuarDeOndeParou = useCallback(() => {
     if (!progressoSalvo) return;
-    let concluidosSalvos: number[] = [];
-    try {
-      const bruto = localStorage.getItem(CHAVE_PROGRESSO);
-      if (bruto) concluidosSalvos = (JSON.parse(bruto) as ProgressoRosario).concluidos ?? [];
-    } catch {
-      // ignora — segue com progresso vazio em memória
-    }
     setMisterioSlugState(progressoSalvo.misterioSlug);
     setPassoIndexState(progressoSalvo.passoIndex);
-    setConcluidos(new Set(concluidosSalvos));
+    setConcluidos(new Set(progressoSalvo.concluidos));
     setProgressoSalvo(null);
   }, [progressoSalvo]);
 

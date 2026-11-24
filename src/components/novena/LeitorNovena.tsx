@@ -34,7 +34,7 @@ export default function LeitorNovena({ novena }: PropsLeitorNovena) {
 
   const [dia, setDia] = useState(1);
   const [hoje, setHoje] = useState<DiaEmAndamento | null>(null);
-  const { rezados, alternar, reiniciar } = useProgressoNovena(novena.slug, versao.id);
+  const { rezados, pronto, alternar, reiniciar } = useProgressoNovena(novena.slug, versao.id);
   const leituraRef = useRef<HTMLDivElement>(null);
 
   const datas = useMemo(
@@ -117,6 +117,7 @@ export default function LeitorNovena({ novena }: PropsLeitorNovena) {
             <button
               type="button"
               onClick={reiniciar}
+              disabled={!pronto}
               className="inline-flex items-center gap-1.5 font-label-sm text-[11px] text-on-surface-variant hover:text-primary transition-colors"
             >
               <RotateCcw size={13} aria-hidden="true" />
@@ -194,8 +195,9 @@ export default function LeitorNovena({ novena }: PropsLeitorNovena) {
           <button
             type="button"
             onClick={() => alternar(dia)}
+            disabled={!pronto}
             aria-pressed={rezado}
-            className={`inline-flex items-center gap-2 px-8 py-3 rounded-full font-label-md transition-all ${
+            className={`inline-flex items-center gap-2 px-8 py-3 rounded-full font-label-md transition-all disabled:opacity-60 ${
               rezado
                 ? "border border-primary text-primary hover:bg-primary/5"
                 : "bg-primary text-on-primary hover:bg-primary/90"

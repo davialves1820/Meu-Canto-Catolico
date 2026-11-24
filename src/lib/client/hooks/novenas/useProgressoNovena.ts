@@ -1,94 +1,54 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
-import { lerProgressoRemoto, salvarProgressoRemoto } from "@/lib/client/progressoRemoto";
+import { useCallback, useMemo, useState } from "react";
+import { useProgressoSincronizado } from "@/lib/client/hooks/utils/useProgressoSincronizado";
+import type { ConfigProgresso, RegistroProgresso } from "@/lib/client/progressoLocal";
 
-interface ProgressoNovena {
-  dias: number[];
-  atualizadoEm: number;
+/** Formatos gravados antes de o progresso ter dono: [1, 2] e { dias, atualizadoEm }. */
+function converterAntigo(bruto: unknown): RegistroProgresso<number[]> | null {
+  if (Array.isArray(bruto)) return { dados: bruto as number[], atualizadoEm: 0 };
+  const antigo = bruto as { dias?: number[]; atualizadoEm?: number } | null;
+  return Array.isArray(antigo?.dias) ? { dados: antigo.dias, atualizadoEm: antigo.atualizadoEm ?? 0 } : null;
 }
 
-const chave = (slug: string, versao: string) => `novena:${slug}:${versao}`;
-const chaveLocal = (slug: string, versao: string) => `novena-progresso:${slug}:${versao}`;
-
-function lerLocal(slug: string, versao: string): ProgressoNovena {
-  try {
-    const bruto = localStorage.getItem(chaveLocal(slug, versao));
-    if (!bruto) return { dias: [], atualizadoEm: 0 };
-    const salvo = JSON.parse(bruto) as ProgressoNovena | number[];
-    // Formato antigo: só a lista de dias, sem data.
-    return Array.isArray(salvo) ? { dias: salvo, atualizadoEm: 0 } : salvo;
-  } catch {
-    // localStorage indisponível ou dado corrompido — começa do zero
-    return { dias: [], atualizadoEm: 0 };
-  }
-}
-
-function gravarLocal(slug: string, versao: string, progresso: ProgressoNovena) {
-  try {
-    localStorage.setItem(chaveLocal(slug, versao), JSON.stringify(progresso));
-  } catch {
-    // armazenamento cheio/indisponível — o progresso segue em memória
-  }
-}
+const ordenar = (dias: Iterable<number>) => [...new Set(dias)].sort((a, b) => a - b);
 
 /**
  * Dias já rezados (1-based) de uma versão da novena. Fica no navegador e, com login,
- * também na conta: vale o registro mais recente entre os dois.
+ * também na conta.
  */
 export function useProgressoNovena(slug: string, versao: string) {
-  const { status } = useSession();
   const [rezados, setRezados] = useState<Set<number>>(new Set());
 
-  useEffect(() => {
-    const local = lerLocal(slug, versao);
-    /* eslint-disable-next-line react-hooks/set-state-in-effect */
-    setRezados(new Set(local.dias));
-    if (status !== "authenticated") return;
+  const config = useMemo<ConfigProgresso<number[]>>(
+    () => ({
+      chave: `novena:${slug}:${versao}`,
+      base: `novena-progresso:${slug}:${versao}`,
+      converterAntigo,
+      mesclar: (a, b) => ordenar([...a.dados, ...b.dados]),
+    }),
+    [slug, versao]
+  );
 
-    let cancelado = false;
-    lerProgressoRemoto<number[]>(chave(slug, versao)).then((remoto) => {
-      if (cancelado) return;
-      if (remoto && remoto.atualizadoEm > local.atualizadoEm) {
-        gravarLocal(slug, versao, { dias: remoto.dados, atualizadoEm: remoto.atualizadoEm });
-        setRezados(new Set(remoto.dados));
-      } else if (local.dias.length && (!remoto || local.atualizadoEm > remoto.atualizadoEm)) {
-        // Progresso feito antes do login (ou offline) sobe para a conta.
-        salvarProgressoRemoto(chave(slug, versao), local.dias, local.atualizadoEm || Date.now());
-      }
-    });
-    return () => {
-      cancelado = true;
-    };
-  }, [slug, versao, status]);
-
-  const persistir = useCallback(
-    (dias: Set<number>) => {
-      const progresso = { dias: [...dias].sort((a, b) => a - b), atualizadoEm: Date.now() };
-      gravarLocal(slug, versao, progresso);
-      if (status === "authenticated") salvarProgressoRemoto(chave(slug, versao), progresso.dias, progresso.atualizadoEm);
-    },
-    [slug, versao, status]
+  const { pronto, gravar, reiniciar: reiniciarSalvo } = useProgressoSincronizado(config, (registro) =>
+    setRezados(new Set(registro?.dados))
   );
 
   const alternar = useCallback(
     (dia: number) => {
-      setRezados((atual) => {
-        const novo = new Set(atual);
-        if (novo.has(dia)) novo.delete(dia);
-        else novo.add(dia);
-        persistir(novo);
-        return novo;
-      });
+      const novo = new Set(rezados);
+      if (novo.has(dia)) novo.delete(dia);
+      else novo.add(dia);
+      setRezados(novo);
+      gravar(ordenar(novo));
     },
-    [persistir]
+    [rezados, gravar]
   );
 
   const reiniciar = useCallback(() => {
     setRezados(new Set());
-    persistir(new Set());
-  }, [persistir]);
+    reiniciarSalvo([]);
+  }, [reiniciarSalvo]);
 
-  return { rezados, alternar, reiniciar };
+  return { rezados, pronto, alternar, reiniciar };
 }

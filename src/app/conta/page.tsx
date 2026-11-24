@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
-import { auth, signOut } from "@/auth";
+import { auth } from "@/auth";
 import { buscarDataCadastro } from "@/lib/server/services/usuarios";
 import { Breadcrumb } from "@/components/shared/Breadcrumb";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
@@ -14,11 +14,6 @@ export const metadata: Metadata = pageMetadata({
   path: "/conta",
   noIndex: true,
 });
-
-async function sair() {
-  "use server";
-  await signOut({ redirectTo: "/" });
-}
 
 export default async function ContaPage() {
   const session = await auth();
@@ -42,7 +37,6 @@ export default async function ContaPage() {
             email={session.user.email ?? ""}
             avatarUrlInicial={session.user.image ?? null}
             membroDesde={membroDesde}
-            onSignOut={sair}
           />
 
           <div className="bg-surface-container-lowest border border-secondary/10 rounded-2xl p-6 sm:p-8">

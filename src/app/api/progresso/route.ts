@@ -17,6 +17,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Não autenticado." }, { status: 401 });
   }
 
+  // O cliente diz de quem é o progresso: se o login foi trocado em outra aba, recusa.
+  if (request.nextUrl.searchParams.get("usuario") !== session.user.id) {
+    return NextResponse.json({ error: "Sessão de outro usuário." }, { status: 409 });
+  }
+
   const chave = request.nextUrl.searchParams.get("chave") ?? "";
   if (!PADRAO_CHAVE_PROGRESSO.test(chave)) {
     return NextResponse.json({ error: "Chave inválida." }, { status: 400 });
@@ -49,6 +54,9 @@ export async function PUT(request: NextRequest) {
     }
 
     const body = JSON.parse(texto);
+    if (body.usuario !== session.user.id) {
+      return NextResponse.json({ error: "Sessão de outro usuário." }, { status: 409 });
+    }
     const chave = typeof body.chave === "string" ? body.chave : "";
     const atualizadoEm = Number(body.atualizadoEm);
     if (!PADRAO_CHAVE_PROGRESSO.test(chave) || body.dados === undefined) {
