@@ -23,7 +23,11 @@ export default function EntrarForm() {
     const resultado = await signIn("credentials", { email, password: senha, redirect: false });
 
     if (resultado?.error) {
-      setErro("E-mail ou senha incorretos.");
+      setErro(
+        resultado.code === "muitas_tentativas"
+          ? "Muitas tentativas de login. Aguarde alguns minutos e tente de novo."
+          : "E-mail ou senha incorretos."
+      );
       setCarregando(false);
       return;
     }

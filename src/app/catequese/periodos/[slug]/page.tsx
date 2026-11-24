@@ -5,6 +5,9 @@ import { notFound } from "next/navigation";
 import { obterTituloPorSlug, CATEQUESE } from "@/config/catequese";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
 
+// Todos os slugs são conhecidos no build: sem isto, cada URL inventada grava um 404 no cache (ISR).
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const secao = CATEQUESE.find((s) => s.id === "periodos");
   return (secao?.itens ?? []).map(({ slug }) => ({ slug }));

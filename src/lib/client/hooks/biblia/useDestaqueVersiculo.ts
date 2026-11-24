@@ -15,6 +15,7 @@ export function useDestaqueVersiculo(versiculoParaDestacar: number | undefined, 
 
   // Sincronizar quando a propriedade highlightVerse for alterada
   useEffect(() => {
+    /* eslint-disable-next-line react-hooks/set-state-in-effect */
     setVersiculoDestaque(versiculoParaDestacar);
   }, [versiculoParaDestacar]);
 

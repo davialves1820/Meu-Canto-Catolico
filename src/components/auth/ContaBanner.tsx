@@ -1,22 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { User, Camera, SquarePen, LockKeyhole, LogOut } from "lucide-react";
 import Modal from "@/components/shared/Modal";
 import PerfilForm from "@/components/auth/PerfilForm";
 import AlterarSenhaForm from "@/components/auth/AlterarSenhaForm";
+import { descarregarProgressoPendente } from "@/lib/client/progressoRemoto";
 
 interface Props {
   nomeInicial: string;
   email: string;
   avatarUrlInicial: string | null;
   membroDesde: string;
-  onSignOut: () => void;
 }
 
-export default function ContaBanner({ nomeInicial, email, avatarUrlInicial, membroDesde, onSignOut }: Props) {
+export default function ContaBanner({ nomeInicial, email, avatarUrlInicial, membroDesde }: Props) {
   const [modalPerfilAberto, setModalPerfilAberto] = useState(false);
   const [modalSenhaAberto, setModalSenhaAberto] = useState(false);
 
@@ -26,6 +26,13 @@ export default function ContaBanner({ nomeInicial, email, avatarUrlInicial, memb
   const { data: sessao } = useSession();
   const nome = sessao ? sessao.user?.name ?? "" : nomeInicial;
   const avatarUrl = sessao ? sessao.user?.image ?? null : avatarUrlInicial;
+
+  // Pelo cliente (e não por server action) para recarregar a página e avisar as outras abas:
+  // senão o site continuaria achando que esta pessoa está logada.
+  const sair = async () => {
+    await descarregarProgressoPendente();
+    await signOut({ redirectTo: "/" });
+  };
 
   return (
     <>
@@ -76,7 +83,7 @@ export default function ContaBanner({ nomeInicial, email, avatarUrlInicial, memb
             </button>
             <button
               type="button"
-              onClick={onSignOut}
+              onClick={sair}
               aria-label="Sair da conta"
               className="p-2.5 rounded-xl text-destructive hover:bg-destructive/10 transition-colors flex items-center justify-center"
             >

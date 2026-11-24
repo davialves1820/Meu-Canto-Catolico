@@ -24,6 +24,17 @@ export default function PrivacidadePage() {
               arquivos (Vercel Blob) e é usada apenas para exibição na sua conta.
             </p>
             <p>
+              Se você estiver conectado, guardamos também o seu progresso nas novenas e no Rosário (os
+              dias rezados e onde você parou), para que possa continuar em outro aparelho. Como revela a
+              sua prática religiosa, é um dado pessoal sensível: usamos apenas para mostrar o progresso a
+              você, sem compartilhar com ninguém. Ele é apagado junto com a conta. Sem login, o
+              progresso fica só no seu navegador; se você entrar na conta no mesmo aparelho, o que foi
+              feito sem login é juntado a ela.
+            </p>
+            <p>
+              O Exame de Consciência não é enviado nem guardado por nós.
+            </p>
+            <p>
               Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing.
               Usamos um cookie de sessão para manter você conectado — ele é necessário para o login
               funcionar e não é usado para rastreamento entre sites.

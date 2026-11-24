@@ -12,6 +12,9 @@ import { JsonLd } from "@/components/shared/JsonLd";
 import { pageMetadata } from "@/lib/shared/pageMetadata";
 import { siteConfig, absoluteUrl } from "@/config/site";
 
+// Todos os slugs são conhecidos no build: sem isto, cada URL inventada grava um 404 no cache (ISR).
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const { santos } = await getSantos({ tipo: "Todos", busca: "", pagina: 1, porPagina: 9999 });
   return santos.map((s) => ({ slug: s.slug }));

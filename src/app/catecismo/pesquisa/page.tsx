@@ -51,6 +51,7 @@ export default function PaginaBuscaCatecismo() {
 
   useEffect(() => {
     if (query.trim().length < 3 && numeroDoParagrafo(query) === null) {
+      /* eslint-disable-next-line react-hooks/set-state-in-effect */
       setResults([]);
       setSearched(false);
       setError(false);
